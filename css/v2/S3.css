@@ -71,3 +71,16 @@
   .uv__ptxt>.p+.h3{margin-top:48px}
   .uv__card>*+*{margin-top:12px}
 }
+
+/* v2.3.2: 04/05 の番号をやめ、見出しとして目に留まる形（ブロンズの縦棒） */
+.uv__sub{border-left:calc(4*var(--u)) solid var(--bronze);padding-left:calc(20*var(--u))}
+/* 剥がれた膜の図: 本文の右に小さく */
+.uv__pivot{display:grid;grid-template-columns:1fr calc(300*var(--u));column-gap:calc(var(--gut2)*var(--u));align-items:center}
+.uv__peelbox>*+*{margin-top:calc(var(--sp-in)*var(--u))}
+.uv__peelbox .note{text-align:center}
+.uv__flake{fill:var(--sand);stroke:var(--charcoal);stroke-width:1;stroke-linejoin:round}
+@media (max-width:900px){
+  .uv__sub{border-left-width:3px;padding-left:12px}
+  .uv__pivot{grid-template-columns:1fr;row-gap:16px}
+  .uv__peelbox{width:220px;margin:0 auto}
+}

@@ -151,3 +151,8 @@
   .mt__coin{width:48px}
   .mt__right>.h3+.big,.mt__right>.note+.h3{margin-top:16px}
 }
+
+/* v2.3.2: 普及率ブロックだけ枠なし（早川さん指示）。所属は余白で示す */
+#market-share .stat,#market-share .figbox{background:transparent;border:0;padding:0}
+#market-share .figbox__title{margin-bottom:calc(var(--sp-in)*var(--u))}
+#market-share .figbox+.figbox{margin-top:calc(var(--sp-el)*var(--u))}
