@@ -162,6 +162,7 @@
   .gr__right{display:block}
   .gr__right>.figbox+.figbox{margin-top:32px}
   .lg{width:100%;height:auto;aspect-ratio:600/220}
-  .mt__row{justify-content:flex-start;column-gap:16px;align-items:center}
-  .mt__row>.p{flex:0 1 auto}
+  /* 絵は3つとも同じ列（本文の右・幅72px）に縦1列でそろえる */
+  .mt__row{display:grid;grid-template-columns:minmax(0,560px) 72px;column-gap:16px;align-items:center;justify-items:center}
+  .mt__row>.p{justify-self:start}
 }
