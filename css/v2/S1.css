@@ -156,3 +156,12 @@
 #market-share .stat,#market-share .figbox{background:transparent;border:0;padding:0}
 #market-share .figbox__title{margin-bottom:calc(var(--sp-in)*var(--u))}
 #market-share .figbox+.figbox{margin-top:calc(var(--sp-el)*var(--u))}
+
+/* v2.3.6 タブレット・スマホ: グラフの箱の高さを viewBox の比で確保（文字と重ならないように）。アイコンは本文のすぐ隣 */
+@media (max-width:900px){
+  .gr__right{display:block}
+  .gr__right>.figbox+.figbox{margin-top:32px}
+  .lg{width:100%;height:auto;aspect-ratio:600/220}
+  .mt__row{justify-content:flex-start;column-gap:16px;align-items:center}
+  .mt__row>.p{flex:0 1 auto}
+}

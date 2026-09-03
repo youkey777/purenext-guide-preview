@@ -71,9 +71,12 @@
 
 /* ---------- 設置スペース（W18c の重ね図） ---------- */
 .a3__svg{width:calc(700*var(--u));height:auto;margin-left:auto;margin-right:auto;display:block}
-.a3__box{fill:none;stroke:var(--rule-soft);stroke-width:1.4}
-.a3__paper{fill:var(--sand);stroke:var(--rule-soft);stroke-width:1.6}
-.a3__base{fill:var(--white);stroke:var(--bronze);stroke-width:2.2}
+/* v2.3.6: 外側の四角は廃止。いちばん外＝A3用紙（白）、その内側＝PureNext の設置面（サンド＋ブロンズ枠） */
+.a3__paper{fill:var(--white);stroke:var(--charcoal);stroke-width:1.4}
+.a3__base{fill:var(--sand);stroke:var(--bronze);stroke-width:2.2}
+.a3__in{fill:var(--charcoal);font-weight:500}
+.a3__in2{fill:var(--gray)}
+.a3__em{fill:var(--bronze);font-weight:500}
 .a3__dim line{stroke:var(--mist);stroke-width:2}
 .a3__dim polygon,.a3__dim circle{fill:var(--mist);stroke:none}
 .a3__svg text{font-family:var(--jp);font-weight:400;fill:var(--charcoal)}
