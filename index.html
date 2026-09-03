@@ -502,9 +502,9 @@
             <img class="md__illus md__illus--glasses" src="assets/W08_temps/glasses.png" width="214" height="117" alt="氷入りの冷水と常温水のグラスの線画">
           </div>
           <h4 class="h3">冷水・常温水</h4>
-          <p class="p">いつでも飲める綺麗な常温の水は、意外と貴重です。</p>
           <p class="p">冷水（約6℃）と常温水は、ロック解除なしでそのまま出せます。</p>
           <p class="p">夜寝る前の水分補給や、体を冷やしたくない健康志向で、常温水の需要が急速に高まっています。</p>
+          <p class="p">いつでも飲める綺麗な常温の水は、意外と貴重です。</p>
         </div>
       </div>
 
@@ -654,22 +654,29 @@
           <p class="p">毎日決まった量を習慣にしている方ほど、同じ数字がすぐ立ち上がるので便利です。</p>
         </div>
 
-        <div class="md__ba">
-          <div class="md__ba-item">
-            <div class="md__lcd md__panel">
-              <p class="big md__pnum">0<span class="md__punit">ml</span></p>
-            </div>
-            <p class="note">メモリなし ― 毎回ゼロから合わせる</p>
-          </div>
-
-          <svg class="md__ba-arrow" viewBox="0 0 33 66" role="img" aria-label="から"><path d="M16.5 2v61M2 49l14.5 15L31 49" fill="none" stroke="currentColor" stroke-width="3.4"/></svg>
-
-          <div class="md__ba-item">
-            <div class="md__lcd md__panel">
-              <p class="big md__pnum">150<span class="md__punit">ml</span></p>
-            </div>
-            <p class="note">PureNext ― 前回の150mlから始まる</p>
-          </div>
+        <div class="md__memfig">
+          <svg class="md__memsvg" viewBox="0 0 640 296" role="img" aria-label="操作パネルの5つのボタンそれぞれに、前回の量が記録されている図。温水180ml・白湯150ml・冷水と常温水は共通で200ml・40℃モード100ml">
+            <rect class="mm__panel" x="8" y="8" width="624" height="120" rx="14"/>
+            <g class="mm__btn">
+              <rect x="40" y="36" width="88" height="64" rx="8"/><rect x="164" y="36" width="88" height="64" rx="8"/><rect x="288" y="36" width="88" height="64" rx="8"/><rect x="412" y="36" width="88" height="64" rx="8"/><rect x="536" y="36" width="88" height="64" rx="8"/>
+            </g>
+            <g class="mm__lbl" font-size="20" text-anchor="middle">
+              <text x="84" y="76">温水</text><text x="208" y="76">白湯</text><text x="332" y="76">冷水</text><text x="456" y="76">常温水</text><text x="580" y="70">40℃</text><text x="580" y="90" font-size="14">モード</text>
+            </g>
+            <g class="mm__link">
+              <path d="M84 100 V178"/><path d="M208 100 V178"/><path d="M332 100 V150 H394 V178"/><path d="M456 100 V150 H394"/><path d="M580 100 V178"/>
+            </g>
+            <g class="mm__chip">
+              <rect x="40" y="178" width="88" height="56" rx="6"/><rect x="164" y="178" width="88" height="56" rx="6"/><rect x="316" y="178" width="156" height="56" rx="6"/><rect x="536" y="178" width="88" height="56" rx="6"/>
+            </g>
+            <g class="mm__val" font-size="26" text-anchor="middle">
+              <text x="84" y="214">180<tspan font-size="15">ml</tspan></text><text x="208" y="214">150<tspan font-size="15">ml</tspan></text><text x="394" y="214">200<tspan font-size="15">ml</tspan></text><text x="580" y="214">100<tspan font-size="15">ml</tspan></text>
+            </g>
+            <g class="mm__cap" font-size="14" text-anchor="middle">
+              <text x="84" y="258">前回の量</text><text x="208" y="258">前回の量</text><text x="394" y="258">冷水・常温水は共通</text><text x="580" y="258">前回の量</text>
+            </g>
+          </svg>
+          <p class="note">ボタンごとに、前回の量が別々に記録されています（数値は例）。</p>
         </div>
       </div>
 
@@ -685,6 +692,7 @@
     <h2 class="h1" id="uv-h">出水口のUV殺菌</h2>
     <div class="h1__rule"></div>
     <p class="lead--h1">99.9%殺菌。出口の清潔まで設計しています。</p>
+    <p class="lead--h1 uv__lead2">徹底した出水口での殺菌で、徹底した安全な水の提供を。</p>
   </header>
 
   <div class="sec__body">
@@ -692,15 +700,17 @@
     <!-- 1 ← W12 タンクの水と、気をつけたい出水口 -->
     <div class="g2 uv__place">
       <ol class="uv__steps">
+        <li class="uv__conj">そもそも</li>
         <li class="uv__step">
           <h4 class="h4 uv__nh"><span class="num">01</span>タンクには、除菌された水が入ります</h4>
-          <p class="p">そもそも温水タンクと冷水タンクには、除菌された水が入ってきます。</p>
-          <p class="p">徹底した出水口での殺菌で、徹底した安全な水の提供を。</p>
+          <p class="p">温水タンクと冷水タンクには、除菌された水が入ってきます。</p>
         </li>
         <li class="uv__step">
           <h4 class="h4 uv__nh"><span class="num">02</span>タンク内は、菌が繁殖しにくい環境です</h4>
           <p class="p">温水タンクは90℃、冷水タンクは約6℃。どちらも菌が繁殖しにくい環境です。</p>
+          <p class="p uv__so">なので、タンクの中は心配が少ないです。</p>
         </li>
+        <li class="uv__conj">だけど</li>
         <li class="uv__step">
           <h4 class="h4 uv__nh"><span class="num">03</span>気をつけたいのは、出水口の付近です</h4>
           <p class="p">空気中の菌・手指・水はねで菌が入りやすく、残る水は常温のため、繁殖しやすい場所です。</p>
@@ -770,19 +780,22 @@
     <div class="uv__pivot">
       <div class="stack">
         <p class="p uv__pivot-t">膜が作られると、水を出すたびに膜が剥がれ落ちて水に混ざり、衛生面や味・品質の劣化の懸念を生みます。</p>
-        <p class="p uv__pivot-t">だから、浮遊や付着の段階で殺菌することが重要です。</p>
       </div>
       <div class="uv__peelbox">
-        <svg class="uv__tank uv__peel" viewBox="0 0 320 184" role="img" aria-label="水槽の底のぬるぬるの膜が剥がれ、小さなかけらが水の中に混ざっている図">
-          <rect class="uv__inner" x="4" y="4" width="312" height="176"/>
-          <rect class="uv__water" x="4" y="22" width="312" height="158"/>
-          <line class="uv__surface" x1="4" y1="22.5" x2="316" y2="22.5"/>
-          <rect class="uv__box" x="4" y="4" width="312" height="176"/>
-          <path class="uv__film" d="M14 176 L14 160 Q40 150 70 158 L92 152 L100 166 Q130 156 160 162 L190 154 L200 170 Q240 152 300 160 L306 176 Z"/>
-          <g class="uv__flake"><path d="M96 140 l14 -4 4 8 -12 6 z"/><path d="M186 128 l12 -6 6 6 -10 8 z"/><path d="M150 100 l10 -3 3 7 -10 4 z"/><path d="M230 112 l11 -5 5 7 -11 5 z"/><path d="M60 118 l9 -4 4 6 -9 4 z"/><path d="M130 72 l8 -3 3 6 -8 3 z"/></g>
-          <g class="uv__dot"><circle cx="103" cy="143" r="2.4"/><circle cx="192" cy="131" r="2.4"/><circle cx="156" cy="103" r="2.2"/><circle cx="237" cy="116" r="2.3"/><circle cx="66" cy="121" r="2.2"/><circle cx="135" cy="75" r="2"/></g>
+        <svg class="uv__peel" viewBox="0 0 320 300" role="img" aria-label="タンクから出水口へ向かう管の内側にぬるぬるの膜ができ、剥がれたかけらが水と一緒に出水口からコップへ流れ出ている図">
+          <path class="uv__pipewall" d="M60 6 V38 H136 V172 M260 6 V38 H184 V172"/>
+          <path class="uv__pipewater" d="M140 40 H180 V172 H140 Z"/>
+          <path class="uv__film" d="M136 92 Q150 96 148 110 Q150 126 138 134 Q146 148 136 160 Z"/>
+          <path class="uv__film" d="M184 104 Q170 108 172 122 Q170 138 182 146 Q174 158 184 166 Z"/>
+          <g class="uv__dot"><circle cx="142" cy="106" r="1.8"/><circle cx="143" cy="126" r="1.8"/><circle cx="141" cy="148" r="1.8"/><circle cx="178" cy="118" r="1.8"/><circle cx="177" cy="140" r="1.8"/><circle cx="179" cy="158" r="1.8"/></g>
+          <path class="uv__nozzle" d="M132 172 H188 V184 Q188 192 180 192 H140 Q132 192 132 184 Z"/>
+          <path class="uv__stream" d="M152 192 H168 V236 H152 Z"/>
+          <g class="uv__flake"><path d="M158 128 l7 -3 3 5 -7 4 z"/><path d="M162 160 l6 -3 3 5 -6 3 z"/><path d="M156 206 l6 -3 3 5 -6 3 z"/><path d="M162 224 l6 -3 3 5 -6 3 z"/><path d="M128 266 l7 -3 3 5 -7 4 z"/><path d="M176 258 l7 -3 3 5 -7 4 z"/><path d="M150 276 l7 -3 3 5 -7 4 z"/></g>
+          <g class="uv__dot"><circle cx="161" cy="130" r="1.6"/><circle cx="165" cy="162" r="1.6"/><circle cx="159" cy="208" r="1.6"/><circle cx="165" cy="226" r="1.6"/><circle cx="131" cy="268" r="1.6"/><circle cx="179" cy="260" r="1.6"/><circle cx="153" cy="278" r="1.6"/></g>
+          <path class="uv__cupwater" d="M108 246 H212 L204 292 H116 Z"/>
+          <path class="uv__cup" d="M102 236 H218 L208 294 H112 Z"/>
         </svg>
-        <p class="note">剥がれた膜が水に混ざる</p>
+        <p class="note">管の内側の膜が剥がれ、コップへ流れ出る</p>
       </div>
     </div>
 
@@ -791,6 +804,7 @@
 
     <div class="g2 uv__proof">
       <div class="uv__ptxt">
+        <p class="p">だから、浮遊や付着の段階で殺菌することが重要です。</p>
         <p class="p">壁に付着してバイオフィルムを形成する前に殺菌します。</p>
         <h3 class="h3">第三者機関の試験で、99.9%の殺菌を証明。</h3>
       </div>
@@ -1103,7 +1117,7 @@
       <tbody>
         <tr>
           <th class="p" scope="row">フィルター交換</th>
-          <td><span class="p a3__v">カーボン系6ヶ月・ナノ系1年</span><span class="p a3__v">（年2個・無料）</span></td>
+          <td><span class="p a3__v">カーボン系6ヶ月・ナノ系1年</span><span class="p a3__v">（年3個・無料）</span></td>
         </tr>
         <tr>
           <th class="p" scope="row">型番</th>
@@ -1229,7 +1243,7 @@
       <h3 class="h2">フィルターのお届け</h3>
     </header>
     <div class="blk__body">
-      <p class="p">フィルターの費用は月額に含まれ、年2個を無料でお届けします。<br>6か月ごとと1年ごとの2種類を、ご自宅へお送りします。<br>別途のご購入は必要ありません。</p>
+      <div class="stack"><p class="p">フィルターの費用は、月額に含まれています。</p><p class="p">フィルターAは年1回、フィルターBは6か月ごとの交換です。年に合計3個のフィルターを、無料でご自宅へお届けします。</p><p class="p">別途のご購入は必要ありません。</p></div>
     </div>
   </article>
 </section>
@@ -1237,7 +1251,7 @@
   <header class="sec__head">
     <h2 class="h1" id="app-h">専用アプリ</h2>
     <div class="h1__rule"></div>
-    <p class="lead--h1">水分量の算出から注文まで、ご契約後の手間を減らすアプリです。</p>
+    <p class="lead--h1">水分量の算出から飲水記録まで、さらに確認の手間やトラブル時のサポートまで行えるアプリです。</p>
   </header>
 
   <div class="sec__body">

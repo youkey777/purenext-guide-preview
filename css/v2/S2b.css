@@ -20,7 +20,7 @@
 /* ---------- 白湯（W09）：左に本文・右にマグの図（元寸 238 幅のまま） ---------- */
 .md__sy{align-items:start}
 .md__imgbox--sy{padding:calc(var(--sp-in-lg)*var(--u))}
-.md__mug{width:calc(238*var(--u));height:auto}   /* 元 238×269 */
+.md__mug{width:calc(160*var(--u));height:auto}   /* 元 238×269。挿絵は本文の脇役（R5） */
 
 /* 定量取水との掛け合わせ：サンドの面の中に本文2文＋右に液晶（幅 320） */
 .md__sayu{display:grid;grid-template-columns:1fr 1fr;
@@ -113,7 +113,7 @@
 
   /* --- 白湯：マグは 140px・面は絵に合わせて縮める --- */
   .md__imgbox--sy{padding:16px;width:fit-content;justify-self:start}
-  .md__mug{width:140px}
+  .md__mug{width:90px}
   .md__sayu{grid-template-columns:1fr;row-gap:24px}
   .md__lcd--lg{width:240px}
   .md__ml{font-size:52px;letter-spacing:0}
@@ -159,3 +159,14 @@
   .md__ba-arrow{width:22px;height:40px}
   .md__memnotes>li{padding:12px 0}
 }
+
+/* ---------- メモリ機能の図（操作パネル→各ボタンのメモリ）。色はトークンのみ ---------- */
+.md__memfig>*+*{margin-top:calc(var(--sp-in)*var(--u))}
+.md__memsvg{display:block;width:100%;height:auto}
+.mm__panel{fill:var(--white);stroke:var(--charcoal);stroke-width:1.4}
+.mm__btn rect{fill:var(--white);stroke:var(--charcoal);stroke-width:1.2}
+.mm__lbl text{fill:var(--charcoal);font-family:var(--jp);font-weight:500}
+.mm__link path{fill:none;stroke:var(--bronze);stroke-width:1.6;stroke-dasharray:4 4}
+.mm__chip rect{fill:var(--sand);stroke:var(--bronze);stroke-width:1.2}
+.mm__val text{fill:var(--charcoal);font-family:var(--jp-thin);font-weight:300}
+.mm__cap text{fill:var(--gray);font-family:var(--jp)}
