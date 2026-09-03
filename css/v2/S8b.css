@@ -1,0 +1,21 @@
+@charset "utf-8";
+/* ===== S8b 安心サポート =====
+   画像は無い章。文字サイズは型7段（.h1 .h2 .p .note .sum）だけ、
+   余白は --sp-* トークン（64 / 32 / 24）だけを使う。
+   ここで決めているのは表の幅・列の比率・罫線だけ。 */
+
+/* 幅は本文幅いっぱい（1392＝x:72〜1464）。他のセクションの表とそろえる */
+.su__tbl{width:100%;border-collapse:collapse;table-layout:fixed}
+.su__tbl th,.su__tbl td{
+  text-align:left;vertical-align:baseline;
+  padding-top:calc(var(--sp-in-lg)*var(--u));
+  padding-bottom:calc(var(--sp-in-lg)*var(--u));
+  padding-right:calc(var(--sp-el)*var(--u));
+  border-bottom:calc(1*var(--u)) solid var(--rule);
+}
+.su__tbl th:last-child,.su__tbl td:last-child{padding-right:0}
+.su__tbl th:first-child,.su__tbl td:first-child{width:40%}
+.su__th{font-weight:400;
+  padding-top:0;
+  padding-bottom:calc(var(--sp-in)*var(--u));
+  border-bottom:calc(1*var(--u)) solid var(--rule)}

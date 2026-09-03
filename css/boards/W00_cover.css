@@ -1,0 +1,74 @@
+@charset "utf-8";
+/* 00_表紙 — 左：キッチン写真（見本からの無劣化切り出し）／右：タイトル面と目次カード */
+
+#p00 .cv__photo{
+  position:absolute;left:0;top:0;
+  width:calc(730*var(--u));height:calc(1024*var(--u));
+}
+
+/* 「浄水型ウォーターサーバー」字間広め */
+#p00 .cv__eyebrow{
+  position:absolute;left:calc(746*var(--u));top:calc(106.5*var(--u));width:calc(806*var(--u));
+  margin:0;text-align:center;font-size:calc(19*var(--u));line-height:1;
+  letter-spacing:calc(9.4*var(--u));color:var(--gray);font-weight:400;
+}
+/* 「PureNext 製品ガイド」 */
+#p00 .cv__title{
+  position:absolute;left:calc(739.5*var(--u));top:calc(156.5*var(--u));width:calc(806*var(--u));
+  margin:0;text-align:center;font-size:calc(61*var(--u));line-height:1;
+  letter-spacing:calc(3.5*var(--u));word-spacing:calc(5*var(--u));color:var(--charcoal);font-weight:300;
+}
+#p00 .cv__en{font-size:1.174em;letter-spacing:calc(5.1*var(--u))}
+#p00 .cv__rule{
+  position:absolute;left:calc(1027*var(--u));top:calc(272*var(--u));
+  width:calc(193*var(--u));height:calc(3*var(--u));background:var(--bronze);
+}
+#p00 .cv__for{
+  position:absolute;left:calc(723*var(--u));top:calc(313*var(--u));width:calc(806*var(--u));
+  margin:0;text-align:center;font-size:calc(26*var(--u));line-height:1;
+  letter-spacing:calc(1.9*var(--u));color:var(--charcoal);font-weight:400;
+}
+#p00 .cv__lead{
+  position:absolute;left:calc(726*var(--u));top:calc(363.5*var(--u));width:calc(806*var(--u));
+  margin:0;text-align:center;font-size:calc(18*var(--u));line-height:1;
+  letter-spacing:calc(0.2*var(--u));color:var(--gray);font-weight:400;
+}
+#p00 .cv__model{
+  position:absolute;left:calc(713*var(--u));top:calc(454*var(--u));width:calc(806*var(--u));
+  margin:0;text-align:center;font-size:calc(17.5*var(--u));line-height:1;
+  letter-spacing:calc(0.2*var(--u));color:var(--gray);font-weight:400;
+}
+/* 目次カードの上辺のミストブルーの細線 */
+#p00 .cv__mist{
+  position:absolute;left:calc(757*var(--u));top:calc(537*var(--u));
+  width:calc(741*var(--u));height:calc(3*var(--u));background:var(--mist);
+}
+/* 目次カードの面（見本の実測色 #F6F3F1） */
+#p00 .cv__card{
+  position:absolute;left:calc(757*var(--u));top:calc(541*var(--u));
+  width:calc(740*var(--u));height:calc(446*var(--u));background:#F6F3F1;
+}
+
+#p00 .toc{position:absolute;left:0;top:0;width:100%;height:100%}
+#p00 .toc__row{
+  position:absolute;display:flex;align-items:baseline;
+  width:calc(330*var(--u));line-height:1;text-decoration:none;
+}
+#p00 .toc__n{
+  width:calc(46*var(--u));flex:none;
+  font-size:calc(24*var(--u));line-height:1;letter-spacing:calc(2*var(--u));color:var(--bronze);font-weight:500;
+}
+#p00 .toc__t{
+  position:relative;top:calc(-3*var(--u));font-size:calc(17*var(--u));line-height:1;color:var(--charcoal);font-weight:400;
+  letter-spacing:calc(0.2*var(--u));white-space:nowrap;
+}
+/* 2列×7行・左列 x=786 / 右列 x=1138、行送り 55px */
+#p00 .toc__row:nth-child(-n+7){left:calc(786*var(--u))}
+#p00 .toc__row:nth-child(n+8){left:calc(1138*var(--u))}
+#p00 .toc__row:nth-child(1),#p00 .toc__row:nth-child(8){top:calc(568.5*var(--u))}
+#p00 .toc__row:nth-child(2),#p00 .toc__row:nth-child(9){top:calc(623.5*var(--u))}
+#p00 .toc__row:nth-child(3),#p00 .toc__row:nth-child(10){top:calc(678.5*var(--u))}
+#p00 .toc__row:nth-child(4),#p00 .toc__row:nth-child(11){top:calc(733.5*var(--u))}
+#p00 .toc__row:nth-child(5),#p00 .toc__row:nth-child(12){top:calc(788.5*var(--u))}
+#p00 .toc__row:nth-child(6),#p00 .toc__row:nth-child(13){top:calc(843.5*var(--u))}
+#p00 .toc__row:nth-child(7),#p00 .toc__row:nth-child(14){top:calc(898.5*var(--u))}

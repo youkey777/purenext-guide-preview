@@ -1,0 +1,51 @@
+@charset "utf-8";
+/* 13_YASUNEモール — 左：棚の写真（切り出し）／右：説明2ブロック＋3分類の行（アイコンは切り出し） */
+
+#p13 .ys__photo{
+  position:absolute;left:calc(65*var(--u));top:calc(256*var(--u));
+  width:calc(608*var(--u));height:calc(593*var(--u));
+}
+
+#p13 .ys__lead{
+  position:absolute;left:calc(754.6*var(--u));top:calc(261.8*var(--u));
+  width:calc(720*var(--u));white-space:nowrap;
+  font-size:calc(32*var(--u));line-height:calc(50*var(--u));
+  letter-spacing:calc(4.2*var(--u));color:var(--charcoal);font-weight:400;
+}
+#p13 .ys__sub{
+  position:absolute;left:calc(753.5*var(--u));top:calc(378.5*var(--u));
+  width:calc(720*var(--u));white-space:nowrap;
+  font-size:calc(20*var(--u));line-height:calc(38*var(--u));
+  letter-spacing:calc(2.5*var(--u));color:var(--gray);font-weight:400;
+}
+
+#p13 .ys__rule{
+  position:absolute;left:calc(754*var(--u));width:calc(710*var(--u));
+  height:calc(1.3*var(--u));background:var(--rule);
+}
+#p13 .ys__rule--1{top:calc(484.7*var(--u))}
+#p13 .ys__rule--2{top:calc(617.7*var(--u))}
+#p13 .ys__rule--3{top:calc(743.7*var(--u))}
+
+#p13 .ys__ic{position:absolute}
+#p13 .ys__ic--1{left:calc(776*var(--u));top:calc(508*var(--u));width:calc(66*var(--u));height:calc(92*var(--u))}
+#p13 .ys__ic--2{left:calc(750*var(--u));top:calc(634*var(--u));width:calc(111*var(--u));height:calc(91*var(--u))}
+#p13 .ys__ic--3{left:calc(783*var(--u));top:calc(758*var(--u));width:calc(52*var(--u));height:calc(90*var(--u))}
+
+#p13 .ys__t{
+  position:absolute;left:calc(895*var(--u));white-space:nowrap;
+  font-size:calc(29*var(--u));line-height:1;letter-spacing:calc(7.5*var(--u));
+  color:var(--charcoal);font-weight:500;
+}
+#p13 .ys__t--1{top:calc(538.4*var(--u))}
+#p13 .ys__t--2{top:calc(666.4*var(--u))}
+#p13 .ys__t--3{top:calc(788.4*var(--u))}
+
+#p13 .ys__d{
+  position:absolute;left:calc(1054*var(--u));white-space:nowrap;
+  font-size:calc(19*var(--u));line-height:1;letter-spacing:calc(1.4*var(--u));
+  color:var(--charcoal);font-weight:400;
+}
+#p13 .ys__d--1{top:calc(543.6*var(--u))}
+#p13 .ys__d--2{top:calc(672.6*var(--u))}
+#p13 .ys__d--3{top:calc(795.6*var(--u))}

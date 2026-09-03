@@ -1,0 +1,28 @@
+@charset "utf-8";
+/* ===== S8a YASUNEモール =====
+   文字サイズは base_v2.css の型7段（.h1 .h2 .h3 .p .note .src .sum）だけ。
+   ここで決めているのは写真・アイコンの大きさと、3分類の行の並べ方だけ。
+   余白はすべて --sp-* トークン（64 / 32 / 24）。 */
+
+/* ---------- 左：棚の写真（v1 の切り出しをそのまま・列幅に収める） ---------- */
+/* 左端は大見出しの罫と同じ x=72 にそろえる（列の中で中央寄せにしない） */
+.ys__photo{align-self:center;justify-self:start;width:calc(608*var(--u));height:auto}
+
+/* ---------- 右：本文＋3分類 ---------- */
+.ys__right{align-self:center}
+.ys__right>*+*{margin-top:calc(var(--sp-in)*var(--u))}
+.ys__right>.ys__cats{margin-top:calc(var(--sp-el)*var(--u))}
+
+.ys__cats{list-style:none;padding:0}
+.ys__cat{display:flex;align-items:center;column-gap:calc(var(--sp-in-lg)*var(--u));
+  border-top:calc(1*var(--u)) solid var(--rule);
+  padding-top:calc(var(--sp-in-lg)*var(--u))}
+.ys__cat+.ys__cat{margin-top:calc(var(--sp-in-lg)*var(--u))}
+
+/* アイコンは高さをそろえ、幅の違い（66/111/52）は中央ぞろえで吸収する */
+.ys__icwrap{flex:none;width:calc(120*var(--u));display:flex;justify-content:center}
+.ys__ic{height:calc(72*var(--u));width:auto}
+
+.ys__ctx{flex:1 1 auto;min-width:0;display:block}
+.ys__t{display:block}
+.ys__d{display:block;margin-top:calc(var(--sp-h3)*var(--u))}

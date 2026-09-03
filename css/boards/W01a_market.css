@@ -1,0 +1,74 @@
+@charset "utf-8";
+/* 01-1_市場_前年比 — 左：宅配水型／右：浄水型（サンドグレージュの面）の左右対比
+   サンドの面はこのボードの実測値 #F3EFED（トークンの --sand #EEEAE7 とは 5〜6 差） */
+/* 右ピルの文字は見本の実測色。生成時にブロンズが橙寄り・濃いめに振れており、
+   トークンの --bronze #9D7B5C だと枠線より文字が薄く見える（見本は文字＜枠線の濃さ） */
+#p01-1{--sand-board:#F3EFED;--pill-ink:#9A4F0D}
+
+#p01-1 .mk__sand{
+  position:absolute;left:calc(768*var(--u));top:calc(245*var(--u));
+  width:calc(768*var(--u));height:calc(582*var(--u));background:var(--sand-board);
+}
+#p01-1 .mk__illus{position:absolute}
+#p01-1 .mk__illus--l{left:calc(255*var(--u));top:calc(244*var(--u));width:calc(340*var(--u));height:calc(324*var(--u))}
+#p01-1 .mk__illus--r{left:calc(958*var(--u));top:calc(252*var(--u));width:calc(314*var(--u));height:calc(321*var(--u))}
+
+#p01-1 .mk__label{
+  position:absolute;margin:0;width:calc(400*var(--u));text-align:center;
+  font-size:calc(24*var(--u));line-height:1;letter-spacing:calc(4*var(--u));
+  color:var(--charcoal);font-weight:400;
+}
+#p01-1 .mk__label--l{left:calc(228*var(--u));top:calc(578.5*var(--u))}
+#p01-1 .mk__label--r{left:calc(917*var(--u));top:calc(578.5*var(--u))}
+
+#p01-1 .mk__num{
+  position:absolute;margin:0;width:calc(600*var(--u));
+  display:flex;align-items:baseline;justify-content:center;line-height:1;
+}
+#p01-1 .mk__num--l{left:calc(138*var(--u));top:calc(598*var(--u))}
+#p01-1 .mk__num--r{left:calc(834*var(--u));top:calc(598*var(--u))}
+#p01-1 .mk__figure{
+  font-family:var(--jp-thin);font-weight:200;
+  position:relative;top:calc(-3*var(--u));
+  font-size:calc(108*var(--u));line-height:1;letter-spacing:calc(17*var(--u));
+  color:var(--charcoal);
+}
+/* 126 は見本の字送りが狭い（生成側の 1 が細い）ので、この行だけ字間を詰める */
+#p01-1 .mk__num--r .mk__figure{letter-spacing:calc(9.5*var(--u))}
+#p01-1 .mk__num--r .mk__unit{margin-left:calc(10*var(--u))}
+#p01-1 .mk__unit{
+  position:relative;top:calc(-4*var(--u));
+  font-size:calc(24*var(--u));line-height:1;letter-spacing:calc(1*var(--u));
+  color:var(--charcoal);font-weight:400;margin-left:0;
+}
+/* 126 の左に立てるミストブルーの短い縦のアクセント線 */
+#p01-1 .mk__accent{
+  position:absolute;left:calc(955*var(--u));top:calc(617*var(--u));
+  width:calc(11*var(--u));height:calc(82*var(--u));background:var(--mist);
+}
+
+#p01-1 .mk__pill{
+  position:absolute;margin:0;display:flex;align-items:center;justify-content:center;
+  border:calc(2*var(--u)) solid var(--bronze);border-radius:calc(12*var(--u));
+  line-height:1;font-weight:400;
+}
+#p01-1 .mk__pill--l{
+  left:calc(235*var(--u));top:calc(721*var(--u));
+  width:calc(386*var(--u));height:calc(56*var(--u));
+  background:var(--ground);color:var(--charcoal);
+  font-size:calc(27*var(--u));letter-spacing:calc(1*var(--u));
+  padding-bottom:calc(2*var(--u));
+}
+#p01-1 .mk__pill--r{
+  left:calc(923*var(--u));top:calc(721*var(--u));
+  width:calc(382*var(--u));height:calc(74*var(--u));
+  background:var(--white);color:var(--pill-ink);font-weight:400;
+  font-size:calc(35*var(--u));letter-spacing:calc(1*var(--u));
+  padding-bottom:calc(3*var(--u));
+}
+#p01-1 .mk__note{
+  position:absolute;margin:0;left:calc(230*var(--u));top:calc(793.5*var(--u));
+  width:calc(400*var(--u));text-align:center;
+  font-size:calc(20*var(--u));line-height:1;letter-spacing:calc(0.3*var(--u));
+  color:var(--charcoal);font-weight:400;
+}

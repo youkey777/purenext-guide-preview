@@ -1,0 +1,67 @@
+@charset "utf-8";
+/* ===== S7 製品仕様 =====
+   文字サイズは型7段（.h2 / .p / .note / .sum / .big）だけ。3節は中見出し（.h2）の article.blk。
+   ここで決めているのは表の列幅・図版の幅・寸法線の引き方だけで、
+   余白はすべて --sp-* トークン（64 / 32 / 24）。色は v1 の実測色ではなくトークンに統一
+   （寸法線と引き出し線＝--mist／月額＝--bronze／罫線＝--rule）。 */
+
+/* ---------- 表（3つとも同じ見た目にそろえる） ---------- */
+.sp__tbl,.tk__tbl,.a3__tbl{width:100%;border-collapse:collapse;table-layout:fixed}
+.sp__tbl th,.sp__tbl td,
+.tk__tbl th,.tk__tbl td,
+.a3__tbl th,.a3__tbl td{
+  text-align:left;vertical-align:top;
+  padding-top:calc(var(--sp-in-lg)*var(--u));padding-bottom:calc(var(--sp-in-lg)*var(--u));
+  border-bottom:calc(1*var(--u)) solid var(--rule)}
+.sp__tbl tr:first-child th,.sp__tbl tr:first-child td,
+.tk__tbl tr:first-child th,.tk__tbl tr:first-child td,
+.a3__tbl tr:first-child th,.a3__tbl tr:first-child td{
+  border-top:calc(1*var(--u)) solid var(--rule)}
+.sp__tbl th,.tk__tbl th,.a3__tbl th{font-weight:500}
+.sp__tbl td,.tk__tbl td,.a3__tbl td{padding-left:calc(var(--sp-in)*var(--u))}
+
+.sp__tbl th{width:calc(320*var(--u))}
+.a3__tbl th{width:calc(320*var(--u))}
+.tk__tbl th{width:calc(320*var(--u))}
+
+/* 契約条件の表の値 */
+.a3__v{display:block}
+.a3__v+.a3__v{margin-top:calc(var(--sp-in)*var(--u))}
+.a3__price{line-height:1;white-space:nowrap;color:var(--bronze)}
+.a3__pn{font-size:calc(84*var(--u));color:var(--bronze);letter-spacing:calc(2*var(--u))}
+.a3__pa{font-size:calc(20*var(--u));font-weight:400;margin-right:calc(8*var(--u))}
+.a3__pu{font-size:calc(42*var(--u));font-weight:400;margin-left:calc(8*var(--u))}
+.a3__price2{margin-top:calc(var(--sp-in)*var(--u))}
+
+/* ---------- 寸法図（W18a の切り出し＋寸法線） ---------- */
+.sd__stage{display:flex;justify-content:center;align-items:flex-start;
+  column-gap:calc(var(--gut2)*var(--u))}
+.sd__h{display:flex;align-items:center;column-gap:calc(var(--sp-in)*var(--u))}
+.sd__hlab{text-align:right}
+.sd__av{flex:none;width:calc(16*var(--u));height:calc(498*var(--u))}
+
+.sd__view{width:calc(240*var(--u));text-align:center}
+.sd__view>*+*{margin-top:calc(var(--sp-in)*var(--u))}
+.sd__img{height:auto;margin-left:auto;margin-right:auto}
+.sd__img--f{width:calc(130*var(--u))}
+.sd__img--s{width:calc(133*var(--u))}
+.sd__ah{height:calc(16*var(--u));margin-left:auto;margin-right:auto}
+.sd__ah--f{width:calc(101*var(--u))}
+.sd__ah--s{width:calc(133*var(--u))}
+.sd__shaft{fill:none;stroke:var(--mist);stroke-width:2}
+.sd__head{fill:var(--mist);stroke:none}
+
+/* ---------- 各タンクの容量（W18b） ---------- */
+.tk__uv{display:flex;column-gap:calc(var(--sp-in)*var(--u))}
+.tk__bar{flex:none;width:calc(10*var(--u));background:var(--bronze)}
+.tk__fig{width:calc(824*var(--u));height:auto;margin-left:auto;margin-right:auto}
+
+/* ---------- 設置スペース（W18c の重ね図） ---------- */
+.a3__svg{width:calc(700*var(--u));height:auto;margin-left:auto;margin-right:auto;display:block}
+.a3__box{fill:none;stroke:var(--rule);stroke-width:1.4}
+.a3__paper{fill:var(--sand);stroke:var(--rule);stroke-width:1.6}
+.a3__base{fill:var(--white);stroke:var(--bronze);stroke-width:2.2}
+.a3__dim line{stroke:var(--mist);stroke-width:2}
+.a3__dim polygon,.a3__dim circle{fill:var(--mist);stroke:none}
+.a3__svg text{font-family:var(--jp);font-weight:400;fill:var(--charcoal)}
+.a3__ts{fill:var(--gray)}

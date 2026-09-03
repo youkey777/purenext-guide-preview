@@ -1,0 +1,47 @@
+@charset "utf-8";
+/* 10-1_カラー — 左：サンドグレージュの面＋白い本体／右：チャコールの面＋黒い本体
+   面と色チップの色は見本の実測値（トークンとは数値が違うのでこのボード内の変数にしてある） */
+#p10-1{
+  --pane-l:#EFEBE7;   /* 左の面（トークンの --sand #EEEAE7 より 1〜2 明るい） */
+  --pane-r:#32302F;   /* 右の面（トークンの --charcoal #2E2C2B より 3〜4 明るい） */
+  --chip-l:#F3F0EC;   /* 左の色チップの中 */
+  --chip-l-line:#C1BEBA;
+  --chip-r:#23211E;   /* 右の色チップ（面より暗い黒） */
+}
+
+#p10-1 .cl__panel{position:absolute;top:calc(230*var(--u));
+  width:calc(649*var(--u));height:calc(630*var(--u))}
+#p10-1 .cl__panel--l{left:calc(113*var(--u));background:var(--pane-l)}
+#p10-1 .cl__panel--r{left:calc(773*var(--u));background:var(--pane-r)}
+
+#p10-1 .cl__unit{position:absolute;top:calc(245*var(--u));
+  width:calc(175*var(--u));height:calc(440*var(--u))}
+#p10-1 .cl__unit--l{left:calc(350*var(--u))}
+#p10-1 .cl__unit--r{left:calc(1008*var(--u))}
+
+#p10-1 .cl__txt{position:absolute;top:calc(700*var(--u));
+  width:calc(649*var(--u));text-align:center}
+#p10-1 .cl__txt--l{left:calc(116*var(--u))}
+#p10-1 .cl__txt--r{left:calc(769*var(--u))}
+#p10-1 .cl__name{line-height:1;white-space:nowrap;font-weight:500;
+  font-size:calc(25*var(--u));letter-spacing:calc(-0.86*var(--u))}
+#p10-1 .cl__desc{line-height:1;white-space:nowrap;font-weight:400}
+#p10-1 .cl__desc--1{margin-top:calc(14*var(--u));
+  font-size:calc(16*var(--u));letter-spacing:calc(-0.87*var(--u))}
+#p10-1 .cl__desc--2{margin-top:calc(10*var(--u));
+  font-size:calc(15.5*var(--u));letter-spacing:calc(-0.08*var(--u))}
+
+#p10-1 .cl__txt--l .cl__name{color:var(--charcoal)}
+#p10-1 .cl__txt--l .cl__desc{color:var(--gray)}
+#p10-1 .cl__txt--r .cl__name{color:var(--white);letter-spacing:calc(-0.83*var(--u))}
+#p10-1 .cl__txt--r .cl__desc{color:var(--white)}
+#p10-1 .cl__txt--r .cl__desc--1{font-size:calc(16.5*var(--u));letter-spacing:calc(-1.33*var(--u))}
+#p10-1 .cl__txt--r .cl__desc--2{margin-top:calc(8.5*var(--u));
+  font-size:calc(15*var(--u));letter-spacing:calc(0.18*var(--u))}
+
+#p10-1 .cl__chip{position:absolute;top:calc(795*var(--u));
+  height:calc(51*var(--u));box-sizing:border-box}
+#p10-1 .cl__chip--l{left:calc(361*var(--u));width:calc(156*var(--u));
+  background:var(--chip-l);border:calc(1*var(--u)) solid var(--chip-l-line)}
+#p10-1 .cl__chip--r{left:calc(1015*var(--u));width:calc(157*var(--u));
+  background:var(--chip-r)}

@@ -1,0 +1,62 @@
+@charset "utf-8";
+/* 12-2_製品仕様_タンクの構成 — 左：容量表＋注記＋UVの一言／右：系統図（図版ブロックごと切り出し）
+   見本の実測色: 表の罫線 #C7C6C4（トークンの --rule #DFDBD7 より濃い）／
+                 UV の一文だけ茶色 #5A4128（他の本文はチャコール） */
+#p12-2{--tbl-rule:#C7C6C4; --ink-brown:#5A4128}
+
+/* 見出し */
+#p12-2 .tk__h{
+  position:absolute;left:calc(94*var(--u));top:calc(284.9*var(--u));
+  font-size:calc(42*var(--u));line-height:1;letter-spacing:calc(1.9*var(--u));
+  color:var(--charcoal);font-weight:500;white-space:nowrap;
+}
+
+/* 容量表 */
+#p12-2 .tk__tbl{
+  position:absolute;left:calc(95*var(--u));top:calc(357.25*var(--u));
+  width:calc(444*var(--u));border-collapse:collapse;table-layout:fixed;
+}
+#p12-2 .tk__tbl th,
+#p12-2 .tk__tbl td{
+  height:calc(57.75*var(--u));padding:0;
+  border-top:calc(1.5*var(--u)) solid var(--tbl-rule);
+  color:var(--charcoal);font-weight:400;line-height:1;text-align:left;
+  vertical-align:middle;
+}
+#p12-2 .tk__tbl tr:last-child th,
+#p12-2 .tk__tbl tr:last-child td{border-bottom:calc(1.5*var(--u)) solid var(--tbl-rule)}
+#p12-2 .tk__tbl th{
+  width:calc(294*var(--u));padding-left:calc(14.8*var(--u));
+  border-right:calc(1.5*var(--u)) solid var(--tbl-rule);
+  font-size:calc(24*var(--u));letter-spacing:0;
+}
+#p12-2 .tk__tbl td{
+  padding-left:calc(28.5*var(--u));
+  font-size:calc(28*var(--u));letter-spacing:calc(4*var(--u));
+}
+
+/* 注記（2行） */
+#p12-2 .tk__note{
+  position:absolute;left:calc(95.75*var(--u));top:calc(600*var(--u));
+  width:calc(500*var(--u));white-space:nowrap;
+  font-size:calc(25*var(--u));line-height:calc(38*var(--u));
+  letter-spacing:calc(-0.3*var(--u));color:var(--charcoal);font-weight:400;
+}
+
+/* UV の一言（左にブロンズの縦棒） */
+#p12-2 .tk__bar{
+  position:absolute;left:calc(97*var(--u));top:calc(699*var(--u));
+  width:calc(10.5*var(--u));height:calc(115*var(--u));background:var(--bronze);
+}
+#p12-2 .tk__block{
+  position:absolute;left:calc(131.2*var(--u));top:calc(698.4*var(--u));
+  width:calc(460*var(--u));white-space:nowrap;
+  font-size:calc(24*var(--u));line-height:calc(38.5*var(--u));
+  letter-spacing:calc(-0.5*var(--u));color:var(--ink-brown);font-weight:400;
+}
+
+/* 系統図（見本からの無劣化切り出し） */
+#p12-2 .tk__fig{
+  position:absolute;left:calc(630*var(--u));top:calc(258*var(--u));
+  width:calc(824*var(--u));height:calc(598*var(--u));
+}

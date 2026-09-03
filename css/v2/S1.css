@@ -1,0 +1,104 @@
+@charset "utf-8";
+/* ===== S1 ウォーターサーバー市場について =====
+   文字サイズは base_v2.css の型7段（.h1 .h2 .h3 .p .note .src .sum）だけを使う。
+   ここで新しく決めているのは「大数字（.big）の大きさ」と、図版・面の中の並べ方だけ。
+   余白はすべて base_v2.css の --sp-* トークン（64 / 32 / 24 …）。 */
+
+/* ---------- 中(a) 台数と前年比の左右対比 ---------- */
+.mk__col{text-align:center}
+.mk__col>*+*{margin-top:calc(var(--sp-in-lg)*var(--u))}
+.mk__illus{width:calc(340*var(--u));height:auto;margin-left:auto;margin-right:auto}
+.mk__col:last-child .mk__illus{width:calc(314*var(--u))}
+.mk__label{letter-spacing:calc(4*var(--u))}
+.mk__num{font-size:calc(108*var(--u));letter-spacing:calc(8*var(--u))}
+.mk__unit{font-family:var(--jp);font-weight:400;font-size:calc(24*var(--u));
+  letter-spacing:0;margin-left:calc(8*var(--u))}
+.mk__pill{display:inline-block;line-height:1;
+  border:calc(2*var(--u)) solid var(--bronze);border-radius:calc(12*var(--u));
+  padding:calc(16*var(--u)) calc(40*var(--u));background:var(--ground)}
+.mk__pill--em{background:var(--white);color:var(--bronze)}
+.mk__note{margin-top:calc(var(--sp-in)*var(--u))}
+
+/* ---------- 中(a) 小見出し「普及率について」 ---------- */
+.gr__left{align-self:center}
+.gr__left>*+*{margin-top:calc(var(--sp-in-lg)*var(--u))}
+/* 素材は 10列×11行＝110軒。最下段1行を切って 10×10＝100軒に見せる
+   （実測: 行の帯は y=10..349、行送り 31.9、10行目の下端 y=318、下余白は素材と同じ 6）*/
+.gr__houses{width:calc(397*var(--u));height:calc(324*var(--u));
+  object-fit:cover;object-position:top}
+.gr__nums{display:flex;align-items:baseline;justify-content:center;
+  column-gap:calc(var(--sp-el)*var(--u))}
+.gr__rate{font-size:calc(79*var(--u))}
+.gr__units{font-size:calc(77*var(--u));letter-spacing:calc(2*var(--u))}
+.gr__pct{font-family:var(--jp);font-weight:400;font-size:calc(38*var(--u));
+  margin-left:calc(4*var(--u))}
+.gr__approx{font-family:var(--jp);font-weight:400;font-size:calc(29*var(--u));
+  letter-spacing:0;margin-right:calc(4*var(--u))}
+.gr__unit{font-family:var(--jp);font-weight:400;font-size:calc(26*var(--u));
+  letter-spacing:0;margin-left:calc(8*var(--u))}
+
+.gr__right{display:flex;flex-direction:column;justify-content:center;
+  row-gap:calc(var(--sp-el)*var(--u))}
+
+/* 折れ線グラフ（v1 の SVG を流用。軸はトークンの --mist に統一） */
+.lg{width:100%;height:auto;overflow:visible}
+.lg__frame,.lg__grid,.lg__axis,.lg__line{fill:none}
+.lg__frame{stroke:var(--rule)}
+.lg__grid{stroke:var(--rule);stroke-dasharray:3 3;stroke-linecap:butt}
+.lg__axis{stroke:var(--mist);stroke-linecap:butt}
+.lg__line{stroke-linejoin:round;stroke-linecap:round}
+.lg__line--a{stroke:var(--charcoal)}
+.lg__line--b{stroke:var(--bronze)}
+.lg__dot--a circle{fill:var(--charcoal)}
+.lg__dot--b circle{fill:var(--bronze)}
+.lg text{font-family:var(--jp)}
+.lg__unit{fill:var(--gray);font-weight:500}
+.lg__title{fill:var(--charcoal);font-weight:400}
+.lg__val{fill:var(--charcoal);font-weight:500}
+.lg__zero,.lg__year{fill:var(--charcoal);font-weight:400}
+
+/* ---------- 中(b)(d) 3列カード ---------- */
+.card>*+*{margin-top:calc(var(--sp-in)*var(--u))}
+.card>.fig+*{margin-top:calc(var(--sp-in-lg)*var(--u))}
+
+/* ---------- 中(c) 宅配水型の月額 ---------- */
+.mt__left>*+*{margin-top:calc(var(--sp-in)*var(--u))}
+.mt__left>.mt__tbl,.mt__left>.note{margin-top:calc(var(--sp-el)*var(--u))}
+.mt__tbl{width:100%;border-collapse:collapse}
+.mt__tbl caption{text-align:left;padding-bottom:calc(var(--sp-in)*var(--u))}
+.mt__tbl td{border-bottom:calc(1*var(--u)) solid var(--rule);
+  padding-top:calc(var(--sp-in-lg)*var(--u));padding-bottom:calc(var(--sp-in-lg)*var(--u));
+  vertical-align:baseline;color:var(--charcoal)}
+.mt__tbl tr:first-child td{border-top:calc(1*var(--u)) solid var(--rule)}
+.mt__co{font-size:calc(24*var(--u));line-height:1.4;letter-spacing:0.02em;font-weight:500}
+.mt__pr{text-align:right;white-space:nowrap;line-height:1}
+.mt__prn{font-size:calc(42*var(--u));letter-spacing:calc(2*var(--u))}
+.mt__pru,.mt__prk{font-size:calc(26*var(--u));font-weight:400}
+
+.mt__right>*+*{margin-top:calc(var(--sp-in-lg)*var(--u))}
+.mt__price{display:flex;align-items:baseline;justify-content:space-between;
+  column-gap:calc(var(--sp-in-lg)*var(--u))}
+.mt__big{flex:none;font-size:calc(84*var(--u));color:var(--bronze);letter-spacing:calc(2*var(--u))}
+.mt__yen{font-family:var(--jp);font-weight:400;font-size:calc(42*var(--u));
+  letter-spacing:0;margin-left:calc(8*var(--u))}
+.mt__zeinuki{font-family:var(--jp);font-weight:400;font-size:calc(20*var(--u));
+  letter-spacing:0;margin-left:calc(8*var(--u))}
+.mt__free{flex:none;text-align:right;letter-spacing:calc(2*var(--u))}
+.mt__zeikomi{letter-spacing:calc(3*var(--u))}
+/* 01〜03 は下段の全幅3列（v2.1・2列の高さ差をなくすため上段から出した） */
+.mt__list{list-style:none;padding:0}
+.mt__list>li{border-top:calc(1*var(--u)) solid var(--rule);
+  padding-top:calc(var(--sp-in-lg)*var(--u))}
+.mt__list>li>.p,.mt__list>li>.mt__row{margin-top:calc(var(--sp-in)*var(--u))}
+/* 03「使える用途が増える」の右にグラスの線画（v1 と同じ位置関係） */
+/* 03 は見出しを列いっぱいに出し、本文の右にグラスを置く（見出しが折り返さないように） */
+.mt__row{display:flex;align-items:flex-start;column-gap:calc(var(--sp-in-lg)*var(--u))}
+.mt__row>.p{flex:1 1 auto;min-width:0}
+.mt__glass{flex:none;width:calc(72*var(--u));height:auto;
+  mix-blend-mode:darken}  /* 切り出しの地色が地より明るく四角く見えるのを消す */
+
+/* ---------- 中(d) 「他にも」の面 ---------- */
+.nc__more>*+*{margin-top:calc(var(--sp-in-lg)*var(--u))}
+.nc__list{display:grid;grid-auto-flow:column;
+  grid-template-rows:repeat(2,auto);grid-template-columns:1fr 1fr;
+  column-gap:calc(var(--gut2)*var(--u));row-gap:calc(var(--sp-in-lg)*var(--u))}

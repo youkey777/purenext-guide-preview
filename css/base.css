@@ -1,0 +1,90 @@
+@charset "utf-8";
+
+/* ===== 同梱フォント（CDN 不使用） ===== */
+@font-face{font-family:"ZenKakuGothicNew";src:url("../assets/fonts/zenkaku-300.ttf") format("truetype");font-weight:300;font-style:normal;font-display:block}
+@font-face{font-family:"ZenKakuGothicNew";src:url("../assets/fonts/zenkaku-400.ttf") format("truetype");font-weight:400;font-style:normal;font-display:block}
+@font-face{font-family:"ZenKakuGothicNew";src:url("../assets/fonts/zenkaku-500.ttf") format("truetype");font-weight:500;font-style:normal;font-display:block}
+@font-face{font-family:"NotoSansJPThin";src:url("../assets/fonts/notosansjp-200.ttf") format("truetype");font-weight:200;font-style:normal;font-display:block}
+@font-face{font-family:"NotoSansJPThin";src:url("../assets/fonts/notosansjp-300.ttf") format("truetype");font-weight:300;font-style:normal;font-display:block}
+
+/* ===== デザイントークン ===== */
+:root{
+  --ground:#FBF9F7;
+  --sand:#EEEAE7;
+  --charcoal:#2E2C2B;
+  --bronze:#9D7B5C;
+  --mist:#8BA4B7;
+  --gray:#595551;
+  --rule:#DFDBD7;
+  --white:#FFFFFF;
+  --jp:"ZenKakuGothicNew","Zen Kaku Gothic New",sans-serif;
+  --jp-thin:"NotoSansJPThin","Noto Sans JP",sans-serif;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--ground);color:var(--charcoal);
+  font-family:var(--jp);font-weight:400;
+  -webkit-font-smoothing:antialiased;text-rendering:geometricPrecision}
+h1,h2,h3,h4,h5,h6,p,figure,ul,ol,dl,dd{margin:0;font-size:inherit;font-weight:inherit}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+.deck{display:block}
+
+/* ===== ボード（1ページ＝3:2 の面） ===== */
+.board{
+  container-type:inline-size;
+  width:100%;max-width:1536px;margin:0 auto;
+  aspect-ratio:3/2;position:relative;overflow:hidden;
+  background:var(--ground);
+}
+.board>.in{
+  --u:calc(100cqw / 1536);
+  position:absolute;inset:0;
+}
+/* 座標で置くブロック（文字は箱の中で普通に流す） */
+.at{position:absolute}
+
+/* ===== 共通部品：章見出し（上端 230px） =====
+   .hdr / .closing は座標の基準をボード全体にそろえるため inset:0 で重ねる。
+   中身はすべて 1536x1024 基準の絶対座標（calc(N*var(--u))）で置く。 */
+.hdr{position:absolute;inset:0;pointer-events:none}
+.hdr>*{pointer-events:auto}
+.hdr__title{
+  position:absolute;left:calc(72*var(--u));top:calc(60*var(--u));
+  font-size:calc(56*var(--u));line-height:1;letter-spacing:calc(3*var(--u));
+  color:var(--charcoal);font-weight:300;white-space:nowrap;
+}
+.hdr__rule{
+  position:absolute;left:calc(72*var(--u));top:calc(146*var(--u));
+  width:calc(73*var(--u));height:calc(4*var(--u));background:var(--bronze);
+}
+.hdr__lead{
+  position:absolute;left:calc(72*var(--u));top:calc(164.5*var(--u));
+  font-size:calc(25*var(--u));line-height:1;letter-spacing:0;
+  color:var(--gray);font-weight:400;white-space:nowrap;
+}
+.hdr__page{
+  position:absolute;right:calc(72*var(--u));top:calc(68.5*var(--u));
+  font-size:calc(24*var(--u));line-height:1;
+  color:var(--gray);font-weight:400;white-space:nowrap;
+}
+
+/* ===== 共通部品：結び（下端 160px） ===== */
+.closing{position:absolute;inset:0;pointer-events:none}
+.closing>*{pointer-events:auto}
+.closing__rule{
+  position:absolute;left:calc(728*var(--u));top:calc(888*var(--u));
+  width:calc(81*var(--u));height:calc(4*var(--u));background:var(--bronze);
+}
+.closing__text{
+  position:absolute;left:0;top:calc(914.5*var(--u));width:100%;
+  text-align:center;font-size:calc(34*var(--u));line-height:1;
+  letter-spacing:calc(0.2*var(--u));color:var(--charcoal);font-weight:300;
+}
+.closing--2 .closing__text{top:calc(900.5*var(--u));font-size:calc(31*var(--u));line-height:calc(43*var(--u))}
+.closing__source{
+  position:absolute;left:0;top:calc(986.5*var(--u));width:100%;
+  text-align:center;font-size:calc(19*var(--u));line-height:1;letter-spacing:calc(0.4*var(--u));
+  color:var(--gray);font-weight:400;
+}

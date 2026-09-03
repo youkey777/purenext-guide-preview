@@ -1,0 +1,21 @@
+@charset "utf-8";
+/* ===== S9 専用アプリ =====
+   左：01〜04 の機能（番号つき小見出し＋本文・区切りは --rule の罫線）
+   右：アプリ画面2枚（v1 の切り出しをそのまま）＋キャプション
+   文字サイズは型7段だけ、余白は --sp-* トークン（64 / 32 / 24）だけ。 */
+
+/* ---------- 左：4つの機能 ---------- */
+.ap__list{list-style:none;padding:0;align-self:center}
+.ap__item+.ap__item{
+  margin-top:calc(var(--sp-el)*var(--u));
+  border-top:calc(1*var(--u)) solid var(--rule);
+  padding-top:calc(var(--sp-el)*var(--u));
+}
+.ap__item>.h3+*{margin-top:calc(var(--sp-h3)*var(--u))}
+
+/* ---------- 右：アプリ画面2枚 ---------- */
+.ap__right{align-self:center}
+.ap__phones{display:flex;justify-content:center;align-items:flex-end;
+  column-gap:calc(var(--sp-in-lg)*var(--u))}
+.ap__ph{height:calc(576*var(--u));width:auto}
+.ap__cap{margin-top:calc(var(--sp-in-lg)*var(--u));text-align:center}

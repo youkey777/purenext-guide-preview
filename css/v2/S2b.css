@@ -1,0 +1,97 @@
+@charset "utf-8";
+/* ===== S2 後半「豊富な出水モード」「メモリ機能」（v2-C 担当） =====
+   文字サイズは base_v2.css の型7段（.h2 .lead .h3 .p .note .sum .big）だけを使う。
+   ここで新しく決めているのは「大数字（.big）の大きさ」と、図版・面・5ステップの並べ方だけ。
+   余白はすべて base_v2.css の --sp-* トークン。色もトークンだけ（ボード実測色は使わない）。 */
+
+/* ---------- 共通：白い面に収めた線画 ---------- */
+.md__imgbox{background:var(--white);display:flex;align-items:center;justify-content:center;
+  padding:calc(var(--sp-in-lg)*var(--u))}
+
+/* ---------- 温水 / 冷水・常温水（W08） ---------- */
+.md__col>*+*{margin-top:calc(var(--sp-in)*var(--u))}
+.md__col>*+.h3{margin-top:calc(var(--sp-in-lg)*var(--u))}
+/* 2つの面の高さをそろえて、下の小見出し（温水 / 冷水・常温水）を同じ行にそろえる */
+.md__col>.md__imgbox{height:calc(211*var(--u))}
+.md__illus--mug{width:calc(132*var(--u));height:auto}
+.md__illus--glasses{width:calc(214*var(--u));height:auto}
+
+/* ---------- 白湯（W09）：マグの面と液晶 ---------- */
+.md__imgbox--sy{padding:calc(var(--sp-in-lg)*var(--u))}
+.md__mug{width:calc(313*var(--u));height:auto}
+
+/* 液晶パネル（サイト共通の1種類。白湯・40℃モードのステップ1・メモリの2枚で同じ形。
+   枠はミストの4px・角丸8・地は白・内枠なし・数字は中央。統括判断 2026-09-03） */
+.md__lcd{background:var(--white);border:calc(4*var(--u)) solid var(--mist);
+  border-radius:calc(8*var(--u));
+  display:flex;align-items:center;justify-content:center}
+/* 大きい液晶は v1 と同じ比率の箱（幅648:高さ256 = v1 の 496:196）。隣のマグの面とは上ぞろえ */
+.md__lcd--lg{align-self:start;height:calc(256*var(--u))}
+.md__ml{font-size:calc(113.6*var(--u));letter-spacing:calc(-1.75*var(--u))}
+.md__ml-unit{font-size:calc(65*var(--u));letter-spacing:0;margin-left:calc(8*var(--u))}
+
+/* ---------- 40℃モードの5ステップ（W10a） ---------- */
+.md__flow{display:flex;align-items:flex-start;column-gap:calc(var(--sp-in-lg)*var(--u))}
+.md__step{flex:1 1 0;min-width:0;text-align:center}
+.md__step>*+*{margin-top:calc(var(--sp-in)*var(--u))}
+.md__vis{height:calc(240*var(--u));display:flex;flex-direction:column;
+  align-items:center;justify-content:flex-end}
+.md__vis>*+*{margin-top:calc(var(--sp-in)*var(--u))}
+.md__si{height:auto}
+.md__step:nth-child(3) .md__si{width:calc(133*var(--u))}
+.md__step:nth-child(5) .md__si{width:calc(132*var(--u))}
+.md__step:nth-child(7) .md__si{width:calc(130*var(--u))}
+.md__step:nth-child(9) .md__si{width:calc(120*var(--u))}
+.md__temp{letter-spacing:calc(3*var(--u))}
+
+/* ステップ1の小さい液晶（v1 と同じ 164×120。枠は共通の形） */
+.md__lcd--sm{width:calc(164*var(--u));height:calc(120*var(--u))}
+.md__ml2{font-size:calc(37*var(--u));letter-spacing:calc(-0.5*var(--u))}
+.md__ml2-unit{font-size:calc(29*var(--u));letter-spacing:0}
+
+/* 番号・ラベル・矢印（矢印は絵の下端＋番号の高さぶん下げて、番号の高さに合わせる）
+   番号は5つともブロンズで統一（温度は絵の中身で伝わるため。統括判断 2026-09-03） */
+.md__stepnum{font-size:calc(54*var(--u));color:var(--bronze)}
+.md__fa{flex:none;width:calc(58*var(--u));height:calc(14*var(--u));
+  color:var(--bronze);margin-top:calc(284*var(--u))}
+
+/* ---------- こんなときに便利（W10b の左3件） ---------- */
+.md__card>*+*{margin-top:calc(var(--sp-in-lg)*var(--u))}
+.md__ui{height:auto}
+.md__ui--soup{width:calc(247*var(--u))}
+.md__ui--tea{width:calc(251*var(--u))}
+.md__ui--powder{width:calc(296*var(--u))}
+
+/* ---------- 出来上がりの量：積み上げバー（W10b の右） ---------- */
+/* 比率は実際の 16ml : 134ml（10.7% : 89.3%）。16ml 側は面が細いのでラベルを面の外（下）に出す */
+.md__barrow{display:flex;align-items:center;column-gap:calc(var(--sp-in-lg)*var(--u))}
+.md__bar{flex:1 1 auto;min-width:0;display:grid;grid-template-columns:16fr 134fr}
+.md__seg{display:flex;flex-direction:column;align-items:center;justify-content:center;
+  padding:calc(var(--sp-in-lg)*var(--u)) 0;
+  min-height:calc(119*var(--u))}
+.md__seg>*+*{margin-top:calc(var(--sp-in)*var(--u))}
+.md__barlbl{margin-top:calc(var(--sp-in)*var(--u))}
+.md__seg--a{background:var(--sand);border:calc(1.5*var(--u)) solid var(--rule)}
+.md__seg--b{background:var(--mist)}
+.md__seg-w{color:var(--white)}
+.md__out{flex:none;text-align:center}
+.md__out>*+*{margin-top:calc(var(--sp-in)*var(--u))}
+
+/* ---------- 温度の誤差について（サンドの面の中の小見出し） ---------- */
+.md__err>.h3+*{margin-top:calc(var(--sp-h3)*var(--u))}
+
+/* ---------- メモリ機能（W11） ---------- */
+.md__memnotes{list-style:none;padding:0;
+  border-top:calc(1*var(--u)) solid var(--rule);
+  border-bottom:calc(1*var(--u)) solid var(--rule)}
+.md__memnotes>li{padding:calc(var(--sp-in)*var(--u)) 0}
+.md__memnotes>li+li{border-top:calc(1*var(--u)) solid var(--rule)}
+
+.md__ba{display:flex;align-items:center;column-gap:calc(var(--gut3)*var(--u))}
+.md__ba-item{flex:1 1 0;min-width:0;text-align:center}
+.md__ba-item>*+*{margin-top:calc(var(--sp-in-lg)*var(--u))}
+.md__ba-arrow{flex:none;width:calc(66*var(--u));height:calc(33*var(--u));color:var(--bronze)}
+/* メモリの2枚も共通の液晶パネル（.md__lcd）。ここでは高さだけ決める */
+.md__panel{padding:calc(var(--sp-in-lg)*var(--u)) 0;min-height:calc(167*var(--u))}
+.md__pnum{font-size:calc(96*var(--u))}
+.md__punit{font-size:calc(44*var(--u))}

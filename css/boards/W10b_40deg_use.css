@@ -1,0 +1,99 @@
+@charset "utf-8";
+/* 05-4_取水モード_40℃モードの用途と誤差 — 左：3つの用途カード／右：説明・積み上げバー・誤差の注記
+   面の色は見本の実測値（カード #FCFBFB・帯 #F3EFED・青 #839DB2・枠 #BEBEBC） */
+#p05-4{--sand-board:#F3EFED;--card-board:#FCFBFB;--card-line:#F1EEED;--blue-board:#839DB2;--seg-line:#BEBEBC;--sep2:#EAE7E5}
+
+#p05-4 .us__bar{
+  position:absolute;left:calc(88*var(--u));top:calc(211*var(--u));
+  width:calc(8*var(--u));height:calc(51*var(--u));background:var(--bronze);
+}
+#p05-4 .us__h{
+  position:absolute;margin:0;left:calc(136*var(--u));top:calc(202.8*var(--u));
+  white-space:nowrap;line-height:1;font-size:calc(61*var(--u));
+  letter-spacing:calc(-2.7*var(--u));color:var(--charcoal);font-weight:400;
+}
+
+/* 小見出し */
+#p05-4 .us__sh{
+  position:absolute;margin:0;white-space:nowrap;line-height:1;
+  color:var(--charcoal);font-weight:400;
+}
+#p05-4 .us__sh--l{left:calc(84*var(--u));top:calc(310.3*var(--u));font-size:calc(35*var(--u));letter-spacing:calc(1.4*var(--u))}
+#p05-4 .us__sh--r{left:calc(751.2*var(--u));top:calc(310.1*var(--u));font-size:calc(37*var(--u));letter-spacing:calc(1*var(--u))}
+
+/* 左：3つのカードと説明 */
+#p05-4 .us__card{
+  position:absolute;left:calc(87*var(--u));width:calc(196*var(--u));
+  background:var(--card-board);border:calc(1*var(--u)) solid var(--card-line);
+}
+#p05-4 .us__card--1{top:calc(373*var(--u));height:calc(140*var(--u))}
+#p05-4 .us__card--2{top:calc(541*var(--u));height:calc(137*var(--u))}
+#p05-4 .us__card--3{top:calc(704*var(--u));height:calc(138*var(--u))}
+#p05-4 .us__illus{position:absolute}
+#p05-4 .us__card--1 .us__illus{left:calc(40*var(--u));top:calc(25*var(--u));width:calc(115*var(--u));height:calc(87*var(--u))}
+#p05-4 .us__card--2 .us__illus{left:calc(33*var(--u));top:calc(27*var(--u));width:calc(117*var(--u));height:calc(86*var(--u))}
+#p05-4 .us__card--3 .us__illus{left:calc(37*var(--u));top:calc(23*var(--u));width:calc(138*var(--u));height:calc(93*var(--u))}
+
+#p05-4 .us__ct{
+  position:absolute;margin:0;left:calc(322.65*var(--u));white-space:nowrap;
+  font-size:calc(27*var(--u));line-height:calc(40*var(--u));letter-spacing:calc(0.4*var(--u));
+  color:var(--charcoal);font-weight:400;
+}
+#p05-4 .us__ct--1{top:calc(398.7*var(--u));letter-spacing:calc(-1.23*var(--u))}
+#p05-4 .us__ct--2{top:calc(569.7*var(--u));left:calc(320.65*var(--u));letter-spacing:calc(-2.69*var(--u))}
+#p05-4 .us__ct--3{top:calc(731.7*var(--u));letter-spacing:calc(-1*var(--u))}
+
+#p05-4 .us__sep{
+  position:absolute;left:calc(88*var(--u));width:calc(576*var(--u));
+  background:var(--rule);
+}
+#p05-4 .us__sep--1{top:calc(527*var(--u));height:calc(1*var(--u))}
+#p05-4 .us__sep--2{top:calc(690*var(--u));height:calc(2*var(--u));background:var(--sep2)}
+
+/* 右：説明 */
+#p05-4 .us__p{
+  position:absolute;margin:0;left:calc(753.75*var(--u));white-space:nowrap;
+  font-size:calc(24*var(--u));line-height:calc(38*var(--u));letter-spacing:calc(0.5*var(--u));
+  color:var(--charcoal);font-weight:400;
+}
+#p05-4 .us__p--1{top:calc(388.3*var(--u));letter-spacing:calc(-2.07*var(--u))}
+#p05-4 .us__p--2{top:calc(450.3*var(--u));letter-spacing:calc(-0.99*var(--u))}
+#p05-4 .us__pl2{letter-spacing:calc(-1.54*var(--u))}
+
+/* 右：積み上げバー */
+#p05-4 .us__stack{
+  position:absolute;left:calc(755*var(--u));top:calc(563*var(--u));
+  width:calc(561*var(--u));height:calc(119*var(--u));
+}
+#p05-4 .us__seg{position:absolute;top:0;height:100%}
+#p05-4 .us__seg--a{
+  left:0;width:calc(171*var(--u));
+  background:var(--sand-board);border:calc(1.5*var(--u)) solid var(--seg-line);
+}
+#p05-4 .us__seg--b{left:calc(171*var(--u));width:calc(390*var(--u));background:var(--blue-board)}
+#p05-4 .us__seg p{
+  position:absolute;margin:0;left:0;width:100%;text-align:center;white-space:nowrap;line-height:1;
+  font-weight:400;
+}
+#p05-4 .us__seg p.us__seg-t1{left:calc(-3*var(--u));top:calc(28.6*var(--u));font-size:calc(23*var(--u));letter-spacing:calc(-1.5*var(--u));color:var(--charcoal)}
+#p05-4 .us__seg p.us__seg-t2{top:calc(59.6*var(--u));font-size:calc(24*var(--u));letter-spacing:calc(0.5*var(--u));color:var(--charcoal)}
+#p05-4 .us__seg p.us__seg-t3{left:calc(-1.5*var(--u));top:calc(48.4*var(--u));font-size:calc(23*var(--u));letter-spacing:calc(2.4*var(--u));color:var(--white)}
+
+#p05-4 .us__out{
+  position:absolute;margin:0;left:calc(1341.8*var(--u));white-space:nowrap;line-height:1;
+  color:var(--charcoal);font-weight:400;
+}
+#p05-4 .us__out--1{top:calc(594.4*var(--u));font-size:calc(24*var(--u));letter-spacing:calc(-2.6*var(--u))}
+#p05-4 .us__out--2{top:calc(627.5*var(--u));font-size:calc(24*var(--u));letter-spacing:calc(2.4*var(--u))}
+
+/* 右：温度の誤差について */
+#p05-4 .us__note{
+  position:absolute;left:calc(755*var(--u));top:calc(724*var(--u));
+  width:calc(692*var(--u));height:calc(134*var(--u));background:var(--sand-board);
+}
+#p05-4 .us__note>*{position:absolute;margin:0;white-space:nowrap;line-height:1;font-weight:400;color:var(--charcoal)}
+#p05-4 .us__nh{left:calc(27.5*var(--u));top:calc(29.9*var(--u));font-size:calc(29*var(--u));letter-spacing:calc(0.4*var(--u))}
+#p05-4 .us__np{left:calc(27.8*var(--u));top:calc(79.75*var(--u));font-size:calc(25*var(--u));letter-spacing:calc(-1.5*var(--u))}
+#p05-4 .us__ct--1 .us__l2{letter-spacing:calc(-2.33*var(--u))}
+#p05-4 .us__ct--2 .us__l2{letter-spacing:calc(-1.5*var(--u))}
+#p05-4 .us__ct--3 .us__l2{letter-spacing:calc(-1*var(--u))}

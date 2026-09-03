@@ -1,0 +1,78 @@
+@charset "utf-8";
+/* 09_チャイルドロック・エコモード — 左：エコモード／右：チャイルドロック
+   図版の線・面・矢印の色は見本の実測値（トークンに無い色なのでこのボード内の変数にしてある） */
+#p09{
+  --fig-line:#C3C4C8;   /* 温度対比の図の枠線 */
+  --fig-bg:#FDFDFD;     /* 同・地（純白よりわずかに暗い） */
+  --fig-cool:#DAE0E8;   /* 同・エコモード中の面（ミストブルーの淡い版） */
+  --fig-arrow:#AF7D40;  /* 同・矢印（見本のブロンズは橙寄り） */
+}
+
+/* --- ブロック見出し --- */
+#p09 .le__h{
+  position:absolute;white-space:nowrap;line-height:1;
+  color:var(--charcoal);font-weight:500;
+}
+#p09 .le__h--eco{left:calc(77*var(--u));top:calc(242*var(--u));
+  font-size:calc(39*var(--u));letter-spacing:calc(-0.58*var(--u))}
+#p09 .le__h--lock{left:calc(836*var(--u));top:calc(243*var(--u));
+  font-size:calc(38*var(--u));letter-spacing:calc(-0.84*var(--u))}
+
+/* --- 本文 --- */
+#p09 .le__lead{position:absolute}
+#p09 .le__lead p{line-height:1;white-space:nowrap;color:var(--charcoal);font-weight:400}
+#p09 .le__lead--eco{left:calc(78*var(--u));top:calc(319*var(--u))}
+#p09 .le__lead--eco p{font-size:calc(22.5*var(--u))}
+#p09 .le__lead--eco p:first-child{letter-spacing:calc(-1.3*var(--u))}
+#p09 .le__lead--eco p+p{margin-top:calc(18.5*var(--u));letter-spacing:calc(-0.62*var(--u))}
+
+#p09 .le__lead--lock{left:calc(837*var(--u));top:calc(317*var(--u))}
+#p09 .le__lead--lock p:nth-child(1){font-size:calc(22*var(--u));letter-spacing:calc(-2.23*var(--u))}
+#p09 .le__lead--lock p:nth-child(2){margin-top:calc(33*var(--u));
+  font-size:calc(23*var(--u));letter-spacing:calc(-2.38*var(--u))}
+#p09 .le__lead--lock p:nth-child(3){margin-top:calc(23*var(--u));
+  font-size:calc(22.5*var(--u));letter-spacing:calc(-2.17*var(--u))}
+
+/* --- 温度対比の図（枠・面・矢印は CSS/SVG、文字は実テキスト） --- */
+#p09 .le__fig{
+  position:absolute;left:calc(79*var(--u));top:calc(419*var(--u));
+  width:calc(601*var(--u));height:calc(129*var(--u));box-sizing:border-box;
+  border:calc(2*var(--u)) solid var(--fig-line);border-radius:calc(4*var(--u));
+  background:var(--fig-bg);
+}
+#p09 .le__figl{
+  position:absolute;left:calc(36*var(--u));top:calc(44*var(--u));
+  line-height:1;white-space:nowrap;color:var(--charcoal);font-weight:400;
+  font-size:calc(32*var(--u));letter-spacing:calc(-0.73*var(--u));
+}
+#p09 .le__arrow{
+  position:absolute;left:calc(261*var(--u));top:calc(49*var(--u));
+  width:calc(87*var(--u));height:calc(25*var(--u));overflow:visible;
+}
+#p09 .le__arrow path{stroke:var(--fig-arrow);stroke-width:3;fill:none}
+#p09 .le__arrow .le__arrow--head{stroke-linejoin:miter;stroke-linecap:butt}
+#p09 .le__figbox{
+  position:absolute;left:calc(368*var(--u));top:calc(5*var(--u));
+  width:calc(224*var(--u));height:calc(115*var(--u));background:var(--fig-cool);
+}
+#p09 .le__figr{position:absolute;left:0;top:calc(25*var(--u));width:100%}
+#p09 .le__figr span{display:block;line-height:1;white-space:nowrap;
+  color:var(--charcoal);font-weight:400}
+#p09 .le__figr1{margin-left:calc(41*var(--u));
+  font-size:calc(26.5*var(--u));letter-spacing:calc(-2.54*var(--u))}
+#p09 .le__figr2{margin-left:calc(52*var(--u));margin-top:calc(11.5*var(--u));
+  font-size:calc(29.5*var(--u));letter-spacing:calc(2.78*var(--u))}
+
+/* --- 注記 --- */
+#p09 .le__note{position:absolute;left:calc(79*var(--u));top:calc(574*var(--u))}
+#p09 .le__note p{line-height:1;white-space:nowrap;color:var(--charcoal);font-weight:400}
+#p09 .le__note p:nth-child(1){font-size:calc(21.5*var(--u));letter-spacing:calc(-1.14*var(--u))}
+#p09 .le__note p:nth-child(2){margin-top:calc(14.5*var(--u));
+  font-size:calc(22*var(--u));letter-spacing:calc(-2.29*var(--u))}
+
+/* --- 操作パネルの線画（見本からの無劣化切り出し） --- */
+#p09 .le__panel{position:absolute}
+#p09 .le__panel--eco{left:calc(74*var(--u));top:calc(666*var(--u));
+  width:calc(601*var(--u));height:calc(180*var(--u))}
+#p09 .le__panel--lock{left:calc(787*var(--u));top:calc(491*var(--u));
+  width:calc(676*var(--u));height:calc(355*var(--u))}

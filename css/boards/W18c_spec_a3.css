@@ -1,0 +1,69 @@
+@charset "utf-8";
+/* 12-3_製品仕様_契約条件と設置スペース — 左：契約条件の表／右：A3用紙と設置面の重ね図（inline SVG）
+   見本の実測色: 表の罫線 #A9A7A6 ／ 月額の金額は金色寄りのブロンズ #96651E ／
+                 図の寸法線と引き出し線は濃い青 #1568A8（トークンの --mist より濃い） */
+#p12-3{--tbl-rule:#A9A7A6; --gold:#96651E}
+
+/* 契約条件の表 */
+#p12-3 .a3__tbl{
+  position:absolute;left:calc(112*var(--u));top:calc(380*var(--u));
+  width:calc(613*var(--u));border-collapse:collapse;table-layout:fixed;
+}
+#p12-3 .a3__tbl th,
+#p12-3 .a3__tbl td{
+  padding:0;text-align:left;vertical-align:top;line-height:1;
+  color:var(--charcoal);font-weight:400;
+}
+#p12-3 .a3__tbl th{
+  width:calc(259*var(--u));padding-left:calc(19.5*var(--u));
+  font-size:calc(26*var(--u));letter-spacing:calc(-1.5*var(--u));white-space:nowrap;
+}
+#p12-3 .a3__r2 th,#p12-3 .a3__r2 td{border-top:calc(1.4*var(--u)) solid var(--tbl-rule)}
+#p12-3 .a3__r3 th,#p12-3 .a3__r3 td{border-top:calc(1.4*var(--u)) solid var(--tbl-rule)}
+#p12-3 .a3__r1 th,#p12-3 .a3__r1 td{height:calc(127*var(--u))}
+#p12-3 .a3__r2 th,#p12-3 .a3__r2 td{height:calc(103*var(--u))}
+#p12-3 .a3__r3 th,#p12-3 .a3__r3 td{height:calc(190*var(--u))}
+
+#p12-3 .a3__r1 th{padding-top:calc(42*var(--u));letter-spacing:calc(-2.9*var(--u))}
+#p12-3 .a3__r2 th{padding-top:calc(39.6*var(--u))}
+#p12-3 .a3__r3 th{padding-top:calc(55.6*var(--u))}
+
+#p12-3 .a3__r1 td{padding-top:calc(18.5*var(--u))}
+#p12-3 .a3__r2 td{padding-top:calc(36.6*var(--u))}
+#p12-3 .a3__r3 td{padding-top:calc(17.3*var(--u))}
+
+#p12-3 .a3__v1,#p12-3 .a3__v2{display:block;white-space:nowrap;font-size:calc(27*var(--u));line-height:calc(40*var(--u))}
+#p12-3 .a3__v2{text-indent:calc(-14*var(--u))}
+#p12-3 .a3__code{display:block;font-size:calc(30*var(--u));line-height:1}
+
+/* 月額（金額） */
+#p12-3 .a3__price{display:block;font-size:calc(91*var(--u));line-height:1;white-space:nowrap;color:var(--gold);text-indent:calc(3*var(--u))}
+#p12-3 .a3__pa,#p12-3 .a3__pu{font-size:calc(42*var(--u));font-weight:500;position:relative;top:calc(-12.5*var(--u))}
+#p12-3 .a3__pa{letter-spacing:calc(-0.5*var(--u));margin-right:calc(10*var(--u))}
+#p12-3 .a3__pu{margin-left:calc(3*var(--u))}
+#p12-3 .a3__pn{font-size:calc(91*var(--u));font-weight:400;letter-spacing:0}
+#p12-3 .a3__price2{
+  display:block;margin-top:calc(12.4*var(--u));text-indent:calc(3*var(--u));
+  font-size:calc(28*var(--u));line-height:1;letter-spacing:calc(1.9*var(--u));
+  color:var(--charcoal);
+}
+
+/* 右：設置スペース */
+#p12-3 .a3__h{
+  position:absolute;left:calc(858*var(--u));top:calc(292.1*var(--u));
+  font-size:calc(39*var(--u));line-height:1;letter-spacing:calc(1*var(--u));
+  color:var(--charcoal);font-weight:500;white-space:nowrap;
+}
+#p12-3 .a3__svg{
+  position:absolute;left:0;top:0;
+  width:calc(1536*var(--u));height:calc(1024*var(--u));pointer-events:none;
+}
+#p12-3 .a3__lb{position:absolute;white-space:nowrap;color:var(--charcoal);font-weight:400}
+#p12-3 .a3__lb--paper{left:calc(1261*var(--u));top:calc(417.8*var(--u))}
+#p12-3 .a3__lb--base{left:calc(1258*var(--u));top:calc(604.3*var(--u))}
+#p12-3 .a3__lbt{display:block;font-size:calc(22*var(--u));line-height:1}
+#p12-3 .a3__lbs{display:block;font-size:calc(21*var(--u));line-height:1}
+#p12-3 .a3__lb--paper .a3__lbt{letter-spacing:calc(0.45*var(--u))}
+#p12-3 .a3__lb--paper .a3__lbs{margin-top:calc(9.5*var(--u));letter-spacing:calc(-0.2*var(--u))}
+#p12-3 .a3__lb--base .a3__lbt{letter-spacing:calc(-0.9*var(--u))}
+#p12-3 .a3__lb--base .a3__lbs{margin-top:calc(12*var(--u));letter-spacing:calc(-0.35*var(--u))}

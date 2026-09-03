@@ -1,0 +1,66 @@
+@charset "utf-8";
+/* 05-2_取水モード_白湯 — 左：2つの節（見出し＋本文、間にミストブルーの罫線）／右：白カードのイラストと液晶
+   ミストブルーは見本の実測値 #4F7996（トークンの --mist #8BA4B7 より濃い。工程2で統括の判断待ち）
+   液晶の内枠は実測値 #AFA6A5、カード・液晶の地は実測値 #FEFEFE */
+#p05-2{--mist-board:#4F7996;--inner-board:#AFA6A5;--card-board:#FEFEFE}
+
+/* 左：見出し1（白湯（さゆ）― 55〜60℃） */
+#p05-2 .sy__h1{
+  position:absolute;margin:0;left:calc(106.4*var(--u));top:calc(257.8*var(--u));
+  white-space:nowrap;line-height:1;font-size:calc(52*var(--u));
+  color:var(--charcoal);font-weight:400;
+}
+#p05-2 .sy__w{letter-spacing:calc(4*var(--u))}
+#p05-2 .sy__yomi{font-size:calc(34.4*var(--u));letter-spacing:calc(0.53*var(--u));margin-left:calc(-5.5*var(--u))}
+#p05-2 .sy__dash{font-size:calc(45*var(--u));margin-left:calc(3.1*var(--u));vertical-align:calc(-3*var(--u))}
+#p05-2 .sy__temp{font-size:calc(46*var(--u));letter-spacing:calc(2.6*var(--u));margin-left:calc(19*var(--u))}
+
+/* 左：本文 */
+#p05-2 .sy__t{
+  position:absolute;margin:0;left:calc(111.5*var(--u));white-space:nowrap;
+  font-size:calc(23*var(--u));line-height:calc(36*var(--u));letter-spacing:calc(0.3*var(--u));
+  color:var(--charcoal);font-weight:400;
+}
+#p05-2 .sy__t--1{top:calc(340.1*var(--u));letter-spacing:calc(-0.73*var(--u))}
+#p05-2 .sy__t--2{top:calc(438.1*var(--u))}
+#p05-2 .sy__t--3{top:calc(497.1*var(--u));letter-spacing:calc(-0.6*var(--u))}
+#p05-2 .sy__t--4{top:calc(677.1*var(--u));letter-spacing:calc(-0.93*var(--u))}
+#p05-2 .sy__l2{letter-spacing:calc(-1.6*var(--u))}
+#p05-2 .sy__t--5{top:calc(769.1*var(--u));letter-spacing:calc(-1.23*var(--u))}
+
+#p05-2 .sy__rule{
+  position:absolute;left:calc(109*var(--u));top:calc(568*var(--u));
+  width:calc(693*var(--u));height:calc(3*var(--u));background:var(--mist-board);
+}
+
+/* 左：見出し2 */
+#p05-2 .sy__h2{
+  position:absolute;margin:0;left:calc(111*var(--u));top:calc(612.8*var(--u));
+  white-space:nowrap;line-height:1;font-size:calc(40*var(--u));
+  letter-spacing:calc(-1.33*var(--u));color:var(--charcoal);font-weight:400;
+}
+
+/* 右：白カードとマグカップ */
+#p05-2 .sy__card{
+  position:absolute;left:calc(909*var(--u));top:calc(265*var(--u));
+  width:calc(493*var(--u));height:calc(326*var(--u));background:var(--card-board);
+}
+#p05-2 .sy__mug{position:absolute;left:calc(148*var(--u));top:calc(22*var(--u));width:calc(238*var(--u));height:calc(269*var(--u))}
+
+/* 右：液晶（外枠＝ミストブルー／内枠＝細い角丸） */
+#p05-2 .sy__lcd{
+  position:absolute;left:calc(909*var(--u));top:calc(614*var(--u));
+  width:calc(496*var(--u));height:calc(196*var(--u));
+  background:var(--card-board);border:calc(4*var(--u)) solid var(--mist-board);
+}
+#p05-2 .sy__lcd-in{
+  position:absolute;left:calc(17*var(--u));top:calc(22*var(--u));
+  width:calc(453.1*var(--u));height:calc(149*var(--u));
+  border:calc(2*var(--u)) solid var(--inner-board);border-radius:calc(4*var(--u));
+}
+#p05-2 .sy__ml{
+  position:absolute;margin:0;left:calc(117*var(--u));top:calc(32.3*var(--u));
+  white-space:nowrap;line-height:1;font-family:var(--jp-thin);font-weight:200;
+  font-size:calc(113.6*var(--u));letter-spacing:calc(-1.75*var(--u));color:var(--charcoal);
+}
+#p05-2 .sy__ml-unit{font-size:calc(65*var(--u));letter-spacing:0;margin-left:calc(8*var(--u))}

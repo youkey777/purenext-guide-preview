@@ -1,0 +1,38 @@
+@charset "utf-8";
+/* 07-3_UV殺菌_膜ができると — 3ステップの水槽図（inline SVG・水面は波・膜は角丸の面）＋区切り罫＋本文2行 */
+
+#p07-3 .rk__fig{position:absolute;left:0;top:0;width:100%;height:100%}
+#p07-3 .rk__inner{fill:var(--white)}
+#p07-3 .rk__water{fill:var(--mist);fill-opacity:.556}
+#p07-3 .rk__box{fill:none;stroke:var(--charcoal);stroke-width:2}
+#p07-3 .rk__dot{fill:var(--charcoal)}
+#p07-3 .rk__film{fill:var(--sand);stroke:var(--charcoal);stroke-width:1.6;stroke-linejoin:round}
+
+#p07-3 .rk__step{
+  position:absolute;margin:0;white-space:nowrap;color:var(--charcoal);font-weight:400;line-height:1;
+}
+#p07-3 .rk__step--1{left:calc(243.4*var(--u));top:calc(576.2*var(--u));font-size:calc(37*var(--u));letter-spacing:calc(16.12*var(--u))}
+#p07-3 .rk__step--2{left:calc(720.1*var(--u));top:calc(576.3*var(--u));font-size:calc(38*var(--u));letter-spacing:calc(12.75*var(--u))}
+#p07-3 .rk__step--3{left:calc(1149.4*var(--u));top:calc(576.0*var(--u));font-size:calc(39*var(--u));letter-spacing:calc(8.50*var(--u))}
+
+#p07-3 .rk__cap{
+  position:absolute;margin:0;white-space:nowrap;color:var(--charcoal);font-weight:400;
+  font-size:calc(23*var(--u));line-height:1;
+}
+#p07-3 .rk__cap--1{left:calc(119.1*var(--u));top:calc(632.7*var(--u));letter-spacing:calc(2.35*var(--u))}
+#p07-3 .rk__cap--2{left:calc(598.8*var(--u));top:calc(632.7*var(--u));letter-spacing:calc(2.40*var(--u))}
+#p07-3 .rk__cap--3{left:calc(1087.8*var(--u));top:calc(633.0*var(--u));letter-spacing:calc(2.99*var(--u))}
+
+#p07-3 .rk__rule{
+  position:absolute;left:calc(97*var(--u));top:calc(706*var(--u));
+  width:calc(1341*var(--u));height:calc(2*var(--u));background:var(--gray);opacity:.34;
+}
+
+#p07-3 .rk__main{
+  position:absolute;margin:0;white-space:nowrap;text-align:center;
+  left:calc(45.5*var(--u));width:calc(1503*var(--u));top:calc(738.9*var(--u));
+  color:var(--charcoal);font-weight:400;
+  font-size:calc(33*var(--u));line-height:calc(47.13*var(--u));
+}
+#p07-3 .rk__m1{letter-spacing:calc(0.61*var(--u));margin-right:calc(-0.61*var(--u))}
+#p07-3 .rk__m2{letter-spacing:calc(4.73*var(--u));margin-right:calc(-4.73*var(--u))}

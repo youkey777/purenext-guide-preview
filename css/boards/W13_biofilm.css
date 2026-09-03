@@ -1,0 +1,79 @@
+@charset "utf-8";
+/* 07-2_UV殺菌_緑膿菌とバイオフィルム — 大見出し＋3ステップの水槽図（inline SVG）＋下帯の 1,000倍
+   下帯の面はこのボードの実測値 #F3EFEE（トークンの --sand #EEEAE7 とは 5〜7 差） */
+/* 下帯の面と、大数字の金茶はこのボードの実測値。--sand / --bronze とは差が大きい */
+#p07-2{--band:#F3EFEE;--big:#8C5A1F}
+
+#p07-2 .bf__h{
+  position:absolute;margin:0;white-space:nowrap;color:var(--charcoal);font-weight:400;
+  left:calc(74.1*var(--u));top:calc(211.9*var(--u));
+  font-size:calc(48*var(--u));line-height:calc(67.12*var(--u));
+}
+#p07-2 .bf__h1{letter-spacing:calc(3.88*var(--u))}
+#p07-2 .bf__h2{letter-spacing:calc(1.11*var(--u))}
+
+#p07-2 .bf__sub{
+  position:absolute;margin:0;white-space:nowrap;color:var(--charcoal);font-weight:400;
+  left:calc(74.5*var(--u));top:calc(359.1*var(--u));
+  font-size:calc(34*var(--u));letter-spacing:calc(2.34*var(--u));line-height:1;
+}
+#p07-2 .bf__lead{
+  position:absolute;margin:0;white-space:nowrap;color:var(--charcoal);font-weight:400;
+  left:calc(75.1*var(--u));top:calc(409.9*var(--u));
+  font-size:calc(24*var(--u));letter-spacing:calc(-0.20*var(--u));line-height:1;
+}
+
+/* 3ステップの水槽図。座標は見本（1536×1024）そのままなので viewBox で拡縮する */
+#p07-2 .bf__fig{
+  position:absolute;left:0;top:0;width:100%;height:100%;
+}
+#p07-2 .bf__box{fill:none;stroke:var(--charcoal);stroke-width:1.2}
+#p07-2 .bf__inner{fill:var(--white)}
+#p07-2 .bf__water{fill:var(--mist);fill-opacity:.52}
+#p07-2 .bf__surface{stroke:var(--mist);stroke-opacity:.88;stroke-width:1.4}
+#p07-2 .bf__dot{fill:var(--charcoal)}
+#p07-2 .bf__film{fill:var(--sand);stroke:var(--charcoal);stroke-width:1;stroke-linejoin:round}
+
+#p07-2 .bf__step{
+  position:absolute;margin:0;white-space:nowrap;color:var(--charcoal);font-weight:400;
+  font-size:calc(29*var(--u));line-height:1;
+}
+#p07-2 .bf__step--1{left:calc(272.8*var(--u));top:calc(707.0*var(--u));letter-spacing:calc(8.50*var(--u))}
+#p07-2 .bf__step--2{left:calc(716.2*var(--u));top:calc(707.2*var(--u));letter-spacing:calc(8.12*var(--u))}
+#p07-2 .bf__step--3{left:calc(1119.6*var(--u));top:calc(707.1*var(--u));letter-spacing:calc(8.04*var(--u))}
+
+#p07-2 .bf__cap{
+  position:absolute;margin:0;white-space:nowrap;color:var(--charcoal);font-weight:400;line-height:1;
+}
+#p07-2 .bf__cap--1{left:calc(161.2*var(--u));top:calc(745.8*var(--u));font-size:calc(21*var(--u));letter-spacing:calc(0.08*var(--u))}
+#p07-2 .bf__cap--2{left:calc(617.8*var(--u));top:calc(746.0*var(--u));font-size:calc(21*var(--u));letter-spacing:calc(-1.03*var(--u))}
+#p07-2 .bf__cap--3{left:calc(1072.1*var(--u));top:calc(746.3*var(--u));font-size:calc(20*var(--u));letter-spacing:calc(1.49*var(--u))}
+
+#p07-2 .bf__note{
+  position:absolute;margin:0;white-space:nowrap;color:var(--charcoal);font-weight:400;
+  left:calc(501.8*var(--u));top:calc(805.8*var(--u));
+  font-size:calc(22*var(--u));letter-spacing:calc(-0.18*var(--u));line-height:1;
+}
+
+/* 下帯（1,000倍） */
+#p07-2 .bf__band{
+  position:absolute;left:0;top:calc(858*var(--u));width:100%;height:calc(166*var(--u));
+  background:var(--band);
+}
+#p07-2 .bf__big{
+  position:absolute;margin:0;display:flex;align-items:baseline;white-space:nowrap;
+  left:calc(114.2*var(--u));top:calc(843.6*var(--u));line-height:1;
+}
+#p07-2 .bf__num{
+  font-size:calc(132*var(--u));letter-spacing:calc(18.84*var(--u));
+  color:var(--big);font-weight:300;
+}
+#p07-2 .bf__unit{
+  font-size:calc(65*var(--u));letter-spacing:0;margin-left:calc(-4.3*var(--u));
+  color:var(--big);font-weight:400;
+}
+#p07-2 .bf__band-text{
+  position:absolute;margin:0;white-space:nowrap;color:var(--charcoal);font-weight:400;
+  left:calc(637.6*var(--u));top:calc(918.2*var(--u));
+  font-size:calc(22*var(--u));letter-spacing:calc(1.08*var(--u));line-height:1;
+}

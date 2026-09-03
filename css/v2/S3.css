@@ -1,0 +1,55 @@
+@charset "utf-8";
+/* ===== S3 出水口のUV殺菌 =====
+   文字サイズは base_v2.css の型7段（.h1 .h2 .h3 .p .note .src .sum）だけを使う。
+   ここで決めているのは「大数字（.big）の大きさ」と、図版・面の中の並べ方だけ。
+   余白はすべて base_v2.css の --sp-* トークン（64 / 32 / 24）。
+   v1 のボード固有色（#8C5A1F・#A54E1B の金茶）は使わず --bronze に統一した。 */
+
+/* ---------- 1 ← W12 タンクの水と、気をつけたい出水口 ---------- */
+.uv__place{align-items:center}
+.uv__steps>*+*{margin-top:calc(var(--sp-el)*var(--u))}
+.uv__step>.h3+*{margin-top:calc(var(--sp-h3)*var(--u))}
+.uv__step>.p+.p{margin-top:calc(var(--sp-in)*var(--u))}
+.uv__fig{width:100%;max-width:calc(674*var(--u));height:auto;
+  margin-left:auto;margin-right:auto}
+
+/* ---------- 2 ← W13 緑膿菌とバイオフィルム ---------- */
+.uv__def>*+*{margin-top:calc(var(--sp-in)*var(--u))}
+.uv__deft{font-weight:500}
+
+.uv__bfwrap>*+*{margin-top:calc(var(--sp-in-lg)*var(--u))}
+.uv__bfc{text-align:center}
+.uv__bfc>*+*{margin-top:calc(var(--sp-in)*var(--u))}
+.uv__bfs{letter-spacing:calc(8*var(--u));margin-right:calc(-8*var(--u))}
+.uv__bfnote{text-align:center}
+
+/* 3ステップの水槽図（v1 の SVG を1槽ずつ切り出し、同じ viewBox に正規化）。
+   色はすべてトークン（--white / --mist / --charcoal / --sand）。 */
+.uv__tank{display:block;width:100%;height:auto}
+.uv__inner{fill:var(--white)}
+.uv__water{fill:var(--mist);fill-opacity:.52}
+.uv__surface{stroke:var(--mist);stroke-opacity:.88;stroke-width:1.4}
+.uv__box{fill:none;stroke:var(--charcoal);stroke-width:1.2}
+.uv__dot{fill:var(--charcoal)}
+.uv__film{fill:var(--sand);stroke:var(--charcoal);stroke-width:1;stroke-linejoin:round}
+
+/* 1,000倍の帯（v1 は全幅の帯。v2 では本文幅のサンドの面にした） */
+.uv__band{display:flex;align-items:center;column-gap:calc(var(--sp-el)*var(--u))}
+.uv__bignum{flex:none;color:var(--bronze);
+  font-size:calc(132*var(--u));letter-spacing:calc(12*var(--u))}
+.uv__bigunit{font-family:var(--jp);font-weight:400;color:var(--bronze);
+  font-size:calc(65*var(--u));letter-spacing:0}
+
+/* ---------- 3 ← W13b 膜が作られると（3ステップ図の再掲は出さない） ---------- */
+.uv__pivot>*+*{margin-top:calc(var(--sp-in)*var(--u))}
+/* 仕様書 5-S3-3 の指定「本文より大きく 28px」。28px は型7段の .sum と同じ値で、新しいサイズではない */
+.uv__pivot-t{font-size:calc(28*var(--u));line-height:1.6}
+
+/* ---------- 4 ← W14 99.9%の殺菌 ---------- */
+.uv__proof{align-items:center}
+.uv__ptxt>*+*{margin-top:calc(var(--sp-in-lg)*var(--u))}
+.uv__card{border:calc(1*var(--u)) solid var(--rule);text-align:center}
+.uv__card>*+*{margin-top:calc(var(--sp-in-lg)*var(--u))}
+.uv__99{display:inline-flex;align-items:baseline;color:var(--bronze);
+  font-size:calc(159*var(--u));letter-spacing:calc(2*var(--u))}
+.uv__pct{font-size:calc(88*var(--u));letter-spacing:0}

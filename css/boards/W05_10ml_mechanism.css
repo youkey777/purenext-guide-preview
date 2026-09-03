@@ -1,0 +1,68 @@
+@charset "utf-8";
+/* 04-1_10ml単位_仕組み — 左：メッセージ／右：液晶パネルの枠・目盛り・注記
+   液晶枠の線は見本の実測値 #6E93AD、目盛りは #6E95B0（どちらもトークンの --mist #8BA4B7 より濃い）
+   ▲マーカーも見本の実測値 #96621C（トークンの --bronze #9D7B5C より彩度が高い） */
+#p04-1{--lcd:#6E93AD;--tick:#6E95B0;--marker:#96621C}
+
+#p04-1 .ml__lead{
+  position:absolute;left:calc(68.5*var(--u));top:calc(316.1*var(--u));width:calc(560*var(--u));
+  font-size:calc(56*var(--u));line-height:calc(77*var(--u));
+  color:var(--charcoal);font-weight:400;
+}
+#p04-1 .ml__l1{letter-spacing:calc(-0.52*var(--u))}
+#p04-1 .ml__l2{font-size:calc(53.5*var(--u));letter-spacing:calc(-0.89*var(--u));position:relative;top:calc(-2*var(--u))}
+
+#p04-1 .ml__body{
+  position:absolute;left:calc(71.1*var(--u));width:calc(560*var(--u));
+  font-size:calc(29.5*var(--u));color:var(--charcoal);font-weight:400;
+}
+#p04-1 .ml__body--1{top:calc(509.6*var(--u));line-height:calc(45*var(--u))}
+#p04-1 .ml__body--2{top:calc(619.8*var(--u));left:calc(71.3*var(--u));line-height:calc(48*var(--u))}
+#p04-1 .ml__b1{letter-spacing:calc(0.34*var(--u))}
+#p04-1 .ml__b2{letter-spacing:calc(-1.23*var(--u))}
+#p04-1 .ml__b3{letter-spacing:calc(0.07*var(--u))}
+#p04-1 .ml__b4{letter-spacing:calc(-1.61*var(--u))}
+
+#p04-1 .ml__rhead{
+  position:absolute;left:calc(800.6*var(--u));top:calc(259.8*var(--u));
+  font-size:calc(36*var(--u));line-height:1;letter-spacing:calc(-1.8*var(--u));
+  color:var(--charcoal);font-weight:400;white-space:nowrap;
+}
+
+#p04-1 .ml__panel{
+  position:absolute;left:calc(790.28*var(--u));top:calc(322.84*var(--u));
+  width:calc(672.08*var(--u));height:calc(269.2*var(--u));
+  border:calc(4.4*var(--u)) solid var(--lcd);border-radius:calc(10*var(--u));
+  background:var(--white);
+}
+#p04-1 .ml__val{
+  position:absolute;left:calc(924.3*var(--u));top:calc(334*var(--u));
+  font-size:calc(218*var(--u));line-height:1;letter-spacing:calc(12.21*var(--u));
+  color:var(--charcoal);font-weight:300;white-space:nowrap;
+}
+#p04-1 .ml__unit{font-size:calc(80.5*var(--u));letter-spacing:calc(-11.03*var(--u));font-weight:400;margin-left:calc(-3*var(--u))}
+
+#p04-1 .ml__scale{
+  position:absolute;left:calc(796.09*var(--u));top:calc(627.82*var(--u));
+  width:calc(651.89*var(--u));height:calc(22.86*var(--u));fill:var(--tick);
+}
+#p04-1 .ml__marker{
+  position:absolute;left:calc(1093*var(--u));top:calc(662*var(--u));
+  width:0;height:0;
+  border-left:calc(10*var(--u)) solid transparent;
+  border-right:calc(10*var(--u)) solid transparent;
+  border-bottom:calc(21*var(--u)) solid var(--marker);
+}
+#p04-1 .ml__min,#p04-1 .ml__max{
+  position:absolute;line-height:1;color:var(--charcoal);font-weight:400;white-space:nowrap;
+}
+#p04-1 .ml__min{left:calc(794.7*var(--u));top:calc(677.9*var(--u));font-size:calc(29*var(--u));letter-spacing:calc(-0.57*var(--u))}
+#p04-1 .ml__max{left:calc(1370.7*var(--u));top:calc(680.4*var(--u));font-size:calc(26.5*var(--u));letter-spacing:calc(0.97*var(--u))}
+
+#p04-1 .ml__note{
+  position:absolute;left:calc(795.7*var(--u));top:calc(739.9*var(--u));width:calc(640*var(--u));
+  font-size:calc(29*var(--u));line-height:calc(48*var(--u));
+  color:var(--charcoal);font-weight:400;
+}
+#p04-1 .ml__t1{letter-spacing:calc(1.8*var(--u))}
+#p04-1 .ml__t2{letter-spacing:calc(-1.22*var(--u));margin-left:calc(-4*var(--u))}

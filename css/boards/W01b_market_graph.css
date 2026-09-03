@@ -1,0 +1,78 @@
+@charset "utf-8";
+/* 01-2_市場_普及率 — 左：家アイコン100軒と大数字／右：折れ線グラフ2段
+   グラフの軸・目盛りの色は仕様どおり見本から実測した値（トークンの --mist より明るい生成色） */
+#p01-2{--axis:#0D89F5;--grid:#8DCCF2;--frame:#C2C4CB}
+
+#p01-2 .gr__houses{
+  position:absolute;left:calc(233*var(--u));top:calc(301*var(--u));
+  width:calc(397*var(--u));height:calc(355*var(--u));
+}
+
+/* 大数字 */
+#p01-2 .gr__big{
+  position:absolute;margin:0;display:flex;align-items:baseline;justify-content:center;
+  line-height:1;color:var(--charcoal);font-weight:300;
+}
+#p01-2 .gr__big--rate{left:calc(78*var(--u));top:calc(681*var(--u));width:calc(400*var(--u))}
+#p01-2 .gr__big--units{left:calc(358*var(--u));top:calc(680*var(--u));width:calc(400*var(--u))}
+#p01-2 .gr__figure{font-family:var(--jp-thin);font-weight:200;font-size:calc(79*var(--u));line-height:1;letter-spacing:calc(1*var(--u))}
+#p01-2 .gr__figure--u{font-size:calc(77*var(--u));letter-spacing:calc(2.7*var(--u))}
+#p01-2 .gr__pct{font-size:calc(38*var(--u));line-height:1;font-weight:400;margin-left:calc(4*var(--u))}
+#p01-2 .gr__approx{font-size:calc(29*var(--u));line-height:1;font-weight:400;margin-right:calc(3*var(--u))}
+#p01-2 .gr__unit{font-size:calc(26*var(--u));line-height:1;font-weight:400;margin-left:calc(5*var(--u))}
+
+/* グラフの線（inline SVG。文字は入れない） */
+#p01-2 .gr__svg{position:absolute;left:0;top:0;width:100%;height:100%;fill:none;overflow:visible}
+#p01-2 .gr__frame path{stroke:var(--frame);stroke-width:2}
+#p01-2 .gr__frame path.gr__frame--thin{stroke-width:1}
+#p01-2 .gr__grid path{stroke:var(--grid);stroke-width:2;stroke-dasharray:1.6 1.6;stroke-linecap:butt}
+#p01-2 .gr__axis path{stroke:var(--axis);stroke-width:1.5;stroke-linecap:butt}
+#p01-2 .gr__line{stroke-width:2.4;stroke-linejoin:round;stroke-linecap:round}
+#p01-2 .gr__line--a{stroke:var(--charcoal)}
+#p01-2 .gr__line--b{stroke:var(--bronze)}
+#p01-2 .gr__dot--a circle{fill:var(--charcoal)}
+#p01-2 .gr__dot--b circle{fill:var(--bronze)}
+
+/* グラフまわりの文字（すべて実 HTML テキスト） */
+#p01-2 .gr__unitlab,#p01-2 .gr__gtitle,#p01-2 .gr__val,#p01-2 .gr__zero,#p01-2 .gr__year{
+  position:absolute;margin:0;line-height:1;font-weight:400;text-align:center;
+}
+#p01-2 .gr__unitlab{
+  width:calc(60*var(--u));text-align:left;
+  font-size:calc(15*var(--u));font-weight:500;letter-spacing:calc(1*var(--u));color:var(--gray);
+}
+#p01-2 .gr__unitlab--a{left:calc(809*var(--u));top:calc(311*var(--u))}
+#p01-2 .gr__unitlab--b{left:calc(810*var(--u));top:calc(569*var(--u))}
+
+#p01-2 .gr__gtitle{
+  width:calc(400*var(--u));
+  font-size:calc(23*var(--u));letter-spacing:calc(2.5*var(--u));color:var(--charcoal);
+}
+#p01-2 .gr__gtitle--a{left:calc(921*var(--u));top:calc(301.5*var(--u))}
+#p01-2 .gr__gtitle--b{left:calc(908*var(--u));top:calc(560.5*var(--u))}
+
+#p01-2 .gr__val{
+  width:calc(80*var(--u));font-size:calc(18*var(--u));font-weight:500;color:var(--charcoal);
+}
+#p01-2 .gr__val--a1{left:calc(901*var(--u));top:calc(354*var(--u))}
+#p01-2 .gr__val--a2{left:calc(1088*var(--u));top:calc(345*var(--u))}
+#p01-2 .gr__val--a3{left:calc(1268*var(--u));top:calc(351*var(--u))}
+#p01-2 .gr__val--b1{left:calc(901*var(--u));top:calc(666*var(--u))}
+#p01-2 .gr__val--b2{left:calc(1089*var(--u));top:calc(641*var(--u))}
+#p01-2 .gr__val--b3{left:calc(1268*var(--u));top:calc(619*var(--u))}
+
+#p01-2 .gr__zero{
+  width:calc(30*var(--u));font-size:calc(19*var(--u));color:var(--charcoal);text-align:right;
+}
+#p01-2 .gr__zero--a{left:calc(807*var(--u));top:calc(503*var(--u))}
+#p01-2 .gr__zero--b{left:calc(807*var(--u));top:calc(732*var(--u))}
+
+#p01-2 .gr__year{
+  width:calc(160*var(--u));font-size:calc(18*var(--u));letter-spacing:calc(0.3*var(--u));color:var(--charcoal);
+}
+#p01-2 .gr__year--a1{left:calc(862*var(--u));top:calc(521*var(--u))}
+#p01-2 .gr__year--a2{left:calc(1048*var(--u));top:calc(521*var(--u))}
+#p01-2 .gr__year--a3{left:calc(1227*var(--u));top:calc(521*var(--u))}
+#p01-2 .gr__year--b1{left:calc(862*var(--u));top:calc(744*var(--u))}
+#p01-2 .gr__year--b2{left:calc(1048*var(--u));top:calc(744*var(--u))}
+#p01-2 .gr__year--b3{left:calc(1227*var(--u));top:calc(744*var(--u))}

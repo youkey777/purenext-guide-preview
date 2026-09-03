@@ -1,0 +1,81 @@
+@charset "utf-8";
+/* 12-1_製品仕様_寸法と主要スペック — 左：純白の面に正面図・側面図（切り出し）＋寸法線（SVG）／右：スペック表 */
+#p12-1{
+  --sp-pane:#FEFDFD;   /* 図版の面（見本は純白よりわずかに暗い） */
+  --sp-dim:#66849A;    /* 寸法線（見本のミストブルーはトークンより濃い） */
+  --sp-rule:#E1DDDB;   /* 表の罫線（見本は 1px の線＋上下のにじみ。線の実測値） */
+}
+
+#p12-1 .sp__pane{position:absolute;left:calc(64*var(--u));top:calc(273*var(--u));
+  width:calc(644*var(--u));height:calc(649*var(--u));background:var(--sp-pane)}
+#p12-1 .sp__view{position:absolute;top:calc(318*var(--u))}
+#p12-1 .sp__view--front{left:calc(243*var(--u));width:calc(130*var(--u));height:calc(498*var(--u))}
+#p12-1 .sp__view--side{left:calc(481*var(--u));width:calc(133*var(--u));height:calc(499*var(--u))}
+
+#p12-1 .sp__dim{position:absolute;inset:0;width:100%;height:100%}
+#p12-1 .sp__dim path{fill:none;stroke:var(--sp-dim)}
+#p12-1 .sp__tick{stroke-width:1}
+#p12-1 .sp__shaft{stroke-width:2}
+#p12-1 .sp__head{fill:var(--sp-dim);stroke:none}
+
+#p12-1 .sp__dimlab{position:absolute;line-height:1;white-space:nowrap;
+  color:var(--charcoal);font-weight:400}
+#p12-1 .sp__dimlab p{line-height:1;white-space:nowrap}
+#p12-1 .sp__dimlab--h{left:calc(59*var(--u));top:calc(531*var(--u));
+  width:calc(140*var(--u));text-align:center}
+#p12-1 .sp__dimlab--h p:nth-child(1){font-size:calc(18.5*var(--u));letter-spacing:calc(-2.12*var(--u))}
+#p12-1 .sp__dimlab--h p:nth-child(2){margin-top:calc(5.5*var(--u));
+  font-size:calc(19*var(--u));letter-spacing:calc(1.51*var(--u))}
+#p12-1 .sp__dimlab--w{left:calc(262*var(--u));top:calc(874*var(--u));
+  font-size:calc(17.5*var(--u));letter-spacing:calc(2.42*var(--u))}
+#p12-1 .sp__dimlab--d{left:calc(493*var(--u));top:calc(874*var(--u));
+  font-size:calc(18.5*var(--u));letter-spacing:calc(1.65*var(--u))}
+
+/* --- 主要スペックの表 --- */
+#p12-1 .sp__tbl{
+  position:absolute;left:calc(763*var(--u));top:calc(318*var(--u));
+  width:calc(704*var(--u));border-collapse:collapse;table-layout:fixed;
+}
+#p12-1 .sp__tbl tr{border-bottom:calc(1*var(--u)) solid var(--sp-rule)}
+#p12-1 .sp__tbl tr:last-child{border-bottom:0}
+#p12-1 .sp__tbl th,#p12-1 .sp__tbl td{
+  vertical-align:top;text-align:left;line-height:1;white-space:nowrap;
+  color:var(--charcoal);padding:0;
+}
+#p12-1 .sp__tbl th{width:calc(251*var(--u));padding-left:calc(28*var(--u));font-weight:500}
+#p12-1 .sp__tbl td{font-weight:400}
+
+#p12-1 .sp__tbl tr:nth-child(1){height:calc(81*var(--u))}
+#p12-1 .sp__tbl tr:nth-child(1) th,#p12-1 .sp__tbl tr:nth-child(1) td{padding-top:calc(29*var(--u))}
+#p12-1 .sp__tbl tr:nth-child(1) th{font-size:calc(19.5*var(--u));letter-spacing:calc(3.19*var(--u))}
+#p12-1 .sp__tbl tr:nth-child(1) td{font-size:calc(19*var(--u));letter-spacing:calc(2.83*var(--u))}
+
+#p12-1 .sp__tbl tr:nth-child(2){height:calc(80*var(--u))}
+#p12-1 .sp__tbl tr:nth-child(2) th,#p12-1 .sp__tbl tr:nth-child(2) td{padding-top:calc(30*var(--u))}
+#p12-1 .sp__tbl tr:nth-child(2) th{font-size:calc(20*var(--u));letter-spacing:calc(2*var(--u))}
+#p12-1 .sp__tbl tr:nth-child(2) td{font-size:calc(18.5*var(--u));letter-spacing:calc(1.08*var(--u))}
+
+#p12-1 .sp__tbl tr:nth-child(3){height:calc(81*var(--u))}
+#p12-1 .sp__tbl tr:nth-child(3) th,#p12-1 .sp__tbl tr:nth-child(3) td{padding-top:calc(31*var(--u))}
+#p12-1 .sp__tbl tr:nth-child(3) th{font-size:calc(20.5*var(--u));letter-spacing:calc(2.04*var(--u))}
+#p12-1 .sp__tbl tr:nth-child(3) td{font-size:calc(18.5*var(--u));letter-spacing:calc(3.86*var(--u))}
+
+#p12-1 .sp__tbl tr:nth-child(4){height:calc(80*var(--u))}
+#p12-1 .sp__tbl tr:nth-child(4) th,#p12-1 .sp__tbl tr:nth-child(4) td{padding-top:calc(31*var(--u))}
+#p12-1 .sp__tbl tr:nth-child(4) th{font-size:calc(19.5*var(--u));letter-spacing:calc(3.27*var(--u))}
+#p12-1 .sp__tbl tr:nth-child(4) td{font-size:calc(18.5*var(--u));letter-spacing:calc(2.83*var(--u))}
+
+#p12-1 .sp__tbl tr:nth-child(5){height:calc(80*var(--u))}
+#p12-1 .sp__tbl tr:nth-child(5) th,#p12-1 .sp__tbl tr:nth-child(5) td{padding-top:calc(30*var(--u))}
+#p12-1 .sp__tbl tr:nth-child(5) th{font-size:calc(19.5*var(--u));letter-spacing:calc(3.35*var(--u))}
+#p12-1 .sp__tbl tr:nth-child(5) td{font-size:calc(19.5*var(--u));letter-spacing:calc(2.98*var(--u))}
+
+#p12-1 .sp__tbl tr:nth-child(6){height:calc(80*var(--u))}
+#p12-1 .sp__tbl tr:nth-child(6) th,#p12-1 .sp__tbl tr:nth-child(6) td{padding-top:calc(31*var(--u))}
+#p12-1 .sp__tbl tr:nth-child(6) th{font-size:calc(20*var(--u));letter-spacing:calc(1.7*var(--u))}
+#p12-1 .sp__tbl tr:nth-child(6) td{font-size:calc(19.5*var(--u));letter-spacing:calc(2.01*var(--u))}
+
+#p12-1 .sp__tbl tr:nth-child(7){height:calc(60*var(--u))}
+#p12-1 .sp__tbl tr:nth-child(7) th,#p12-1 .sp__tbl tr:nth-child(7) td{padding-top:calc(31*var(--u))}
+#p12-1 .sp__tbl tr:nth-child(7) th{font-size:calc(19.5*var(--u));letter-spacing:calc(3.15*var(--u))}
+#p12-1 .sp__tbl tr:nth-child(7) td{font-size:calc(19.5*var(--u));letter-spacing:calc(1.89*var(--u))}

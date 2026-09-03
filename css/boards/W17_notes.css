@@ -1,0 +1,99 @@
+@charset "utf-8";
+/* 11_注意ポイント — 上段3セル＋下段2セル（中央寄せ）。カード無し・各セルの上に細い罫線だけ */
+#p11{
+  --nt-bar-hot:#AC7951;     /* 積み上げバー：温水（淡いブロンズ） */
+  --nt-bar-cold:#6E98BC;    /* 同：冷水（ミストブルー） */
+  --nt-bar-powder:#E1DBD6;  /* 同：粉末が溶けた分（サンドグレージュ） */
+}
+
+/* 各セルの上の罫線（見本は 3px で上下に色差がある） */
+#p11 .nt__rule{
+  position:absolute;height:calc(3*var(--u));
+  background:linear-gradient(to bottom,#E8E4DF 0 33.34%,#96887E 33.34% 66.67%,#C0B7B1 66.67% 100%);
+}
+#p11 .nt__rule--1{left:calc(116*var(--u));top:calc(230*var(--u));width:calc(409*var(--u))}
+#p11 .nt__rule--2{left:calc(584*var(--u));top:calc(230*var(--u));width:calc(370*var(--u))}
+#p11 .nt__rule--3{left:calc(1016*var(--u));top:calc(230*var(--u));width:calc(404*var(--u))}
+#p11 .nt__rule--4,#p11 .nt__rule--5{
+  background:linear-gradient(to bottom,#EFEBE6 0 33.34%,#9C8F85 33.34% 66.67%,#B7ACA4 66.67% 100%);
+}
+#p11 .nt__rule--4{left:calc(278*var(--u));top:calc(652*var(--u));width:calc(450*var(--u))}
+#p11 .nt__rule--5{left:calc(811*var(--u));top:calc(652*var(--u));width:calc(480*var(--u))}
+
+/* --- 小見出し --- */
+#p11 .nt__h{position:absolute;color:var(--charcoal);font-weight:500}
+#p11 .nt__h span{display:block;line-height:1;white-space:nowrap}
+#p11 .nt__h--1{left:calc(121*var(--u));top:calc(265*var(--u))}
+#p11 .nt__h--1 span:nth-child(1){font-size:calc(30*var(--u));letter-spacing:calc(-0.66*var(--u))}
+#p11 .nt__h--1 span:nth-child(2){margin-top:calc(16*var(--u));
+  font-size:calc(28.5*var(--u));letter-spacing:calc(-0.42*var(--u))}
+#p11 .nt__h--2{left:calc(592*var(--u));top:calc(265*var(--u))}
+#p11 .nt__h--2 span:nth-child(1){font-size:calc(30.5*var(--u));letter-spacing:calc(-1.46*var(--u))}
+#p11 .nt__h--2 span:nth-child(2){margin-left:calc(-3*var(--u));margin-top:calc(12.5*var(--u));
+  font-size:calc(30*var(--u));letter-spacing:calc(-1.74*var(--u))}
+#p11 .nt__h--3{left:calc(1020*var(--u));top:calc(265*var(--u))}
+#p11 .nt__h--3 span:nth-child(1){font-size:calc(30.5*var(--u));letter-spacing:calc(-1.18*var(--u))}
+#p11 .nt__h--3 span:nth-child(2){margin-left:calc(3*var(--u));margin-top:calc(13.5*var(--u));
+  font-size:calc(30.5*var(--u));letter-spacing:calc(1.05*var(--u))}
+#p11 .nt__h--4{left:calc(284*var(--u));top:calc(693*var(--u));line-height:1;white-space:nowrap;
+  font-size:calc(29*var(--u));letter-spacing:calc(-1.5*var(--u))}
+#p11 .nt__h--5{left:calc(820*var(--u));top:calc(693*var(--u));line-height:1;white-space:nowrap;
+  font-size:calc(28.5*var(--u));letter-spacing:calc(-2.85*var(--u))}
+
+/* --- 説明 --- */
+#p11 .nt__b{position:absolute}
+#p11 .nt__b p{line-height:1;white-space:nowrap;color:var(--charcoal);font-weight:400}
+#p11 .nt__b--1{left:calc(122*var(--u));top:calc(368*var(--u))}
+#p11 .nt__b--1 p:nth-child(1){font-size:calc(20*var(--u));letter-spacing:calc(-0.16*var(--u))}
+#p11 .nt__b--1 p:nth-child(2){margin-top:calc(12*var(--u));
+  font-size:calc(20*var(--u));letter-spacing:calc(0.18*var(--u))}
+#p11 .nt__b--1 p:nth-child(3){margin-left:calc(-11*var(--u));margin-top:calc(10*var(--u));
+  font-size:calc(20*var(--u));letter-spacing:calc(-0.07*var(--u))}
+#p11 .nt__b--1 p:nth-child(4){margin-top:calc(11.5*var(--u));
+  font-size:calc(20.5*var(--u));letter-spacing:calc(-0.73*var(--u))}
+#p11 .nt__b--2{left:calc(592*var(--u));top:calc(369*var(--u))}
+#p11 .nt__b--2 p:nth-child(1){font-size:calc(20*var(--u));letter-spacing:calc(-1*var(--u))}
+#p11 .nt__b--2 p:nth-child(2){margin-left:calc(2*var(--u));margin-top:calc(16*var(--u));
+  font-size:calc(20.5*var(--u));letter-spacing:calc(-1.1*var(--u))}
+#p11 .nt__b--3{left:calc(1023*var(--u));top:calc(368*var(--u))}
+#p11 .nt__b--3 p:nth-child(1){font-size:calc(20.5*var(--u));letter-spacing:calc(-0.35*var(--u))}
+#p11 .nt__b--3 p:nth-child(2){margin-left:calc(1*var(--u));margin-top:calc(16.5*var(--u));
+  font-size:calc(20.5*var(--u));letter-spacing:calc(-0.64*var(--u))}
+#p11 .nt__b--3 p:nth-child(3){margin-top:calc(15.5*var(--u));
+  font-size:calc(19.5*var(--u));letter-spacing:calc(0.6*var(--u))}
+#p11 .nt__b--4{left:calc(284*var(--u));top:calc(751*var(--u))}
+#p11 .nt__b--4 p:nth-child(1){font-size:calc(22*var(--u));letter-spacing:calc(-2.04*var(--u))}
+#p11 .nt__b--4 p:nth-child(2){margin-top:calc(17*var(--u));
+  font-size:calc(20.5*var(--u));letter-spacing:calc(-0.48*var(--u))}
+#p11 .nt__b--5{left:calc(822*var(--u));top:calc(754*var(--u))}
+#p11 .nt__b--5 p:nth-child(1){font-size:calc(21*var(--u));letter-spacing:calc(0.49*var(--u))}
+#p11 .nt__b--5 p:nth-child(2){margin-top:calc(15*var(--u));
+  font-size:calc(21*var(--u));letter-spacing:calc(-0.44*var(--u))}
+#p11 .nt__b--5 p:nth-child(3){margin-left:calc(-3*var(--u));margin-top:calc(14*var(--u));
+  font-size:calc(21.5*var(--u));letter-spacing:calc(-0.64*var(--u))}
+
+/* --- 積み上げバー（50 : 35 : 15） --- */
+#p11 .nt__bar{
+  position:absolute;left:calc(119*var(--u));top:calc(504*var(--u));
+  width:calc(322*var(--u));height:calc(28*var(--u));font-size:0;
+}
+#p11 .nt__seg{display:inline-block;height:100%;vertical-align:top}
+#p11 .nt__seg--hot{width:calc(117*var(--u));background:var(--nt-bar-hot)}
+#p11 .nt__seg--cold{width:calc(118*var(--u));background:var(--nt-bar-cold)}
+#p11 .nt__seg--powder{width:calc(87*var(--u));background:var(--nt-bar-powder)}
+#p11 .nt__eq{
+  position:absolute;left:calc(447*var(--u));top:calc(508*var(--u));
+  line-height:1;white-space:nowrap;color:var(--charcoal);font-weight:400;
+  font-size:calc(20*var(--u));letter-spacing:calc(-0.45*var(--u));
+}
+#p11 .nt__lab{position:absolute;line-height:1;white-space:nowrap;
+  color:var(--gray);font-weight:400}
+#p11 .nt__lab p{line-height:1;white-space:nowrap}
+#p11 .nt__lab--hot{left:calc(134*var(--u));top:calc(546*var(--u));
+  font-size:calc(19*var(--u));letter-spacing:calc(0.19*var(--u))}
+#p11 .nt__lab--cold{left:calc(252*var(--u));top:calc(547*var(--u));
+  font-size:calc(18.5*var(--u));letter-spacing:calc(0.6*var(--u))}
+#p11 .nt__lab--powder{left:calc(359*var(--u));top:calc(546*var(--u))}
+#p11 .nt__lab--powder p:nth-child(1){font-size:calc(18*var(--u));letter-spacing:calc(-1.55*var(--u))}
+#p11 .nt__lab--powder p:nth-child(2){margin-left:calc(26*var(--u));margin-top:calc(9*var(--u));
+  font-size:calc(18.5*var(--u));letter-spacing:calc(2.08*var(--u))}

@@ -1,0 +1,47 @@
+@charset "utf-8";
+/* ===== S4 実生活に嬉しい細かな配慮 =====
+   文字サイズは base_v2.css の型7段だけを使う（このファイルは新しい文字サイズを作らない）。
+   余白はすべて --sp-* トークン（64 / 32 / 24）。
+   v1 の W15c のボード固有色（#C3C4C8 枠・#DAE0E8 面・#AF7D40 矢印）はトークンに統一した
+   （枠 --rule ／ 面 --sand ／ 矢印 --bronze ／ 地 --white）。 */
+
+/* ---------- 中 水はねしにくい出水口 ← W15a ---------- */
+.cr__splash{align-items:center}
+.cr__unit{width:100%;max-width:calc(581*var(--u));height:auto;
+  margin-left:auto;margin-right:auto}
+.cr__sptxt>.h3+*{margin-top:calc(var(--sp-h3)*var(--u))}
+.cr__sptxt>.p+.p{margin-top:calc(var(--sp-in)*var(--u))}
+
+/* ---------- 中 外れる受け皿 ← W15b ---------- */
+/* 3枚のカードは「図・番号・見出し・説明」の4段を subgrid で共有し、
+   見出しの行数が違っても説明文の頭がそろうようにする */
+.cr__trays{grid-template-rows:auto auto auto auto}
+.cr__card{display:grid;grid-row:span 4;grid-template-rows:subgrid;
+  row-gap:calc(var(--sp-in)*var(--u));text-align:center}
+/* 本体の線画は3枚とも同じ高さでそろえる（元画像は幅が 130 / 128 / 131 と1〜3px 違う） */
+.cr__tray{width:auto;height:calc(403*var(--u));margin-left:auto;margin-right:auto}
+.cr__no{margin-right:0}
+
+/* ---------- 中 チャイルドロック ← W15c 右半分 ---------- */
+.cr__lock{align-items:center}
+.cr__ltxt>*+*{margin-top:calc(var(--sp-in)*var(--u))}
+.cr__panel{width:100%;height:auto;margin-left:auto;margin-right:auto}
+
+/* ---------- 中 エコモード ← W15c 左半分 ---------- */
+.cr__eco{align-items:center}
+/* 注記は温度対比の図にくっつける（列幅だと「ど）。」だけが折り返すため本文幅に置く） */
+.blk__body>.cr__tnote{margin-top:calc(var(--sp-in)*var(--u))}
+.cr__tnote>*+*{margin-top:calc(var(--sp-in)*var(--u))}
+
+/* 温度対比の図（枠・面・矢印は CSS/SVG、文字は実テキスト） */
+.cr__temp{display:flex;align-items:center;column-gap:calc(var(--sp-in-lg)*var(--u));
+  border:calc(2*var(--u)) solid var(--rule);border-radius:calc(4*var(--u));
+  background:var(--white);padding:calc(var(--sp-in)*var(--u))}
+.cr__tl{flex:1 1 auto;text-align:center}
+.cr__arrow{flex:none;width:calc(87*var(--u));height:calc(25*var(--u))}
+.cr__arrow path{fill:none;stroke:var(--bronze);stroke-width:3}
+.cr__arrowhead{stroke-linejoin:miter;stroke-linecap:butt}
+.cr__tbox{flex:none;background:var(--sand);text-align:center;
+  padding:calc(var(--sp-in)*var(--u)) calc(var(--sp-in-lg)*var(--u))}
+.cr__tr>span{display:block}
+.cr__tr>span+span{margin-top:calc(var(--sp-in)*var(--u))}

@@ -1,0 +1,99 @@
+@charset "utf-8";
+/* ===== S2a PureNextの3つの強み（前半）=====
+   導入（W04）／10ml単位の指定量取水（W05+W06）／測る、押し続ける、待つ。（W07）
+
+   文字サイズは base_v2.css の型（.h1 .h2 .lead .h3 .p .note .src）だけを使う（.sum は v2.1 で廃止）。
+   ここで新しく決めているのは「大数字（.big）の大きさ」と、図版・面の中の並べ方だけ。
+   余白はすべて base_v2.css の --sp-* トークン（64 / 32 / 24 …）。
+   S2 後半（S2b）と同じ #strengths セクションに入るので、セレクタは必ず自分の接頭辞を付ける。 */
+
+/* 導入ブロック（.sec__body）→ 最初の中見出しブロック = 中見出しブロックの間と同じ 140 */
+#strengths > .sec__body + .blk{margin-top:calc(var(--sp-blk)*var(--u))}
+
+/* ---------- 導入 ← W04（左：本体の線画／右：3つの強み） ---------- */
+.st__intro{align-items:center}
+.st__body{width:calc(294*var(--u));height:auto;justify-self:center}
+
+.st__list{list-style:none;padding:0}
+.st__row + .st__row{
+  margin-top:calc(var(--sp-in-lg)*var(--u));
+  padding-top:calc(var(--sp-in-lg)*var(--u));
+  border-top:calc(1*var(--u)) solid var(--rule);
+}
+.st__row > .st__line + *{margin-top:calc(var(--sp-in-lg)*var(--u))}
+.st__row > .h3 + *{margin-top:calc(var(--sp-h3)*var(--u))}
+
+.st__line{display:flex;align-items:baseline;column-gap:calc(var(--sp-in)*var(--u))}
+.st__num{font-size:calc(96*var(--u));letter-spacing:calc(4*var(--u))}
+.st__u{font-size:calc(48*var(--u));letter-spacing:calc(2*var(--u))}
+.st__u2{font-size:calc(56*var(--u));letter-spacing:calc(2*var(--u))}
+.st__u3{font-size:calc(44*var(--u));letter-spacing:0}
+.st__lab{color:var(--bronze);letter-spacing:calc(4*var(--u))}
+
+/* ---------- 中 10ml単位の指定量取水 ← W05 ---------- */
+/* 中見出しのすぐ下からメッセージが読み始められるよう、左右とも上ぞろえ */
+.ml__left{align-self:start}
+.ml__left > * + *{margin-top:calc(var(--sp-in)*var(--u))}
+.ml__left > .h3 + *{margin-top:calc(var(--sp-h3)*var(--u))}
+
+.ml__right > * + *{margin-top:calc(var(--sp-el)*var(--u))}
+.ml__right > .h3 + *{margin-top:calc(var(--sp-h3)*var(--u))}
+
+/* 液晶パネル（v1 の実測色 #6E93AD ではなくトークンの --mist に統一） */
+.ml__lcd{
+  background:var(--white);
+  border:calc(4*var(--u)) solid var(--mist);
+  border-radius:calc(8*var(--u));
+  padding:calc(var(--pad-y)*var(--u)) calc(var(--pad-x)*var(--u));
+  text-align:center;
+}
+.ml__val{font-size:calc(120*var(--u));letter-spacing:calc(6*var(--u))}
+.ml__unit{font-family:var(--jp);font-weight:400;font-size:calc(48*var(--u));
+  letter-spacing:0;margin-left:calc(8*var(--u))}
+
+/* 目盛りと▲印（v1 の実測色 #6E95B0 / #96621C ではなくトークンに統一） */
+.ml__scalebox > * + *{margin-top:calc(var(--sp-in)*var(--u))}
+.ml__scale{display:block;width:100%;height:auto}
+.ml__ticks{fill:var(--mist)}
+.ml__marker{fill:var(--bronze)}
+.ml__range{display:flex;justify-content:space-between}
+
+/* ---------- 中 10ml単位の指定量取水 ← W06 の場面（2×2） ---------- */
+.sc__cell > .sc__iconbox + *{margin-top:calc(var(--sp-in-lg)*var(--u))}
+.sc__cell > .h3 + *{margin-top:calc(var(--sp-h3)*var(--u))}
+/* 線画の縦横比がばらばらなので、下ぞろえの箱に入れて見出しの位置をそろえる */
+.sc__iconbox{height:calc(270*var(--u));display:flex;align-items:flex-end;justify-content:center}
+.sc__icon{height:auto}
+.sc__cell:nth-child(1) .sc__icon{width:calc(200*var(--u))}
+.sc__cell:nth-child(2) .sc__icon{width:calc(197*var(--u))}
+.sc__cell:nth-child(3) .sc__icon{width:calc(86*var(--u))}
+.sc__cell:nth-child(4) .sc__icon{width:calc(103*var(--u))}
+
+/* ---------- 中 測る、押し続ける、待つ。← W07 ---------- */
+/* 2つの線画は列幅（面の内側 520）に余裕をもって収める。
+   v1 の 294+64+151=509 は内側 520 に対して左右 5.5 しか残らず、
+   カードの端で切れて見えたため、ペットボトルを 294 -> 240 に縮めた。
+   縦は中央ぞろえ、横は space-evenly の均等配置（3つの空きが同じ幅になる）。 */
+.me__card{display:flex;align-items:center;justify-content:space-evenly}
+/* bottle.png の下端2行（元画像 y=161-162）は宙に浮いて見える床線なので、
+   箱で切り落として隠す。画像ファイルには触らない。
+   240 幅のとき元画像 163 は 133.1 になり、床線を除いた 160 行ぶんが 130.6。 */
+.me__bottlebox{flex:none;width:calc(240*var(--u));height:calc(130.6*var(--u));overflow:hidden}
+/* 切り出しの地色（実測 254）が純白カード（255）の上で四角く見えるのを消す。
+   darken は担当 A と同じ手だが、A の W02b は「地色がサンドの面より明るい」ケース。
+   ここは逆に地色が面より暗いので darken では min() が地色を残す（実測 253.95 のまま）。
+   そこで brightness を足し、254 を 255 に持ち上げて面と同色にする（線画の最暗値は 43→44 で不変）。 */
+.me__bottle{display:block;width:calc(240*var(--u));height:auto;
+  mix-blend-mode:darken;filter:brightness(1.02)}
+.me__body{width:calc(151*var(--u));height:auto;flex:none}
+
+.me__right > * + *{margin-top:calc(var(--sp-el)*var(--u))}
+.me__panel{border-left:calc(8*var(--u)) solid var(--bronze)}
+.me__panel > * + *{margin-top:calc(var(--sp-in)*var(--u))}
+.me__panel > .h3 + *{margin-top:calc(var(--sp-h3)*var(--u))}
+.me__panel > .note + .p{margin-top:calc(var(--sp-in-lg)*var(--u))}
+.me__em{font-weight:500}
+
+.me__milk{border-top:calc(1*var(--u)) solid var(--rule);
+  padding-top:calc(var(--sp-in-lg)*var(--u))}
+.me__milk > * + *{margin-top:calc(var(--sp-in)*var(--u))}

@@ -1,0 +1,42 @@
+@charset "utf-8";
+/* ===== S5 カラー =====
+   文字サイズは base_v2.css の型7段だけ。ここで決めているのは
+   「切り出し画像の幅」「色チップの大きさ」「面の中の並べ方」だけ。
+   余白はすべて --sp-* トークン（64 / 32 / 24）。 */
+
+/* ---------- 導入：2色のカード（W16） ---------- */
+.cl__card{display:flex;flex-direction:column;text-align:center}
+/* 説明文の行数が違っても、2枚の色チップの高さがそろうようにする */
+.cl__card>.p:last-of-type{margin-bottom:auto}
+.cl__card>*+*{margin-top:calc(var(--sp-in)*var(--u))}
+.cl__card>.cl__unit+*{margin-top:calc(var(--sp-in-lg)*var(--u))}
+.cl__card>.cl__chip{margin-top:calc(var(--sp-in-lg)*var(--u))}
+
+.cl__unit{width:calc(175*var(--u));height:auto;margin-left:auto;margin-right:auto}
+
+.cl__chip{width:calc(156*var(--u));height:calc(51*var(--u));
+  margin-left:auto;margin-right:auto}
+.cl__chip--white{background:var(--white);border:calc(1*var(--u)) solid var(--rule)}
+.cl__chip--black{background:var(--charcoal);border:calc(1*var(--u)) solid var(--rule);
+  border-color:color-mix(in srgb, var(--rule) 40%, transparent)}
+
+/* マットブラックのカードだけ面を反転（色はトークンのまま） */
+.cl__card--dark{background:var(--charcoal)}
+.cl__card--dark .h3,
+.cl__card--dark .p{color:var(--white)}
+
+/* ---------- 中見出し：クラウドダンサー（W16b） ---------- */
+.cd__left{align-self:center;text-align:center}
+.cd__photo{width:calc(301*var(--u));height:auto;margin-left:auto;margin-right:auto}
+.cd__cap{margin-top:calc(var(--sp-in)*var(--u))}
+
+.cd__right>*+*{margin-top:calc(var(--sp-in)*var(--u))}
+.cd__right>.cd__hr,
+.cd__right>.cd__hr+*,
+.cd__right>.cd__swatch{margin-top:calc(var(--sp-el)*var(--u))}
+
+.cd__hr{width:100%;height:calc(1*var(--u));background:var(--rule)}
+
+.cd__swatch{display:flex;align-items:center;column-gap:calc(var(--sp-in)*var(--u))}
+.cd__chip{flex:none;width:calc(106*var(--u));height:calc(93*var(--u));
+  background:var(--white);border:calc(1*var(--u)) solid var(--rule)}

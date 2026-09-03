@@ -1,0 +1,39 @@
+@charset "utf-8";
+/* 05-1_取水モード_温水冷水常温 — 白カード2枚（イラスト）＋左右2カラムの説明＋下のサンドの帯
+   サンドの帯はこのボードの実測値 #F3EEEA（トークンの --sand #EEEAE7 とは 4〜5 差） */
+#p05-1{--sand-board:#F3EEEA;--card-board:#FDFDFD}
+
+#p05-1 .tp__card{position:absolute;top:calc(286*var(--u));height:calc(195*var(--u));background:var(--card-board)}
+#p05-1 .tp__card--l{left:calc(104*var(--u));width:calc(626*var(--u))}
+#p05-1 .tp__card--r{left:calc(803*var(--u));width:calc(627*var(--u))}
+#p05-1 .tp__illus{position:absolute}
+#p05-1 .tp__illus--mug{left:calc(248*var(--u));top:calc(22*var(--u));width:calc(132*var(--u));height:calc(147*var(--u))}
+#p05-1 .tp__illus--glasses{left:calc(193*var(--u));top:calc(46*var(--u));width:calc(214*var(--u));height:calc(117*var(--u))}
+
+#p05-1 .tp__h{
+  position:absolute;margin:0;top:calc(509.8*var(--u));white-space:nowrap;
+  font-size:calc(35*var(--u));line-height:1;color:var(--charcoal);font-weight:500;
+}
+#p05-1 .tp__h--l{left:calc(123.25*var(--u));letter-spacing:calc(13*var(--u))}
+#p05-1 .tp__h--r{left:calc(819.25*var(--u));letter-spacing:calc(11*var(--u))}
+
+#p05-1 .tp__t{
+  position:absolute;margin:0;white-space:nowrap;
+  font-size:calc(20*var(--u));line-height:calc(35*var(--u));
+  letter-spacing:calc(4*var(--u));color:var(--charcoal);font-weight:400;
+}
+#p05-1 .tp__t--l1{left:calc(125*var(--u));top:calc(559.9*var(--u));letter-spacing:calc(5.33*var(--u))}
+#p05-1 .tp__t--l2{left:calc(125*var(--u));top:calc(593.9*var(--u));letter-spacing:calc(3.5*var(--u))}
+#p05-1 .tp__t--l3{left:calc(125*var(--u));top:calc(663.9*var(--u));letter-spacing:calc(3.32*var(--u))}
+#p05-1 .tp__t--r1{left:calc(819*var(--u));top:calc(559.4*var(--u));letter-spacing:calc(2.7*var(--u))}
+#p05-1 .tp__t--r2{left:calc(819*var(--u));top:calc(630.4*var(--u));letter-spacing:calc(3.05*var(--u))}
+
+#p05-1 .tp__band{
+  position:absolute;left:calc(105*var(--u));top:calc(722*var(--u));
+  width:calc(1325*var(--u));height:calc(105*var(--u));background:var(--sand-board);
+}
+#p05-1 .tp__note{
+  position:absolute;margin:0;left:calc(179*var(--u));top:calc(736.9*var(--u));white-space:nowrap;
+  font-size:calc(20*var(--u));line-height:calc(35*var(--u));
+  letter-spacing:calc(4.28*var(--u));color:var(--charcoal);font-weight:400;
+}

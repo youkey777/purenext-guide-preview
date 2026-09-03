@@ -1,0 +1,30 @@
+@charset "utf-8";
+/* 08-1_水はねしにくい出水口 — 左：本体の線画（図版ブロックごと切り出し）／右：見出しと2つの段落 */
+
+#p08-1 .sp__fig{
+  position:absolute;left:calc(137*var(--u));top:calc(277*var(--u));
+  width:calc(581*var(--u));height:calc(560*var(--u));
+}
+
+#p08-1 .sp__h{
+  position:absolute;margin:0;white-space:nowrap;color:var(--charcoal);font-weight:400;
+  left:calc(841.6*var(--u));top:calc(377.9*var(--u));
+  font-size:calc(41*var(--u));letter-spacing:calc(-1.07*var(--u));line-height:1;
+}
+#p08-1 .sp__p{
+  position:absolute;margin:0;white-space:nowrap;color:var(--charcoal);font-weight:400;
+  font-size:calc(25*var(--u));
+}
+#p08-1 .sp__p--1{
+  left:calc(842.4*var(--u));top:calc(473.5*var(--u));
+  line-height:calc(43*var(--u));
+}
+#p08-1 .sp__p--2{
+  left:calc(841.1*var(--u));top:calc(590.0*var(--u));
+  line-height:calc(44.5*var(--u));
+}
+#p08-1 .sp__l1{letter-spacing:calc(-1.53*var(--u))}
+#p08-1 .sp__l2{letter-spacing:calc(-0.93*var(--u))}
+#p08-1 .sp__l3{letter-spacing:calc(-0.67*var(--u))}
+#p08-1 .sp__l4{letter-spacing:calc(-0.96*var(--u))}
+#p08-1 .sp__l5{letter-spacing:calc(-0.13*var(--u))}

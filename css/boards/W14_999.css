@@ -1,0 +1,46 @@
+@charset "utf-8";
+/* 07-4_UV殺菌_99.9パーセント — 左：文とキーライン／右：純白カードの中に大数字。図解は無い
+   大数字の金茶はこのボードの実測値 #A54E1B（トークンの --bronze #9D7B5C より濃く彩度が高い） */
+#p07-4{--big:#A54E1B}
+
+#p07-4 .nn__intro{
+  position:absolute;margin:0;white-space:nowrap;color:var(--charcoal);font-weight:400;
+  left:calc(167.3*var(--u));top:calc(324.2*var(--u));
+  font-size:calc(25*var(--u));line-height:calc(50*var(--u));
+}
+#p07-4 .nn__i1{letter-spacing:calc(-0.08*var(--u))}
+#p07-4 .nn__i2{letter-spacing:calc(-1.93*var(--u))}
+
+#p07-4 .nn__rule{
+  position:absolute;left:calc(112*var(--u));top:calc(493*var(--u));
+  width:calc(653*var(--u));height:calc(1*var(--u));background:var(--gray);opacity:.30;
+}
+
+#p07-4 .nn__means{
+  position:absolute;margin:0;white-space:nowrap;color:var(--charcoal);font-weight:400;
+  left:calc(111.8*var(--u));top:calc(542.0*var(--u));
+  font-size:calc(25*var(--u));letter-spacing:calc(-1.40*var(--u));line-height:1;
+}
+#p07-4 .nn__proof{
+  position:absolute;margin:0;white-space:nowrap;color:var(--charcoal);font-weight:500;
+  left:calc(113.0*var(--u));top:calc(626.8*var(--u));
+  font-size:calc(36*var(--u));letter-spacing:calc(-0.60*var(--u));line-height:1;
+}
+
+/* 右カラムの純白カード（細い罫線で囲む。中は大数字とキャプションだけ） */
+#p07-4 .nn__card{
+  position:absolute;left:calc(839*var(--u));top:calc(266*var(--u));
+  width:calc(583*var(--u));height:calc(478*var(--u));
+  background:var(--white);border:calc(1*var(--u)) solid var(--rule);
+}
+#p07-4 .nn__big{
+  position:absolute;margin:0;display:flex;align-items:baseline;white-space:nowrap;
+  left:calc(961.6*var(--u));top:calc(383.6*var(--u));line-height:1;color:var(--big);
+}
+#p07-4 .nn__num{font-size:calc(159*var(--u));letter-spacing:calc(2.08*var(--u));font-weight:300}
+#p07-4 .nn__pct{font-size:calc(88*var(--u));letter-spacing:0;font-weight:300;margin-left:calc(-0.32*var(--u))}
+#p07-4 .nn__cap{
+  position:absolute;margin:0;white-space:nowrap;color:var(--charcoal);font-weight:500;
+  left:calc(894.4*var(--u));top:calc(578.0*var(--u));
+  font-size:calc(22*var(--u));letter-spacing:calc(-0.51*var(--u));line-height:1;
+}

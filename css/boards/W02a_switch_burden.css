@@ -1,0 +1,40 @@
+@charset "utf-8";
+/* 01-3_市場_宅配水型の負担 — ブロック見出し ＋ 横3列（線画カード → 番号 → 見出し → 説明） */
+
+#p01-3 .bd__h2{
+  position:absolute;left:calc(63.4*var(--u));top:calc(290.8*var(--u));
+  font-size:calc(40*var(--u));line-height:1;letter-spacing:calc(-0.74*var(--u));
+  color:var(--charcoal);font-weight:400;white-space:nowrap;
+}
+
+#p01-3 .bd__illus{position:absolute;top:calc(362*var(--u))}
+#p01-3 .bd__col--1 .bd__illus{left:calc(61*var(--u));width:calc(448*var(--u));height:calc(320*var(--u))}
+#p01-3 .bd__col--2 .bd__illus{left:calc(545*var(--u));width:calc(446*var(--u));height:calc(320*var(--u))}
+#p01-3 .bd__col--3 .bd__illus{left:calc(1037*var(--u));width:calc(436*var(--u));height:calc(320*var(--u))}
+
+#p01-3 .bd__num{
+  position:absolute;top:calc(694.6*var(--u));
+  font-size:calc(73.5*var(--u));line-height:1;
+  color:var(--bronze);font-weight:400;
+}
+#p01-3 .bd__col--1 .bd__num{left:calc(62.3*var(--u));letter-spacing:calc(0.55*var(--u))}
+#p01-3 .bd__col--2 .bd__num{left:calc(549.3*var(--u));letter-spacing:calc(-4.21*var(--u))}
+#p01-3 .bd__col--3 .bd__num{left:calc(1036.3*var(--u));letter-spacing:calc(-5.68*var(--u))}
+
+#p01-3 .bd__head{
+  position:absolute;top:calc(720.6*var(--u));
+  font-size:calc(29.5*var(--u));line-height:1;
+  color:var(--charcoal);font-weight:400;
+}
+#p01-3 .bd__col--1 .bd__head{left:calc(172.5*var(--u));letter-spacing:calc(-0.19*var(--u))}
+#p01-3 .bd__col--2 .bd__head{left:calc(651.4*var(--u));letter-spacing:calc(-0.53*var(--u))}
+#p01-3 .bd__col--3 .bd__head{left:calc(1142.1*var(--u));letter-spacing:calc(-0.58*var(--u))}
+
+#p01-3 .bd__desc{
+  position:absolute;
+  font-size:calc(20.5*var(--u));letter-spacing:calc(-1*var(--u));
+  color:var(--charcoal);font-weight:400;
+}
+#p01-3 .bd__col--1 .bd__desc{left:calc(172*var(--u));top:calc(776*var(--u));width:calc(360*var(--u));line-height:calc(39*var(--u));letter-spacing:calc(-1.25*var(--u))}
+#p01-3 .bd__col--2 .bd__desc{left:calc(651.5*var(--u));top:calc(775.5*var(--u));width:calc(330*var(--u));line-height:calc(38*var(--u));letter-spacing:calc(-0.57*var(--u))}
+#p01-3 .bd__col--3 .bd__desc{left:calc(1142*var(--u));top:calc(775.3*var(--u));width:calc(350*var(--u));line-height:calc(40.3*var(--u));letter-spacing:calc(-1.2*var(--u))}

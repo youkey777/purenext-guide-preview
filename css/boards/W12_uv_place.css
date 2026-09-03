@@ -1,0 +1,61 @@
+@charset "utf-8";
+/* 07-1_UV殺菌_UVの場所 — 左：3つの節（罫線で区切る）／右：UVの位置を示す図版ブロック
+   図版は「図の中にラベルが描かれている」ため、図版ブロックごと切り出す（統括承認済み） */
+
+#p07-1 .uv__h{
+  position:absolute;margin:0;white-space:nowrap;
+  color:var(--charcoal);font-weight:400;
+}
+#p07-1 .uv__p{
+  position:absolute;margin:0;white-space:nowrap;
+  color:var(--charcoal);font-weight:400;
+}
+
+#p07-1 .uv__h--1{
+  left:calc(145.9*var(--u));top:calc(240.6*var(--u));
+  font-size:calc(33*var(--u));letter-spacing:calc(0.62*var(--u));line-height:calc(43.75*var(--u));
+}
+#p07-1 .uv__p--1{
+  left:calc(146.4*var(--u));top:calc(334.5*var(--u));
+  font-size:calc(19*var(--u));letter-spacing:calc(0.49*var(--u));line-height:calc(30.12*var(--u));
+}
+#p07-1 .uv__h--2{
+  left:calc(145.2*var(--u));top:calc(432.5*var(--u));
+  font-size:calc(32*var(--u));letter-spacing:calc(-0.25*var(--u));line-height:calc(41.13*var(--u));
+}
+#p07-1 .uv__p--2{
+  left:calc(146.8*var(--u));top:calc(518.7*var(--u));
+  font-size:calc(18*var(--u));letter-spacing:calc(1.53*var(--u));line-height:calc(29.13*var(--u));
+}
+#p07-1 .uv__h--3{
+  left:calc(167.4*var(--u));top:calc(615.7*var(--u));
+  font-size:calc(32*var(--u));letter-spacing:calc(0.16*var(--u));line-height:calc(38.63*var(--u));
+}
+#p07-1 .uv__p--3{
+  left:calc(147.1*var(--u));top:calc(697.7*var(--u));
+  font-size:calc(18*var(--u));letter-spacing:calc(0.07*var(--u));line-height:calc(27.13*var(--u));
+}
+#p07-1 .uv__p--4{
+  left:calc(146.9*var(--u));top:calc(767.0*var(--u));
+  font-size:calc(19*var(--u));letter-spacing:calc(0.23*var(--u));line-height:calc(27.25*var(--u));
+}
+
+/* 節を分ける細い横罫線 */
+#p07-1 .uv__rule{
+  position:absolute;left:calc(139*var(--u));
+  width:calc(471*var(--u));height:calc(1*var(--u));background:var(--rule);
+}
+#p07-1 .uv__rule--1{top:calc(413*var(--u))}
+#p07-1 .uv__rule--2{top:calc(597*var(--u))}
+
+/* 3つ目の節の見出しの左に立てるブロンズの縦棒 */
+#p07-1 .uv__bar{
+  position:absolute;left:calc(139*var(--u));top:calc(617*var(--u));
+  width:calc(10*var(--u));height:calc(75*var(--u));background:var(--bronze);
+}
+
+/* 図版ブロック（枠・タンク・配管・UVユニット・光・水滴・図中ラベル） */
+#p07-1 .uv__fig{
+  position:absolute;left:calc(710*var(--u));top:calc(231*var(--u));
+  width:calc(674*var(--u));height:calc(615*var(--u));
+}

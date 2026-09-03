@@ -1,0 +1,42 @@
+@charset "utf-8";
+/* 03_3つの強み — 左：本体の線画／右：特大数字＋小ラベル＋見出し＋説明を横罫線で3段 */
+
+#p03 .st__body{
+  position:absolute;left:calc(244*var(--u));top:calc(268*var(--u));
+  width:calc(207*var(--u));height:calc(588*var(--u));
+}
+
+#p03 .st__rule{position:absolute;left:calc(541*var(--u));width:calc(851*var(--u));height:calc(1.5*var(--u));background:var(--rule)}
+#p03 .st__rule--1{top:calc(451.5*var(--u))}
+#p03 .st__rule--2{top:calc(632.5*var(--u))}
+
+#p03 .st__num{
+  position:absolute;line-height:1;color:var(--charcoal);font-weight:300;white-space:nowrap;
+}
+#p03 .st__row--1 .st__num{left:calc(617.7*var(--u));top:calc(277.4*var(--u));font-size:calc(111.5*var(--u))}
+#p03 .st__row--2 .st__num{left:calc(591*var(--u));top:calc(467.7*var(--u));font-size:calc(97*var(--u));letter-spacing:calc(18.4*var(--u))}
+#p03 .st__row--3 .st__num{left:calc(591.5*var(--u));top:calc(650.4*var(--u));font-size:calc(84.5*var(--u));letter-spacing:calc(17.33*var(--u))}
+#p03 .st__u{font-size:calc(50.5*var(--u));letter-spacing:calc(12.58*var(--u));margin-left:calc(-13*var(--u))}
+#p03 .st__u2{font-size:calc(57*var(--u));letter-spacing:calc(8.94*var(--u));margin-left:calc(-18*var(--u))}
+#p03 .st__u3{font-size:calc(45.5*var(--u));letter-spacing:0;margin-left:calc(-6*var(--u))}
+
+#p03 .st__lab{
+  position:absolute;line-height:1;color:var(--bronze);font-weight:400;white-space:nowrap;
+}
+#p03 .st__row--1 .st__lab{left:calc(596.7*var(--u));top:calc(391.7*var(--u));font-size:calc(25.5*var(--u));letter-spacing:calc(4.61*var(--u))}
+#p03 .st__row--2 .st__lab{left:calc(603.1*var(--u));top:calc(572.9*var(--u));font-size:calc(23*var(--u));letter-spacing:calc(3.21*var(--u))}
+#p03 .st__row--3 .st__lab{left:calc(620.1*var(--u));top:calc(739.9*var(--u));font-size:calc(23*var(--u));letter-spacing:calc(3.28*var(--u))}
+
+#p03 .st__head{
+  position:absolute;line-height:1;color:var(--charcoal);font-weight:400;width:calc(600*var(--u));
+}
+#p03 .st__row--1 .st__head{left:calc(869.6*var(--u));top:calc(330.5*var(--u));font-size:calc(27.5*var(--u));letter-spacing:calc(4.15*var(--u))}
+#p03 .st__row--2 .st__head{left:calc(870.7*var(--u));top:calc(507.6*var(--u));font-size:calc(27*var(--u));letter-spacing:calc(7.12*var(--u))}
+#p03 .st__row--3 .st__head{left:calc(869.1*var(--u));top:calc(682.6*var(--u));font-size:calc(26.5*var(--u));letter-spacing:calc(6.26*var(--u))}
+
+#p03 .st__desc{
+  position:absolute;line-height:1;color:var(--charcoal);font-weight:400;width:calc(560*var(--u));
+}
+#p03 .st__row--1 .st__desc{left:calc(870.3*var(--u));top:calc(380.3*var(--u));font-size:calc(18.5*var(--u));letter-spacing:calc(3.04*var(--u))}
+#p03 .st__row--2 .st__desc{left:calc(870.8*var(--u));top:calc(555.7*var(--u));font-size:calc(18*var(--u));letter-spacing:calc(3.61*var(--u))}
+#p03 .st__row--3 .st__desc{left:calc(869.1*var(--u));top:calc(731.4*var(--u));font-size:calc(17.5*var(--u));letter-spacing:calc(1.58*var(--u))}

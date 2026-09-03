@@ -1,0 +1,37 @@
+@charset "utf-8";
+/* 08-2_外れる受け皿 — 3列。各列は本体イラスト（切り出し）＋番号（ブロンズ）＋見出し＋説明 */
+
+#p08-2 .tr__fig{position:absolute;top:calc(276*var(--u));height:calc(403*var(--u))}
+#p08-2 .tr__fig--1{left:calc(234*var(--u));width:calc(130*var(--u))}
+#p08-2 .tr__fig--2{left:calc(683*var(--u));width:calc(128*var(--u))}
+#p08-2 .tr__fig--3{left:calc(1158*var(--u));width:calc(131*var(--u))}
+
+#p08-2 .tr__no{
+  position:absolute;margin:0;white-space:nowrap;color:var(--bronze);font-weight:300;line-height:1;
+}
+#p08-2 .tr__no--1{left:calc(141.9*var(--u));top:calc(710.8*var(--u));font-size:calc(50*var(--u));letter-spacing:calc(9.75*var(--u))}
+#p08-2 .tr__no--2{left:calc(583.9*var(--u));top:calc(710.6*var(--u));font-size:calc(51*var(--u));letter-spacing:calc(3.88*var(--u))}
+#p08-2 .tr__no--3{left:calc(1060.8*var(--u));top:calc(709.5*var(--u));font-size:calc(52*var(--u));letter-spacing:calc(1.00*var(--u))}
+
+#p08-2 .tr__h{
+  position:absolute;margin:0;white-space:nowrap;color:var(--charcoal);font-weight:400;
+}
+#p08-2 .tr__h--1{
+  left:calc(218.0*var(--u));top:calc(723.7*var(--u));
+  font-size:calc(19*var(--u));letter-spacing:calc(-1.83*var(--u));line-height:calc(31.88*var(--u));
+}
+#p08-2 .tr__h--2{
+  left:calc(660.9*var(--u));top:calc(724.7*var(--u));
+  font-size:calc(19*var(--u));letter-spacing:calc(-1.30*var(--u));line-height:calc(29.88*var(--u));
+}
+#p08-2 .tr__h--3{
+  left:calc(1136.5*var(--u));top:calc(731.0*var(--u));
+  font-size:calc(20*var(--u));letter-spacing:calc(-2.38*var(--u));line-height:1;
+}
+
+#p08-2 .tr__p{
+  position:absolute;margin:0;white-space:nowrap;color:var(--charcoal);font-weight:400;
+  font-size:calc(16*var(--u));
+}
+#p08-2 .tr__p--2{left:calc(661.1*var(--u));top:calc(797.0*var(--u));letter-spacing:calc(-0.90*var(--u));line-height:calc(27*var(--u))}
+#p08-2 .tr__p--3{left:calc(1137.6*var(--u));top:calc(782.3*var(--u));letter-spacing:calc(-0.95*var(--u));line-height:calc(26.75*var(--u))}
