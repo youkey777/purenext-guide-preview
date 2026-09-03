@@ -222,7 +222,7 @@ a{color:inherit;text-decoration:none}
 @media (max-width:900px){
   /* R6: 表紙（キービジュアル・タイトル・型番・目次）は出さない。01 から始める */
   /* v2.3.1: 表紙は出す。押して飛べる目次だけ出さない（2026-09-03 早川さん指示） */
-  .cover .toc{display:none}
+  #p00 .toc,.cover .toc{display:none !important}
   .page{max-width:none}
   .page>*{--u:0.66px}
   /* はみ出しの元を実際に潰す（overflow:hidden で隠さない） */
