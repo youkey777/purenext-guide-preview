@@ -9,7 +9,9 @@
 .uv__nh .num{font-size:calc(30*var(--u))}
 
 /* ---------- 1 ← W12 タンクの水と、気をつけたい出水口 ---------- */
-.uv__place{align-items:center}
+/* 01〜03 は図なしの1列。行長が伸びすぎないよう本文幅の 2/3 に収め、サンドの面に載せて「流れ」を一塊に見せる */
+.uv__place{background:var(--sand);padding:calc(var(--pad-y)*var(--u)) calc(var(--pad-x)*var(--u))}
+.uv__steps{max-width:calc(960*var(--u))}
 /* R2: 独自の縦罫は引かない。01→02→03 は番号と余白だけでつなぐ */
 .uv__steps{list-style:none;padding:0;margin:0}
 .uv__step+.uv__step{padding-top:calc(var(--sp-el)*var(--u))}
@@ -48,8 +50,8 @@
 
 /* ---------- 4 ← W14 99.9%の殺菌 ---------- */
 /* 05 の見出しの真下から本文が始まるよう、左列は上そろえ（中央そろえだと見出しと離れる） */
-.uv__proof{align-items:start}
-.uv__ptxt>.p+.h3{margin-top:calc(var(--sp-h3top)*var(--u))}
+.uv__proof{align-items:center}
+.uv__ptxt>.h3+*{margin-top:calc(var(--sp-h3)*var(--u))}
 .uv__card{border:calc(1*var(--u)) solid var(--rule-soft);text-align:center}
 .uv__card>*+*{margin-top:calc(var(--sp-in)*var(--u))}
 .uv__99{display:inline-flex;align-items:baseline;color:var(--bronze);
@@ -68,7 +70,8 @@
   .uv__bandnum>.note{margin-bottom:8px}
   .uv__bignum{font-size:56px;letter-spacing:2px}
   .uv__bigunit{font-size:28px}
-  .uv__ptxt>.p+.h3{margin-top:48px}
+  .uv__ptxt>.h3+*{margin-top:12px}
+  .uv__place{padding:24px 20px}
   .uv__card>*+*{margin-top:12px}
 }
 
