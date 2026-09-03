@@ -20,7 +20,7 @@
 /* ---------- 白湯（W09）：左に本文・右にマグの図（元寸 238 幅のまま） ---------- */
 .md__sy{align-items:start}
 .md__imgbox--sy{padding:calc(var(--sp-in-lg)*var(--u))}
-.md__mug{width:calc(160*var(--u));height:auto}   /* 元 238×269。挿絵は本文の脇役（R5） */
+.md__mug{width:calc(88*var(--u));height:auto}   /* 元 238×269。温水/冷水の面（160×120）と同じ大きさに収める */
 
 /* 定量取水との掛け合わせ：サンドの面の中に本文2文＋右に液晶（幅 320） */
 .md__sayu{display:grid;grid-template-columns:1fr 1fr;
@@ -113,7 +113,7 @@
 
   /* --- 白湯：マグは 140px・面は絵に合わせて縮める --- */
   .md__imgbox--sy{padding:16px;width:fit-content;justify-self:start}
-  .md__mug{width:90px}
+  .md__mug{width:70px}
   .md__sayu{grid-template-columns:1fr;row-gap:24px}
   .md__lcd--lg{width:240px}
   .md__ml{font-size:52px;letter-spacing:0}
@@ -170,3 +170,8 @@
 .mm__chip rect{fill:var(--sand);stroke:var(--bronze);stroke-width:1.2}
 .mm__val text{fill:var(--charcoal);font-family:var(--jp-thin);font-weight:300}
 .mm__cap text{fill:var(--gray);font-family:var(--jp)}
+
+/* 白湯の面は温水/冷水と同じ 160×120。面→見出し 16・見出し→本文 12（他の2つと同じテンポ） */
+.md__imgbox--sy{padding:0}
+.blk__body>.md__imgbox--sy+.h3{margin-top:calc(var(--sp-in)*var(--u))}
+.blk__body>.h3+.stack{margin-top:calc(var(--sp-h3)*var(--u))}

@@ -33,3 +33,13 @@
   .cd__photo{width:220px}
   .cd__cap{margin-top:12px}
 }
+
+/* v2.3.4: PC は画像を左・「インテリアになじむ白」を右（縦長画像1枚が中央に居座らないように）。スマホは1列（base） */
+.cd__two{align-items:center}
+.cd__two .cd__fig{margin-left:0;text-align:left}
+.cd__two .cd__fig .cd__photo{margin-left:0}
+.cd__txt>.h4+*{margin-top:calc(var(--sp-h4)*var(--u))}
+@media (max-width:900px){
+  .cd__two .cd__fig{text-align:center}
+  .cd__two .cd__fig .cd__photo{margin-left:auto}
+}
