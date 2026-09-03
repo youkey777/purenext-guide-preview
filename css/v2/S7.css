@@ -2,8 +2,11 @@
 /* ===== S7 製品仕様 =====
    文字サイズは型7段（.h2 / .p / .note / .sum / .big）だけ。3節は中見出し（.h2）の article.blk。
    ここで決めているのは表の列幅・図版の幅・寸法線の引き方だけで、
-   余白はすべて --sp-* トークン（64 / 32 / 24）。色は v1 の実測色ではなくトークンに統一
-   （寸法線と引き出し線＝--mist／月額＝--bronze／罫線＝--rule）。 */
+   余白はすべて --sp-* / --pad-* トークン。色は v1 の実測色ではなくトークンに統一
+   （寸法線＝--mist／月額＝--bronze）。
+   v2.3: 表の行罫は --rule-soft（区切り罫の --rule-strong と見分けがつく太さ・色）。
+   タンク図は tankfig_v3.png（配管を1本足し、UV殺菌LEDを合流部の短いバーにした版）で、
+   図の周りのラベル8本は表に書いてあるので全部やめた。 */
 
 /* ---------- 表（3つとも同じ見た目にそろえる） ---------- */
 .sp__tbl,.tk__tbl,.a3__tbl{width:100%;border-collapse:collapse;table-layout:fixed}
@@ -12,11 +15,11 @@
 .a3__tbl th,.a3__tbl td{
   text-align:left;vertical-align:top;
   padding-top:calc(var(--sp-in-lg)*var(--u));padding-bottom:calc(var(--sp-in-lg)*var(--u));
-  border-bottom:calc(1*var(--u)) solid var(--rule)}
+  border-bottom:calc(1*var(--u)) solid var(--rule-soft)}
 .sp__tbl tr:first-child th,.sp__tbl tr:first-child td,
 .tk__tbl tr:first-child th,.tk__tbl tr:first-child td,
 .a3__tbl tr:first-child th,.a3__tbl tr:first-child td{
-  border-top:calc(1*var(--u)) solid var(--rule)}
+  border-top:calc(1*var(--u)) solid var(--rule-soft)}
 .sp__tbl th,.tk__tbl th,.a3__tbl th{font-weight:500}
 .sp__tbl td,.tk__tbl td,.a3__tbl td{padding-left:calc(var(--sp-in)*var(--u))}
 
@@ -60,29 +63,16 @@
   column-gap:calc(var(--gut2)*var(--u));row-gap:calc(var(--sp-el)*var(--u))}
 .tk__left>*+*{margin-top:calc(var(--sp-el)*var(--u))}
 
-/* 系統図（Image 2.0 で生成した文字なしの図）＋ HTML のラベル。
-   位置は図の座標に対する％なので、幅が変わってもラベルは追従する。
-   図の本体（筐体）は x 25.3%〜74.6% にあるので、左右の余白にラベルを置く。 */
-.tk__figbox{position:relative;align-self:start}
-.tk__fig{width:100%;height:auto;display:block}
-.tk__lb{position:absolute;transform:translateY(-50%);line-height:1.45;
-  color:var(--charcoal)}
-.tk__lb--l{right:75.5%;max-width:24%;text-align:right}
-.tk__lb--r{left:75.5%;max-width:24%}
-.tk__lb--wide{left:67%;max-width:32%}
-.tk__lb--uv1{top:7.5%}
-.tk__lb--sub{top:20%}
-.tk__lb--sup{top:19%}
-.tk__lb--hot{top:43%}
-.tk__lb--cold{top:43%}
-.tk__lb--uv2{top:61.5%}
-.tk__lb--out{top:67%}
-.tk__lb--flt{top:82%}
+/* 系統図（tankfig_v3.png・文字なし）。ラベルは表に書いてあるので図の周りには置かない。
+   R5: 元画像 1163px より大きく表示しない（右列は最大 777px なので上限内） */
+.tk__figbox{align-self:start}
+.tk__fig{width:100%;max-width:calc(1163*var(--u));height:auto;display:block;
+  margin-left:auto;margin-right:auto}
 
 /* ---------- 設置スペース（W18c の重ね図） ---------- */
 .a3__svg{width:calc(700*var(--u));height:auto;margin-left:auto;margin-right:auto;display:block}
-.a3__box{fill:none;stroke:var(--rule);stroke-width:1.4}
-.a3__paper{fill:var(--sand);stroke:var(--rule);stroke-width:1.6}
+.a3__box{fill:none;stroke:var(--rule-soft);stroke-width:1.4}
+.a3__paper{fill:var(--sand);stroke:var(--rule-soft);stroke-width:1.6}
 .a3__base{fill:var(--white);stroke:var(--bronze);stroke-width:2.2}
 .a3__dim line{stroke:var(--mist);stroke-width:2}
 .a3__dim polygon,.a3__dim circle{fill:var(--mist);stroke:none}
@@ -104,18 +94,13 @@
   .sd__view + .sd__view{margin-left:16px}
   .sd__h{column-gap:8px}
 
+  /* UV の一文: 縦棒が flex-wrap で落ちるので、段落の左罫に置き換える */
+  .tk__uv{display:block;border-left:3px solid var(--bronze);padding-left:12px}
+  .tk__bar{display:none}
+
   /* 各タンクの容量: 1列（表 → 図） */
   .tk__grid{grid-template-columns:1fr;column-gap:0;row-gap:32px}
   .tk__left>*+*{margin-top:24px}
 
   .a3__svg{width:100%}
-}
-/* 幅が狭すぎてラベルを図の左右に置けないときは、図の下に並べる */
-@media (max-width:600px){
-  .tk__lb{position:static;transform:none;max-width:none;text-align:left;
-    margin-top:8px}
-  .tk__lb::before{content:"";display:inline-block;
-    width:8px;height:8px;border-radius:50%;background:var(--bronze);
-    margin-right:8px;vertical-align:middle}
-  .tk__lb--wide{left:auto}
 }

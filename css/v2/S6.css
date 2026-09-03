@@ -1,10 +1,9 @@
 @charset "utf-8";
-/* ===== S6 ご利用いただく上での注意ポイント =====
-   4項目を 2×2。カードの面は作らず、各セルの上に細い罫線だけ。
-   文字サイズは型7段（.h3 / .p / .note）、余白は --sp-* トークンだけ。 */
+/* ===== S6 ご利用いただく上での注意ポイント（v2.3）=====
+   4項目を 2×2。各セルは純白の面（.panel--white）に載せ、番号 01〜04（.num）を小見出しに付ける。
+   v2.2 まであった 3px の上罫は R2 により削除（全幅の区切り罫は base の .blk__head だけ）。
+   文字サイズは型（.h3 / .p）、余白は --sp-* / --pad-* トークンだけ。 */
 
-.nt__cell{border-top:calc(3*var(--u)) solid var(--rule);
-  padding-top:calc(var(--sp-in-lg)*var(--u))}
 .nt__cell>*+*{margin-top:calc(var(--sp-in)*var(--u))}
 .nt__cell>.h3+*{margin-top:calc(var(--sp-h3)*var(--u))}
 
@@ -13,7 +12,6 @@
 
 /* ===== スマホ・タブレット ===== */
 @media (max-width:900px){
-  .nt__cell{border-top-width:2px;padding-top:20px}
   .nt__cell>*+*{margin-top:12px}
-  .nt__grid{row-gap:40px}
+  .nt__grid{row-gap:24px}
 }

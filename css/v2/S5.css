@@ -1,25 +1,17 @@
 @charset "utf-8";
-/* ===== S5 カラー =====
-   文字サイズは base_v2.css の型7段だけ。ここで決めているのは
-   「切り出し画像の幅」「色チップの大きさ」「面の中の並べ方」だけ。
-   余白はすべて --sp-* トークン（64 / 32 / 24）。 */
+/* ===== S5 カラー（v2.3） =====
+   ここで決めているのは「切り出し画像の幅」と「面の中の並べ方」だけ。
+   文字サイズは base_v2.css の型、余白は --sp-* トークンのみ。
+   R2 に従い、この章に独自の罫線は無い（旧 .cd__hr / .cl__chip / .cd__swatch は削除）。 */
 
 /* ---------- 導入：2色のカード（W16） ---------- */
 .cl__card{display:flex;flex-direction:column;text-align:center}
-/* 説明文の行数が違っても、2枚の色チップの高さがそろうようにする */
-.cl__card>.p:last-of-type{margin-bottom:auto}
-.cl__card>*+*{margin-top:calc(var(--sp-in)*var(--u))}
-.cl__card>.cl__unit+*{margin-top:calc(var(--sp-in-lg)*var(--u))}
-.cl__card>.cl__chip{margin-top:calc(var(--sp-in-lg)*var(--u))}
+/* 本体写真 → 色名 は 48、色名 → 本文は 12（R1: ラベルは対象と同じ枠の中・下へ寄せる） */
+.cl__card>*+*{margin-top:calc(var(--sp-h4)*var(--u))}
+.cl__card>.cl__unit+*{margin-top:calc(var(--sp-h4top)*var(--u))}
 
+/* 元画像 175×440 の実寸まで（R5: 拡大しない） */
 .cl__unit{width:calc(175*var(--u));height:auto;margin-left:auto;margin-right:auto}
-
-.cl__chip{width:calc(156*var(--u));height:calc(51*var(--u));
-  margin-left:auto;margin-right:auto}
-/* マットホワイトの色見本も同じクラウドダンサーの色（純白ではない） */
-.cl__chip--white{background:#F0EEE9;border:calc(1*var(--u)) solid var(--rule)}
-.cl__chip--black{background:var(--charcoal);border:calc(1*var(--u)) solid var(--rule);
-  border-color:color-mix(in srgb, var(--rule) 40%, transparent)}
 
 /* マットブラックのカードだけ面を反転（色はトークンのまま）。
    base の「偶数章の .panel--sand は sand-alt」より強くするため id で指定する */
@@ -27,29 +19,17 @@
 .cl__card--dark .h3,
 .cl__card--dark .p{color:var(--white)}
 
-/* ---------- 中見出し：クラウドダンサー（W16b） ---------- */
-.cd__left{align-self:center;text-align:center}
+/* ---------- 中見出し：史上初の賞を取った白（W16b） ---------- */
+/* 画像は1列・全幅の中で中央。元画像 301×529 の実寸まで（R5） */
+.cd__fig{text-align:center}
 .cd__photo{width:calc(301*var(--u));height:auto;margin-left:auto;margin-right:auto}
 .cd__cap{margin-top:calc(var(--sp-in)*var(--u))}
-
-.cd__right>*+*{margin-top:calc(var(--sp-in)*var(--u))}
-.cd__right>.cd__hr,
-.cd__right>.cd__hr+*,
-.cd__right>.cd__swatch{margin-top:calc(var(--sp-el)*var(--u))}
-
-.cd__hr{width:100%;height:calc(1*var(--u));background:var(--rule)}
-
-.cd__swatch{display:flex;align-items:center;column-gap:calc(var(--sp-in)*var(--u))}
-/* クラウドダンサーの色見本。純白ではなく実際の色（見本の実測値 #F0EEE9）＋罫線 */
-.cd__chip{flex:none;width:calc(106*var(--u));height:calc(93*var(--u));
-  background:#F0EEE9;border:calc(1*var(--u)) solid var(--rule)}
 
 /* ===== スマホ・タブレット（base のスマホモードと同じ 900px） ===== */
 @media (max-width:900px){
   .cl__unit{width:150px}
-  .cl__chip{width:120px;height:40px}
+  .cl__card>*+*{margin-top:8px}
+  .cl__card>.cl__unit+*{margin-top:32px}
   .cd__photo{width:220px}
-  .cd__chip{width:80px;height:70px}
-  .cd__right>*+*{margin-top:16px}
-  .cd__right>.cd__hr,.cd__right>.cd__hr+*,.cd__right>.cd__swatch{margin-top:32px}
+  .cd__cap{margin-top:12px}
 }

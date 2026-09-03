@@ -1,27 +1,28 @@
 @charset "utf-8";
-/* ===== S2 後半「豊富な出水モード」「メモリ機能」（v2-C 担当・v2.2） =====
+/* ===== S2 後半「豊富な出水モード」「メモリ機能」（v2-C 担当・v2.3） =====
    文字サイズは base_v2.css の型（.h2 .lead .h3 .h4 .p .note .src .big）だけを使う。
    ここで決めているのは「大数字（.big）の大きさ」と、図版・面・5ステップの並べ方だけ。
-   余白は base_v2.css の --sp-* トークンのみ。色もトークンのみ（ボード実測色は使わない）。 */
+   余白は base_v2.css の --sp-* トークンのみ。罫は --rule-soft のみ（区切り罫は base の .blk__head だけ）。
+   画像はすべて元画像の実寸以下で表示する（R5）。 */
 
-/* ---------- 共通：白い面に収めた線画 ---------- */
-.md__imgbox{background:var(--white);display:flex;align-items:center;justify-content:center;
-  padding:calc(var(--sp-in-lg)*var(--u))}
-/* 温水／冷水・常温水の面は、イラストの縦幅に合わせた正方形に近い比率で左寄せ（右は空ける） */
-.md__imgbox--sq{width:calc(240*var(--u));height:calc(216*var(--u))}
+/* ---------- 共通：白い面に収めた線画（.figbox = base の図の枠） ---------- */
+.md__imgbox{background:var(--white);display:flex;align-items:center;justify-content:center}
 
-/* ---------- 温水 / 冷水・常温水（W08） ---------- */
+/* ---------- 温水 / 冷水・常温水（W08） ----------
+   面（160×120）→ 小見出し → 本文 の順。面の上は要素間の 56（base の .blk__body>*+*）。 */
+.md__imgbox--sq{width:calc(160*var(--u));height:calc(120*var(--u));padding:0}
+.md__illus--mug{width:calc(100*var(--u));height:auto}      /* 元 132×147 */
+.md__illus--glasses{width:calc(130*var(--u));height:auto}  /* 元 214×117 */
 .md__col>*+*{margin-top:calc(var(--sp-in)*var(--u))}
-.md__col>*+.h3{margin-top:calc(var(--sp-in-lg)*var(--u))}
-.md__illus--mug{width:calc(132*var(--u));height:auto}
-.md__illus--glasses{width:calc(214*var(--u));height:auto}
+.md__col>.md__imgbox+.h3{margin-top:calc(var(--sp-in-lg)*var(--u))}
+.md__col>.h3+*{margin-top:calc(20*var(--u))}
 
-/* ---------- 白湯（W09）：左に本文・右上にマグの図 ---------- */
+/* ---------- 白湯（W09）：左に本文・右にマグの図（元寸 238 幅のまま） ---------- */
 .md__sy{align-items:start}
 .md__imgbox--sy{padding:calc(var(--sp-in-lg)*var(--u))}
-.md__mug{width:calc(313*var(--u));height:auto}
+.md__mug{width:calc(238*var(--u));height:auto}   /* 元 238×269 */
 
-/* 定量取水との掛け合わせ：サンドの面の中に本文2文＋右に液晶 */
+/* 定量取水との掛け合わせ：サンドの面の中に本文2文＋右に液晶（幅 320） */
 .md__sayu{display:grid;grid-template-columns:1fr 1fr;
   column-gap:calc(var(--gut2)*var(--u));align-items:center}
 
@@ -29,43 +30,49 @@
 .md__lcd{background:var(--white);border:calc(4*var(--u)) solid var(--mist);
   border-radius:calc(8*var(--u));
   display:flex;align-items:center;justify-content:center}
-/* 大きい液晶は v1 と同じ比率（496:196） */
-.md__lcd--lg{aspect-ratio:496/196}
-.md__ml{font-size:calc(113.6*var(--u));letter-spacing:calc(-1.75*var(--u))}
-.md__ml-unit{font-size:calc(65*var(--u));letter-spacing:0;margin-left:calc(8*var(--u))}
+/* 面の中の液晶は幅 320（右列いっぱいに広げない）。比率は v1 と同じ 496:196 */
+.md__lcd--lg{width:calc(320*var(--u));aspect-ratio:496/196;justify-self:start}
+.md__ml{font-size:calc(73*var(--u));letter-spacing:calc(-1*var(--u))}
+.md__ml-unit{font-size:calc(42*var(--u));letter-spacing:0;margin-left:calc(6*var(--u))}
 
-/* ---------- 40℃モードの5ステップ（W10a） ---------- */
-/* 絵は高さをそろえて底辺を合わせる（step5 も同じ高さ） */
+/* ---------- 40℃モードの5ステップ（W10a） ----------
+   絵は高さ 160 の枠に底辺そろえ。step5 だけ 118（元画像 120×146 を超えない）。
+   番号・ラベルは枠の下で 5 つ横一線。 */
 .md__flow{display:flex;align-items:flex-start;column-gap:calc(var(--sp-in-lg)*var(--u))}
 .md__step{flex:1 1 0;min-width:0;text-align:center}
 .md__step>*+*{margin-top:calc(var(--sp-in)*var(--u))}
-.md__vis{height:calc(200*var(--u));display:flex;
-  align-items:center;justify-content:center}
-.md__si{height:100%;width:auto}
+.md__step>.md__stepnum+.md__steplbl{margin-top:calc(12*var(--u))}
+.md__vis{height:calc(160*var(--u));display:flex;
+  align-items:flex-end;justify-content:center}
+.md__si{height:calc(160*var(--u));width:auto}
+.md__si--5{height:calc(118*var(--u))}
 
-/* ステップ1の小さい液晶（v1 と同じ 164×120。枠は共通の形） */
+/* ステップ1の小さい液晶（164×120。枠は共通の形） */
 .md__lcd--sm{width:calc(164*var(--u));height:calc(120*var(--u))}
 .md__ml2{font-size:calc(37*var(--u));letter-spacing:calc(-0.5*var(--u))}
 .md__ml2-unit{font-size:calc(29*var(--u));letter-spacing:0}
 
-/* 番号・矢印（矢印は絵の高さぶん下げて、番号の高さに合わせる）。番号は5つともブロンズ */
+/* 番号（5つともブロンズ）と、絵の枠の高さの中央にそろえた矢印 */
 .md__stepnum{font-size:calc(54*var(--u));color:var(--bronze)}
 .md__fa{flex:none;width:calc(58*var(--u));height:calc(14*var(--u));
-  color:var(--bronze);margin-top:calc(244*var(--u))}
+  color:var(--bronze);margin-top:calc(73*var(--u))}
 
-/* ---------- こんなときに便利（W10b の左3件） ---------- */
-.md__card>*+*{margin-top:calc(var(--sp-in-lg)*var(--u))}
-.md__ui{height:auto}
-.md__ui--soup{width:calc(247*var(--u))}
-.md__ui--tea{width:calc(251*var(--u))}
-.md__ui--powder{width:calc(296*var(--u))}
+/* ---------- こんなときに便利（W10b の左3件） ----------
+   [白い面 120×120 に元寸以下の絵][本文] の行組みを3段。 */
+.md__uses>*+*{margin-top:calc(var(--sp-in-lg)*var(--u))}
+.md__use{display:flex;align-items:center;column-gap:calc(var(--sp-in-lg)*var(--u))}
+.md__usebox{flex:none;width:calc(120*var(--u));height:calc(120*var(--u));
+  padding:calc(12*var(--u));
+  background:var(--white);display:flex;align-items:center;justify-content:center}
+/* 元画像は 115×87 / 117×86 / 138×93。どれも実寸以下に収める */
+.md__ui{width:auto;height:auto;max-width:calc(96*var(--u));max-height:calc(96*var(--u))}
 
 /* ---------- 出来上がりの量：積み上げバー（比率は実際の 16ml : 134ml） ---------- */
 .md__stackbar{display:flex;align-items:center;column-gap:calc(var(--sp-in-lg)*var(--u))}
 .md__bar{flex:1 1 auto;min-width:0;display:grid;grid-template-columns:16fr 134fr}
 .md__seg{display:flex;align-items:center;justify-content:center;min-width:0;
   padding:calc(var(--sp-in)*var(--u)) 0;min-height:calc(119*var(--u));text-align:center}
-.md__seg--a{background:var(--sand);border:calc(1.5*var(--u)) solid var(--rule)}
+.md__seg--a{background:var(--sand);border:calc(1*var(--u)) solid var(--rule-soft)}
 .md__seg--b{background:var(--mist)}
 .md__seg-w{color:var(--white)}
 .md__eqa{flex:none;width:calc(58*var(--u));height:calc(14*var(--u));color:var(--bronze)}
@@ -74,7 +81,7 @@
 .md__outimg{width:calc(96*var(--u));height:auto;margin-left:auto;margin-right:auto}
 
 /* ---------- 温度の誤差について（サンドの面の中の小見出し） ---------- */
-.md__err>.h4+*{margin-top:calc(var(--sp-h4)*var(--u))}
+.md__err>.h4+*{margin-top:calc(12*var(--u))}
 
 /* ---------- メモリ機能（W11）：本文を左・液晶2枚を右列いっぱいに縦積み ---------- */
 .md__ba{display:flex;flex-direction:column;align-items:stretch;
@@ -87,47 +94,52 @@
 .md__pnum{font-size:calc(96*var(--u))}
 .md__punit{font-size:calc(44*var(--u))}
 
-.md__memnotes{list-style:none;padding:0;
-  border-top:calc(1*var(--u)) solid var(--rule);
-  border-bottom:calc(1*var(--u)) solid var(--rule)}
+/* 行の区切りだけの薄い罫（R2: soft のみ・区切り罫は引かない） */
+.md__memnotes{list-style:none;padding:0}
 .md__memnotes>li{padding:calc(var(--sp-in)*var(--u)) 0}
-.md__memnotes>li+li{border-top:calc(1*var(--u)) solid var(--rule)}
+.md__memnotes>li+li{border-top:calc(1*var(--u)) solid var(--rule-soft)}
 
-/* ===== スマホ・タブレット（base_v2.css のスマホモードに合わせた実寸指定） =====
+/* ===== スマホ・タブレット（≤900px。base のスマホモードに合わせた実寸指定） =====
    base は 900px 以下で --u:0.66px・本文16px・.g2/.g3 を1列にする。
-   ここでは S2b 固有の横並び（5ステップ・積み上げバー・液晶）だけを縦に組み替える。 */
+   ここでは S2b 固有の横並びを、R5/R6 のとおり行組みに組み替える。 */
 @media (max-width:900px){
-  /* --- 温水／冷水・常温水の面 --- */
-  .md__imgbox{padding:16px}
-  .md__imgbox--sq{width:100%;height:auto;max-width:220px}
-  .md__illus--mug{width:110px}
-  .md__illus--glasses{width:170px}
+  /* --- 温水／冷水・常温水の面（挿絵は 96〜140px） --- */
+  .md__imgbox--sq{width:140px;height:105px;padding:0}
+  .md__illus--mug{width:88px}
+  .md__illus--glasses{width:115px}
   .md__col>*+*{margin-top:12px}
-  .md__col>*+.h3{margin-top:16px}
+  .md__col>.md__imgbox+.h3{margin-top:16px}
+  .md__col>.h3+*{margin-top:12px}
 
-  /* --- 白湯：マグと液晶は幅いっぱい・縦積み --- */
-  .md__mug{width:100%;max-width:220px}
+  /* --- 白湯：マグは 140px・面は絵に合わせて縮める --- */
+  .md__imgbox--sy{padding:16px;width:fit-content;justify-self:start}
+  .md__mug{width:140px}
   .md__sayu{grid-template-columns:1fr;row-gap:24px}
-  .md__ml{font-size:56px;letter-spacing:0}
-  .md__ml-unit{font-size:32px;margin-left:4px}
+  .md__lcd--lg{width:240px}
+  .md__ml{font-size:52px;letter-spacing:0}
+  .md__ml-unit{font-size:30px;margin-left:4px}
 
-  /* --- 40℃モードの5ステップ：3＋2 の2段に折る（矢印は縦組みでは意味が崩れるので出さない） --- */
-  .md__flow{display:grid;grid-template-columns:repeat(3,1fr);
-    column-gap:12px;row-gap:28px;align-items:end}
+  /* --- 40℃モードの5ステップ：縦1列の行組み [絵][番号][ラベル]・矢印は出さない --- */
+  .md__flow{display:grid;grid-template-columns:1fr;column-gap:0;row-gap:20px}
   .md__fa{display:none}
-  .md__step{min-width:0}
-  .md__step>*+*{margin-top:8px}
-  .md__vis{height:104px;align-items:flex-end}
-  /* base の .page img{height:auto} より詳細度を上げて、絵を枠の高さに収める（重なり防止） */
-  .md__vis .md__si{height:104px;width:auto;max-width:100%}
-  .md__vis .md__lcd--sm{width:100%;max-width:104px;height:76px}
-  .md__ml2{font-size:22px}
-  .md__ml2-unit{font-size:16px}
-  .md__stepnum{font-size:28px}
+  .md__step{display:flex;flex-wrap:nowrap;align-items:center;column-gap:16px;text-align:left}
+  .md__step>*+*{margin-top:0}
+  .md__step>.md__stepnum+.md__steplbl{margin-top:0}
+  .md__vis{flex:none;width:96px;height:96px;align-items:flex-end;justify-content:center}
+  /* base の .page img{height:auto} より詳細度を上げて、絵を枠の高さに収める */
+  .md__vis .md__si{height:96px;width:auto;max-width:100%}
+  .md__vis .md__si--5{height:70px}
+  .md__vis .md__lcd--sm{width:96px;height:70px}
+  .md__ml2{font-size:20px}
+  .md__ml2-unit{font-size:15px}
+  .md__stepnum{flex:none;width:28px;font-size:24px;text-align:center}
+  .md__steplbl{flex:1 1 auto;min-width:0}
 
-  /* --- こんなときに便利 --- */
-  .md__card>*+*{margin-top:16px}
-  .md__ui--soup,.md__ui--tea,.md__ui--powder{width:100%;max-width:200px}
+  /* --- こんなときに便利：[小さな絵 72px][本文] --- */
+  .md__uses>*+*{margin-top:20px}
+  .md__use{flex-wrap:nowrap;column-gap:16px}
+  .md__usebox{width:72px;height:72px;padding:8px}
+  .md__ui{max-width:56px;max-height:56px}
 
   /* --- 出来上がりの帯：幅100%で縦に積む（面が細くなり文字が入らないため） --- */
   .md__stackbar{flex-direction:column;align-items:stretch;row-gap:16px}

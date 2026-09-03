@@ -26,10 +26,12 @@
    （実測: 行の帯は y=10..349、行送り 31.9、10行目の下端 y=318、下余白は素材と同じ 6）*/
 .gr__houses{width:calc(397*var(--u));height:calc(324*var(--u));
   object-fit:cover;object-position:top}
-.gr__nums{display:flex;align-items:baseline;justify-content:center;
-  column-gap:calc(var(--sp-el)*var(--u))}
-.gr__rate{font-size:calc(79*var(--u))}
-.gr__units{font-size:calc(77*var(--u));letter-spacing:calc(2*var(--u))}
+/* R1: ラベル（.note）を数字の上に置いた枠付きの数値ブロック2つ。枠は base の .stat */
+.gr__nums{display:grid;grid-template-columns:1fr 1fr;
+  column-gap:calc(var(--sp-in-lg)*var(--u))}
+.gr__stat{display:flex;flex-direction:column;justify-content:flex-start}
+.gr__rate{font-size:calc(64*var(--u))}
+.gr__units{font-size:calc(64*var(--u));letter-spacing:calc(2*var(--u))}
 .gr__pct{font-family:var(--jp);font-weight:400;font-size:calc(38*var(--u));
   margin-left:calc(4*var(--u))}
 .gr__approx{font-family:var(--jp);font-weight:400;font-size:calc(29*var(--u));
@@ -41,7 +43,7 @@
   row-gap:calc(var(--sp-el)*var(--u))}
 
 /* 折れ線グラフ（v1 の SVG を流用。軸はトークンの --mist に統一） */
-.lg{width:100%;height:auto;overflow:visible}
+.lg{width:100%;height:auto;display:block;overflow:visible}
 .lg__frame,.lg__grid,.lg__axis,.lg__line{fill:none}
 .lg__frame{stroke:var(--rule)}
 .lg__grid{stroke:var(--rule);stroke-dasharray:3 3;stroke-linecap:butt}
@@ -53,7 +55,6 @@
 .lg__dot--b circle{fill:var(--bronze)}
 .lg text{font-family:var(--jp)}
 .lg__unit{fill:var(--gray);font-weight:500}
-.lg__title{fill:var(--charcoal);font-weight:400}
 .lg__val{fill:var(--charcoal);font-weight:500}
 .lg__zero,.lg__year{fill:var(--charcoal);font-weight:400}
 
@@ -62,32 +63,41 @@
 .card>.fig+*{margin-top:calc(var(--sp-in-lg)*var(--u))}
 
 /* ---------- 中(c) 宅配水型の月額 ---------- */
+/* 左右の面の高さをそろえる（右の面は grid の stretch で左と同じ高さ） */
+.mt__cmp{align-items:stretch}
+.mt__left{display:flex;flex-direction:column}
 .mt__left>*+*{margin-top:calc(var(--sp-in)*var(--u))}
-.mt__left>.mt__tbl,.mt__left>.note{margin-top:calc(var(--sp-el)*var(--u))}
+/* キャプションは枠（.figbox）の中の最上段。表の行罫は soft（R2） */
+.mt__tblbox{flex:1 1 auto}
 .mt__tbl{width:100%;border-collapse:collapse}
-.mt__tbl caption{text-align:left;padding-bottom:calc(var(--sp-in)*var(--u))}
-.mt__tbl td{border-bottom:calc(1*var(--u)) solid var(--rule);
-  padding-top:calc(var(--sp-in-lg)*var(--u));padding-bottom:calc(var(--sp-in-lg)*var(--u));
+.mt__tbl td{border-bottom:calc(1*var(--u)) solid var(--rule-soft);
+  padding-top:calc(var(--sp-in)*var(--u));padding-bottom:calc(var(--sp-in)*var(--u));
   vertical-align:baseline;color:var(--charcoal)}
-.mt__tbl tr:first-child td{border-top:calc(1*var(--u)) solid var(--rule)}
-.mt__co{font-size:calc(24*var(--u));line-height:1.4;letter-spacing:0.02em;font-weight:500}
-.mt__pr{text-align:right;white-space:nowrap;line-height:1}
+.mt__tbl tr:last-child td{border-bottom:0;padding-bottom:0}
+.mt__co{width:calc(480*var(--u));
+  font-size:calc(24*var(--u));line-height:1.4;letter-spacing:0.02em;font-weight:500}
+.mt__pr{text-align:left;white-space:nowrap;line-height:1}
 .mt__prn{font-size:calc(42*var(--u));letter-spacing:calc(2*var(--u))}
 .mt__pru,.mt__prk{font-size:calc(26*var(--u));font-weight:400}
 
-.mt__right>*+*{margin-top:calc(var(--sp-in-lg)*var(--u))}
-.mt__price{display:flex;align-items:baseline;justify-content:space-between;
-  column-gap:calc(var(--sp-in-lg)*var(--u))}
-.mt__big{flex:none;font-size:calc(84*var(--u));color:var(--bronze);letter-spacing:calc(2*var(--u))}
-.mt__yen{font-family:var(--jp);font-weight:400;font-size:calc(42*var(--u));
+/* 「PureNext なら」の面: 縦積み・全部左揃え。中身は上下中央（面の高さは左とそろう） */
+.mt__right{display:flex;flex-direction:column;justify-content:center;align-items:flex-start;
+  text-align:left}
+.mt__right>*+*{margin-top:calc(var(--sp-in)*var(--u))}
+.mt__right>.h3+.big{margin-top:calc(var(--sp-in-lg)*var(--u))}
+.mt__right>.note+.h3{margin-top:calc(var(--sp-in-lg)*var(--u))}
+/* 大数字は「円」「税抜」まで含めて1行のまとまり。折らない */
+.mt__big{display:block;white-space:nowrap;
+  font-size:calc(80*var(--u));color:var(--bronze);letter-spacing:calc(2*var(--u))}
+.mt__yen{font-family:var(--jp);font-weight:400;font-size:calc(40*var(--u));
   letter-spacing:0;margin-left:calc(8*var(--u))}
 .mt__zeinuki{font-family:var(--jp);font-weight:400;font-size:calc(20*var(--u));
-  letter-spacing:0;margin-left:calc(8*var(--u))}
-.mt__free{flex:none;text-align:right;letter-spacing:calc(2*var(--u))}
-.mt__zeikomi{letter-spacing:calc(3*var(--u))}
+  letter-spacing:0;margin-left:calc(12*var(--u))}
+.mt__free{white-space:nowrap;letter-spacing:calc(2*var(--u))}
+.mt__zeikomi{letter-spacing:calc(2*var(--u))}
 /* 01〜03 は下段の全幅3列（v2.1・2列の高さ差をなくすため上段から出した） */
 .mt__list{list-style:none;padding:0}
-.mt__list>li{border-top:calc(1*var(--u)) solid var(--rule);
+.mt__list>li{border-top:calc(1*var(--u)) solid var(--rule-soft);
   padding-top:calc(var(--sp-in-lg)*var(--u))}
 .mt__list>li>.p,.mt__list>li>.mt__row{margin-top:calc(var(--sp-in)*var(--u))}
 /* 03「使える用途が増える」の右にグラスの線画（v1 と同じ位置関係） */
@@ -114,4 +124,30 @@
   /* 「他にも」の4項目は1列に（2列のままだと1項目が3行に折れて窮屈） */
   .nc__list{grid-auto-flow:row;grid-template-columns:1fr;grid-template-rows:none;
     column-gap:0;row-gap:12px}
+
+  /* 数値ブロック2つは横並びのまま（枠が2つ並ぶだけなので幅375でも収まる） */
+  .gr__nums{column-gap:12px}
+  .gr__rate,.gr__units{font-size:30px;letter-spacing:0}
+  .gr__pct{font-size:18px}
+  .gr__approx{font-size:15px}
+  .gr__unit{font-size:14px;margin-left:2px}
+
+  /* 表: 社名の固定幅は解除（base の width:auto）。金額は左揃えのまま */
+  .mt__prn{font-size:26px;letter-spacing:0}
+  .mt__pru,.mt__prk{font-size:16px}
+  .mt__tbl td{padding-top:12px;padding-bottom:12px}
+
+  /* 「PureNext なら」の面: 縦積み左揃えのまま、大数字が折れない大きさに */
+  .mt__big{font-size:44px;letter-spacing:0}
+  .mt__yen{font-size:22px;margin-left:4px}
+  .mt__zeinuki{font-size:14px;margin-left:6px}
+  .mt__free{white-space:normal;letter-spacing:0}
+  .mt__right>*+*{margin-top:12px}
+
+  /* R6: 3項目は [本文][小さな絵] の横1行に。絵だけが次の行へ落ちないようにする */
+  .mt__row{flex-wrap:nowrap;column-gap:12px}
+  .mt__glass{width:36px}
+  .mt__glasses{width:64px}
+  .mt__coin{width:48px}
+  .mt__right>.h3+.big,.mt__right>.note+.h3{margin-top:16px}
 }

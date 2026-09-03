@@ -15,7 +15,7 @@
 
 .ys__cats{list-style:none;padding:0}
 .ys__cat{display:flex;align-items:center;column-gap:calc(var(--sp-in-lg)*var(--u));
-  border-top:calc(1*var(--u)) solid var(--rule);
+  border-top:calc(1*var(--u)) solid var(--rule-soft);
   padding-top:calc(var(--sp-in-lg)*var(--u))}
 .ys__cat+.ys__cat{margin-top:calc(var(--sp-in-lg)*var(--u))}
 

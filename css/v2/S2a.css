@@ -12,13 +12,13 @@
 
 /* ---------- 導入 ← W04（左：本体の線画／右：3つの強み） ---------- */
 .st__intro{align-items:center}
-.st__body{width:calc(294*var(--u));height:auto;justify-self:center}
+.st__body{width:calc(207*var(--u));height:auto;justify-self:center}
 
 .st__list{list-style:none;padding:0}
 .st__row + .st__row{
   margin-top:calc(var(--sp-in-lg)*var(--u));
   padding-top:calc(var(--sp-in-lg)*var(--u));
-  border-top:calc(1*var(--u)) solid var(--rule);
+  border-top:calc(1*var(--u)) solid var(--rule-soft);
 }
 .st__row > .st__line + *{margin-top:calc(var(--sp-in-lg)*var(--u))}
 .st__row > .h3 + *{margin-top:calc(var(--sp-h3)*var(--u))}
@@ -44,14 +44,16 @@
   background:var(--white);
   border:calc(4*var(--u)) solid var(--mist);
   border-radius:calc(8*var(--u));
-  padding:calc(var(--pad-y)*var(--u)) calc(var(--pad-x)*var(--u));
+  padding:calc(24*var(--u)) calc(32*var(--u));
   text-align:center;
+  width:calc(320*var(--u));   /* R5: 液晶パネルは幅320まで。右列いっぱいに広げない */
 }
-.ml__val{font-size:calc(120*var(--u));letter-spacing:calc(6*var(--u))}
-.ml__unit{font-family:var(--jp);font-weight:400;font-size:calc(48*var(--u));
+.ml__val{font-size:calc(88*var(--u));letter-spacing:calc(4*var(--u))}
+.ml__unit{font-family:var(--jp);font-weight:400;font-size:calc(36*var(--u));
   letter-spacing:0;margin-left:calc(8*var(--u))}
 
 /* 目盛りと▲印（v1 の実測色 #6E95B0 / #96621C ではなくトークンに統一） */
+.ml__scalebox{width:calc(320*var(--u))}   /* 液晶と同じ幅にそろえて1つのまとまりに見せる */
 .ml__scalebox > * + *{margin-top:calc(var(--sp-in)*var(--u))}
 .ml__scale{display:block;width:100%;height:auto}
 .ml__ticks{fill:var(--mist)}
@@ -70,14 +72,14 @@
 .sc__cell:nth-child(4) .sc__icon{width:calc(103*var(--u))}
 
 /* ---------- 10ml ブロック末尾の誤差パネルと粉ミルク（← W07）---------- */
-.me__panel{border-left:calc(8*var(--u)) solid var(--bronze)}
+.me__panel{border-left:calc(6*var(--u)) solid var(--bronze)}
 .me__panel > * + *{margin-top:calc(var(--sp-in)*var(--u))}
 .me__panel > .h3 + *{margin-top:calc(var(--sp-h3)*var(--u))}
 .me__panel > .note + .p{margin-top:calc(var(--sp-in-lg)*var(--u))}
 .me__em{font-weight:500}
 
-.me__milk{border-top:calc(1*var(--u)) solid var(--rule);
-  padding-top:calc(var(--sp-in-lg)*var(--u))}
+/* R3: 中見出しの無い「小見出しだけの続き」なので罫は引かない。.h3 の上 72 で切る */
+.me__milk{margin-top:calc(var(--sp-h3top)*var(--u))}
 .me__milk > * + *{margin-top:calc(var(--sp-in)*var(--u))}
 
 /* ===================== スマホ・タブレット（≤900px） =====================
@@ -89,17 +91,19 @@
   .st__body{width:140px}
 
   /* 液晶と目盛りは幅100%。面の内側は base の面（24/20）にそろえ、数字を列幅に収める */
-  .ml__lcd{width:100%;padding:24px 20px;border-width:3px}
-  .ml__val{font-size:56px;letter-spacing:2px}
+  .ml__lcd{width:240px;padding:16px 18px;border-width:3px}
+  .ml__val{font-size:48px;letter-spacing:2px}
   .ml__unit{font-size:24px;margin-left:4px}
+  .ml__scalebox{width:240px}
   .ml__scale{width:100%}
   .ml__scalebox > * + *{margin-top:12px}
 
   /* 4場面は1列（base）。列どうしの高さをそろえる箱は不要になるので高さを解除し、
      図の下に余った空きが出ないようにする */
   .sc__iconbox{height:auto}
+  .sc__icon{height:120px;width:auto;margin-left:auto;margin-right:auto}
 
   /* 誤差パネル・粉ミルクは幅100% */
   .me__panel{width:100%;border-left-width:4px}
-  .me__milk{width:100%}
+  .me__milk{width:100%;margin-top:48px}
 }

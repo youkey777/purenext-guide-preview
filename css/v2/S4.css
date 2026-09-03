@@ -29,7 +29,9 @@
 /* ---------- 中 チャイルドロック ← W15c 右半分 ---------- */
 .cr__lock{align-items:center}
 .cr__ltxt>*+*{margin-top:calc(var(--sp-in)*var(--u))}
-.cr__panel{width:100%;height:auto;margin-left:auto;margin-right:auto}
+/* 当社の実物パネルの切り出し（元画像 1200×311）。表示は列幅（約648）＝元寸以下（R5） */
+.cr__panel{width:100%;max-width:calc(1200*var(--u));height:auto;
+  margin-left:auto;margin-right:auto}
 
 /* ---------- 中 エコモード ← W15c 左半分 ---------- */
 .cr__eco{align-items:center}
@@ -39,7 +41,7 @@
 
 /* 温度対比の図（枠・面・矢印は CSS/SVG、文字は実テキスト） */
 .cr__temp{display:flex;align-items:center;column-gap:calc(var(--sp-in-lg)*var(--u));
-  border:calc(2*var(--u)) solid var(--rule);border-radius:calc(4*var(--u));
+  border:calc(1*var(--u)) solid var(--rule-soft);border-radius:calc(4*var(--u));
   background:var(--white);padding:calc(var(--sp-in)*var(--u))}
 .cr__tl{flex:1 1 auto;text-align:center}
 .cr__arrow{flex:none;width:calc(87*var(--u));height:calc(25*var(--u))}
@@ -57,7 +59,7 @@
   .cr__card{display:block}
   .cr__card>*+*{margin-top:12px}
   /* 温度対比の図は縦積みにして、矢印を下向きに回す */
-  .cr__temp{flex-direction:column;align-items:stretch;padding:16px;row-gap:12px}
+  .cr__temp{flex-direction:column;align-items:stretch;padding:16px;row-gap:12px;border-width:1px}
   .cr__tl{text-align:center}
   .cr__arrow{width:44px;height:13px;align-self:center;
     transform:rotate(90deg);margin:16px 0}

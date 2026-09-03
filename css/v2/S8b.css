@@ -13,14 +13,14 @@
   padding-top:calc(var(--sp-in-lg)*var(--u));
   padding-bottom:calc(var(--sp-in-lg)*var(--u));
   padding-right:calc(var(--sp-el)*var(--u));
-  border-bottom:calc(1*var(--u)) solid var(--rule);
+  border-bottom:calc(1*var(--u)) solid var(--rule-soft);
 }
 .su__tbl th:last-child,.su__tbl td:last-child{padding-right:0}
 .su__tbl th:first-child,.su__tbl td:first-child{width:42%}
 .su__th{font-weight:400;
   padding-top:0;
   padding-bottom:calc(var(--sp-in)*var(--u));
-  border-bottom:calc(1*var(--u)) solid var(--rule)}
+  border-bottom:calc(1*var(--u)) solid var(--rule-soft)}
 
 /* ===== スマホ（〜900px）: 表は2列のまま幅100%（文字は折り返してよい） ===== */
 @media (max-width:900px){

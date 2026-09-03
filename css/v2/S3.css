@@ -1,29 +1,24 @@
 @charset "utf-8";
 /* ===== S3 出水口のUV殺菌 =====
-   文字サイズは base_v2.css の型7段（.h1 .h2 .h3 .p .note .src .sum）だけを使う。
-   ここで決めているのは「大数字（.big）の大きさ」と、図版・面の中の並べ方だけ。
-   余白はすべて base_v2.css の --sp-* トークン（64 / 32 / 24）。
-   v1 のボード固有色（#8C5A1F・#A54E1B の金茶）は使わず --bronze に統一した。 */
+   v2.3: 文字サイズは base_v2.css の型（.h1 .h2 .h3 .h4 .p .note .src）だけを使う。
+   このファイルで決めているのは「大数字（.big）の大きさ」と、図版・面の中の並べ方だけ。
+   余白は base の --sp-* トークンのみ。独自の区切り罫は引かない（R2）。 */
+
+/* 番号つき小見出し（01〜05）。base の .h3:has(>.num) と同じ組み方を .h4 にも適用する */
+.uv__nh{display:flex;align-items:baseline}
+.uv__nh .num{font-size:calc(30*var(--u))}
 
 /* ---------- 1 ← W12 タンクの水と、気をつけたい出水口 ---------- */
 .uv__place{align-items:center}
-/* 01→02→03 を1本の縦線でつなぐ（線は --rule・番号はブロンズ） */
-.uv__steps{list-style:none;padding:0;
-  border-left:calc(2*var(--u)) solid var(--rule)}
-.uv__step{padding-left:calc(var(--sp-in-lg)*var(--u))}
+/* R2: 独自の縦罫は引かない。01→02→03 は番号と余白だけでつなぐ */
+.uv__steps{list-style:none;padding:0;margin:0}
 .uv__step+.uv__step{padding-top:calc(var(--sp-el)*var(--u))}
-.uv__step .h4{display:flex;align-items:baseline}
-.uv__step .num{font-size:calc(30*var(--u))}
 .uv__step>.h4+*{margin-top:calc(var(--sp-h4)*var(--u))}
 .uv__step>.p+.p{margin-top:calc(var(--sp-in)*var(--u))}
-.uv__figwrap>*+*{margin-top:calc(var(--sp-in)*var(--u))}
+/* R5: 元画像 1536×1024。列幅（648）を超えないので実寸内 */
 .uv__fig{width:100%;height:auto}
 
 /* ---------- 2 ← W13 緑膿菌とバイオフィルム ---------- */
-/* 「バイオフィルムとは」の面。本文より1段大きい 28px（旧 .sum と同じ値・新しいサイズではない） */
-.uv__def>*+*{margin-top:calc(var(--sp-in)*var(--u))}
-.uv__deft{font-size:calc(28*var(--u));line-height:1.6}
-
 .uv__bfc{text-align:center}
 .uv__bfc>*+*{margin-top:calc(var(--sp-in)*var(--u))}
 /* 字間の分だけ右にはみ出していたので、負のマージンではなく左パディングで光学的に中央へ */
@@ -39,39 +34,40 @@
 .uv__dot{fill:var(--charcoal)}
 .uv__film{fill:var(--sand);stroke:var(--charcoal);stroke-width:1;stroke-linejoin:round}
 
-/* 1,000倍の帯（v1 は全幅の帯。v2 では本文幅のサンドの面にした） */
+/* 1,000倍の面。R1: 大数字の上に小さなラベル（.note）を同じ枠の中に置く */
 .uv__band{display:flex;align-items:center;column-gap:calc(var(--sp-el)*var(--u))}
-.uv__bignum{flex:none;color:var(--bronze);
+.uv__bandnum{flex:none}
+.uv__bandnum>.note{margin-bottom:calc(var(--sp-in)*var(--u))}
+.uv__bignum{color:var(--bronze);
   font-size:calc(132*var(--u));letter-spacing:calc(12*var(--u))}
 .uv__bigunit{font-family:var(--jp);font-weight:400;color:var(--bronze);
   font-size:calc(65*var(--u));letter-spacing:0}
 
-/* ---------- 3 ← W13b 膜が作られると（3ステップ図の再掲は出さない） ---------- */
-.uv__pivot>*+*{margin-top:calc(var(--sp-in)*var(--u))}
-/* 仕様書 5-S3-3 の指定「本文より大きく 28px」。28px は型7段の .sum と同じ値で、新しいサイズではない */
-.uv__pivot-t{font-size:calc(28*var(--u));line-height:1.6}
+/* ---------- 3 ← W13b 膜が作られると ---------- */
+/* 文字サイズは型のまま（v2.2 までの 28px の独自サイズは廃止） */
 
 /* ---------- 4 ← W14 99.9%の殺菌 ---------- */
-.uv__proof{align-items:center}
-.uv__ptxt>*+*{margin-top:calc(var(--sp-in-lg)*var(--u))}
-.uv__card{border:calc(1*var(--u)) solid var(--rule);text-align:center}
-.uv__card>*+*{margin-top:calc(var(--sp-in-lg)*var(--u))}
+/* 05 の見出しの真下から本文が始まるよう、左列は上そろえ（中央そろえだと見出しと離れる） */
+.uv__proof{align-items:start}
+.uv__ptxt>.p+.h3{margin-top:calc(var(--sp-h3top)*var(--u))}
+.uv__card{border:calc(1*var(--u)) solid var(--rule-soft);text-align:center}
+.uv__card>*+*{margin-top:calc(var(--sp-in)*var(--u))}
 .uv__99{display:inline-flex;align-items:baseline;color:var(--bronze);
   font-size:calc(159*var(--u));letter-spacing:calc(2*var(--u))}
 .uv__pct{font-size:calc(88*var(--u));letter-spacing:0}
 
 /* ===== スマホ・タブレット（base_v2.css のスマホモードに合わせる） ===== */
 @media (max-width:900px){
-  /* 3段の流れ: 縦線と字下げを実寸に */
-  .uv__steps{border-left-width:2px}
-  .uv__step{padding-left:16px}
+  .uv__nh .num{font-size:20px}
   .uv__step+.uv__step{padding-top:32px}
-  .uv__step .num{margin-right:10px}
   /* 3ステップの水槽図は1列。図と見出しの距離より、隣の組との距離を広くとる */
   .uv__bf{row-gap:48px}
   .uv__bfs{letter-spacing:4px;padding-left:4px}
   /* 1,000倍: 87px だと「倍」が折り返すので実寸で詰める */
-  .uv__band{column-gap:16px;row-gap:8px}
+  .uv__band{column-gap:16px;row-gap:16px}
+  .uv__bandnum>.note{margin-bottom:8px}
   .uv__bignum{font-size:56px;letter-spacing:2px}
   .uv__bigunit{font-size:28px}
+  .uv__ptxt>.p+.h3{margin-top:48px}
+  .uv__card>*+*{margin-top:12px}
 }
