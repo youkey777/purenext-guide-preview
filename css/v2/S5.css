@@ -16,12 +16,14 @@
 
 .cl__chip{width:calc(156*var(--u));height:calc(51*var(--u));
   margin-left:auto;margin-right:auto}
-.cl__chip--white{background:var(--white);border:calc(1*var(--u)) solid var(--rule)}
+/* マットホワイトの色見本も同じクラウドダンサーの色（純白ではない） */
+.cl__chip--white{background:#F0EEE9;border:calc(1*var(--u)) solid var(--rule)}
 .cl__chip--black{background:var(--charcoal);border:calc(1*var(--u)) solid var(--rule);
   border-color:color-mix(in srgb, var(--rule) 40%, transparent)}
 
-/* マットブラックのカードだけ面を反転（色はトークンのまま） */
-.cl__card--dark{background:var(--charcoal)}
+/* マットブラックのカードだけ面を反転（色はトークンのまま）。
+   base の「偶数章の .panel--sand は sand-alt」より強くするため id で指定する */
+#color .cl__card--dark{background:var(--charcoal)}
 .cl__card--dark .h3,
 .cl__card--dark .p{color:var(--white)}
 
@@ -38,5 +40,16 @@
 .cd__hr{width:100%;height:calc(1*var(--u));background:var(--rule)}
 
 .cd__swatch{display:flex;align-items:center;column-gap:calc(var(--sp-in)*var(--u))}
+/* クラウドダンサーの色見本。純白ではなく実際の色（見本の実測値 #F0EEE9）＋罫線 */
 .cd__chip{flex:none;width:calc(106*var(--u));height:calc(93*var(--u));
-  background:var(--white);border:calc(1*var(--u)) solid var(--rule)}
+  background:#F0EEE9;border:calc(1*var(--u)) solid var(--rule)}
+
+/* ===== スマホ・タブレット（base のスマホモードと同じ 900px） ===== */
+@media (max-width:900px){
+  .cl__unit{width:150px}
+  .cl__chip{width:120px;height:40px}
+  .cd__photo{width:220px}
+  .cd__chip{width:80px;height:70px}
+  .cd__right>*+*{margin-top:16px}
+  .cd__right>.cd__hr,.cd__right>.cd__hr+*,.cd__right>.cd__swatch{margin-top:32px}
+}

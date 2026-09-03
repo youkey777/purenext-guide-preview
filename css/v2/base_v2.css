@@ -42,6 +42,8 @@
   --sp-in-lg:32;   /* 同じ要素群の中（大きい方） */
   --sp-h3top:56;   /* 小見出しの上 */
   --sp-h3:24;      /* 小見出し → その本文 */
+  --sp-h4top:40;   /* .h4 の上 */
+  --sp-h4:16;      /* .h4 → その本文 */
 
   --gut3:64;       /* 3列のガター */
   --gut2:96;       /* 2列のガター */
@@ -72,15 +74,16 @@ a{color:inherit;text-decoration:none}
 /* ===== 大見出しセクション =====
    章ごとに地色を交互に切り替える。背景は ::before で画面幅いっぱい（1536 の外側も）に敷く。
    .page の子は「表紙 + 各章」なので、章 N は nth-child(N+1)。
-   → nth-child(even) が奇数章（01・03…）＝ --ground、nth-child(odd) が偶数章＝ --ground-alt */
+   v2.2 で反転: 奇数章（01・03…）＝ --ground-alt ／ 偶数章＝ --ground。
+   表紙は --ground のままなので、表紙→01 で必ず色が切り替わる */
 .sec{position:relative;counter-increment:chap;
   padding:calc(var(--sp-pad)*var(--u)) calc(var(--mgn)*var(--u));
   --chap-bg:var(--ground)}
-.page>.sec:nth-child(odd){--chap-bg:var(--ground-alt)}
+.page>.sec:nth-child(even){--chap-bg:var(--ground-alt)}
 .sec::before{content:"";position:absolute;z-index:-1;
   top:0;bottom:0;left:50%;width:100vw;margin-left:-50vw;background:var(--chap-bg)}
 /* 偶数章の中の面だけ、地に合わせて一段濃くする（純白カードは両方の章で白のまま） */
-.page>.sec:nth-child(odd) .panel--sand{background:var(--sand-alt)}
+.page>.sec:nth-child(even) .panel--sand{background:var(--sand-alt)}
 
 /* 章番号（01〜10）。各章の HTML には .h1__num が無いので、CSS カウンタで自動付与する
    （.page で counter-reset、.sec で counter-increment。表紙 .cover は .sec ではないので数えない）。
@@ -93,9 +96,17 @@ a{color:inherit;text-decoration:none}
   color:var(--bronze);font-weight:500;
   margin-bottom:calc(var(--sp-num)*var(--u))}
 
-/* ===== 中見出しブロック ===== */
+/* ===== 中見出しブロック =====
+   v2.2: ブロックの頭に全幅の細い罫、中見出しの左にブロンズの縦棒。
+   縦棒は本文の左端(72)より外へぶら下げるので、見出し・リード・本文の左端は 72 でそろう */
 .blk + .blk{margin-top:calc(var(--sp-blk)*var(--u))}
-.blk__head{margin-bottom:calc(var(--sp-h2)*var(--u))}
+.blk__head{margin-bottom:calc(var(--sp-h2)*var(--u));
+  border-top:calc(1*var(--u)) solid var(--rule);
+  padding-top:calc(var(--sp-h2)*var(--u))}
+.blk__head .h2{
+  border-left:calc(4*var(--u)) solid var(--bronze);
+  padding-left:calc(24*var(--u));
+  margin-left:calc(-28*var(--u))}
 
 /* ===== 要素群のテンポ（ブロックの中身 / 中見出しの無いセクションの中身） ===== */
 .blk__body>*+*,
@@ -104,6 +115,10 @@ a{color:inherit;text-decoration:none}
 .sec__body>*+.h3{margin-top:calc(var(--sp-h3top)*var(--u))}
 .blk__body>.h3+*,
 .sec__body>.h3+*{margin-top:calc(var(--sp-h3)*var(--u))}
+.blk__body>*+.h4,
+.sec__body>*+.h4{margin-top:calc(var(--sp-h4top)*var(--u))}
+.blk__body>.h4+*,
+.sec__body>.h4+*{margin-top:calc(var(--sp-h4)*var(--u))}
 .blk__body>.note+*,.blk__body>*+.note,
 .sec__body>.note+*,.sec__body>*+.note{margin-top:calc(var(--sp-in)*var(--u))}
 .blk__body>*+.src,
@@ -125,6 +140,8 @@ a{color:inherit;text-decoration:none}
 .lead{font-size:calc(24*var(--u));line-height:1.7;color:var(--gray);font-weight:400;
   margin-top:calc(var(--sp-lead)*var(--u))}
 .h3{font-size:calc(30*var(--u));line-height:1.4;color:var(--charcoal);font-weight:500}
+/* v2.2 追加: 小見出しのもう1段下 */
+.h4{font-size:calc(26*var(--u));line-height:1.4;color:var(--charcoal);font-weight:500}
 /* 番号つきの小見出しは、折り返した2行目が番号の下に潜り込まないよう横並びにする */
 .h3:has(>.num){display:flex;align-items:baseline}
 .num{flex:none;font-size:calc(40*var(--u));line-height:1;color:var(--bronze);font-weight:300;
@@ -163,3 +180,61 @@ a{color:inherit;text-decoration:none}
 .dotlist>li{display:flex;align-items:center;column-gap:calc(var(--sp-in)*var(--u))}
 .dotlist>li::before{content:"";flex:none;
   width:calc(16*var(--u));height:calc(16*var(--u));border-radius:50%;background:var(--bronze)}
+
+/* ===================================================================
+   スマホ（〜900px）: 縮小ではなく組み替える。
+   --u を実寸に固定して文字を読める大きさにし、2列・3列は1列に落とす。
+   ここだけは px で書く（拡縮ではなく「実寸で読ませる」モードのため）。
+   =================================================================== */
+@media (max-width:900px){
+  .page{max-width:none}
+  .page>*{--u:0.66px}
+  /* はみ出しの元を実際に潰す（overflow:hidden で隠さない） */
+  .page *{max-width:100%;box-sizing:border-box}
+  /* 横並び（flex）は折り返す。flex コンテナ以外には効かないので安全 */
+  .page *{flex-wrap:wrap}
+  .page img,.page svg{max-width:100%;height:auto}
+
+  /* --- 章 --- */
+  .sec{padding:80px 24px}
+  .sec .h1{font-size:32px;line-height:1.25;letter-spacing:1px}
+  .sec .h1::before{font-size:14px;letter-spacing:2px;margin-bottom:8px}
+  .lead--h1{font-size:17px;margin-top:16px}
+  .sec__head{margin-bottom:48px}
+
+  /* --- 中見出しブロック --- */
+  .blk + .blk{margin-top:96px}
+  .blk__head{padding-top:24px;margin-bottom:24px}
+  .blk__head .h2{border-left-width:3px;padding-left:12px;margin-left:-16px}
+
+  /* --- 型（実寸） --- */
+  .h2{font-size:24px;line-height:1.35;letter-spacing:0}
+  .lead{font-size:16px;line-height:1.7;margin-top:8px}
+  .h3{font-size:20px}
+  .h4{font-size:18px}
+  .p{font-size:16px;line-height:1.8}
+  .note{font-size:14px}
+  .src{font-size:13px}
+  .sum{font-size:16px}
+  .num{font-size:26px;margin-right:12px}
+
+  /* --- 要素間 --- */
+  .blk__body>*+*,.sec__body>*+*{margin-top:32px}
+  .blk__body>*+.h3,.sec__body>*+.h3{margin-top:40px}
+  .blk__body>.h3+*,.sec__body>.h3+*{margin-top:12px}
+  .blk__body>*+.h4,.sec__body>*+.h4{margin-top:28px}
+  .blk__body>.h4+*,.sec__body>.h4+*{margin-top:12px}
+  .stack>*+*,.stack--lg>*+*{margin-top:12px}
+
+  /* --- 列組みは全部1列 --- */
+  .g2,.g3{grid-template-columns:1fr;column-gap:0;row-gap:32px}
+  .g2--vs{row-gap:32px}
+  .g2--vs>*:first-child{padding-right:0}
+  .g2--vs>*:last-child{padding-left:0;border-left:0;
+    border-top:1px solid var(--rule);padding-top:32px}
+
+  /* --- 面・図・表 --- */
+  .panel--sand,.panel--white{padding:24px 20px}
+  .page table{table-layout:auto;width:100%}
+  .page table th,.page table td{width:auto}
+}

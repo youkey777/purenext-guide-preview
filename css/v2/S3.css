@@ -7,21 +7,27 @@
 
 /* ---------- 1 ← W12 タンクの水と、気をつけたい出水口 ---------- */
 .uv__place{align-items:center}
-.uv__steps>*+*{margin-top:calc(var(--sp-el)*var(--u))}
-.uv__step>.h3+*{margin-top:calc(var(--sp-h3)*var(--u))}
+/* 01→02→03 を1本の縦線でつなぐ（線は --rule・番号はブロンズ） */
+.uv__steps{list-style:none;padding:0;
+  border-left:calc(2*var(--u)) solid var(--rule)}
+.uv__step{padding-left:calc(var(--sp-in-lg)*var(--u))}
+.uv__step+.uv__step{padding-top:calc(var(--sp-el)*var(--u))}
+.uv__step .h4{display:flex;align-items:baseline}
+.uv__step .num{font-size:calc(30*var(--u))}
+.uv__step>.h4+*{margin-top:calc(var(--sp-h4)*var(--u))}
 .uv__step>.p+.p{margin-top:calc(var(--sp-in)*var(--u))}
-.uv__fig{width:100%;max-width:calc(674*var(--u));height:auto;
-  margin-left:auto;margin-right:auto}
+.uv__figwrap>*+*{margin-top:calc(var(--sp-in)*var(--u))}
+.uv__fig{width:100%;height:auto}
 
 /* ---------- 2 ← W13 緑膿菌とバイオフィルム ---------- */
+/* 「バイオフィルムとは」の面。本文より1段大きい 28px（旧 .sum と同じ値・新しいサイズではない） */
 .uv__def>*+*{margin-top:calc(var(--sp-in)*var(--u))}
-.uv__deft{font-weight:500}
+.uv__deft{font-size:calc(28*var(--u));line-height:1.6}
 
-.uv__bfwrap>*+*{margin-top:calc(var(--sp-in-lg)*var(--u))}
 .uv__bfc{text-align:center}
 .uv__bfc>*+*{margin-top:calc(var(--sp-in)*var(--u))}
-.uv__bfs{letter-spacing:calc(8*var(--u));margin-right:calc(-8*var(--u))}
-.uv__bfnote{text-align:center}
+/* 字間の分だけ右にはみ出していたので、負のマージンではなく左パディングで光学的に中央へ */
+.uv__bfs{letter-spacing:calc(8*var(--u));padding-left:calc(8*var(--u))}
 
 /* 3ステップの水槽図（v1 の SVG を1槽ずつ切り出し、同じ viewBox に正規化）。
    色はすべてトークン（--white / --mist / --charcoal / --sand）。 */
@@ -53,3 +59,19 @@
 .uv__99{display:inline-flex;align-items:baseline;color:var(--bronze);
   font-size:calc(159*var(--u));letter-spacing:calc(2*var(--u))}
 .uv__pct{font-size:calc(88*var(--u));letter-spacing:0}
+
+/* ===== スマホ・タブレット（base_v2.css のスマホモードに合わせる） ===== */
+@media (max-width:900px){
+  /* 3段の流れ: 縦線と字下げを実寸に */
+  .uv__steps{border-left-width:2px}
+  .uv__step{padding-left:16px}
+  .uv__step+.uv__step{padding-top:32px}
+  .uv__step .num{margin-right:10px}
+  /* 3ステップの水槽図は1列。図と見出しの距離より、隣の組との距離を広くとる */
+  .uv__bf{row-gap:48px}
+  .uv__bfs{letter-spacing:4px;padding-left:4px}
+  /* 1,000倍: 87px だと「倍」が折り返すので実寸で詰める */
+  .uv__band{column-gap:16px;row-gap:8px}
+  .uv__bignum{font-size:56px;letter-spacing:2px}
+  .uv__bigunit{font-size:28px}
+}

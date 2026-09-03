@@ -77,3 +77,28 @@
   padding-left:calc(28*var(--u));text-indent:calc(-28*var(--u));
 }
 #p00 .toc__subs a::before{content:"—　";color:var(--rule)}
+
+/* ===== スマホ（〜900px）: 写真を上に全幅・その下にタイトル群・目次は1列 ===== */
+@media (max-width:900px){
+  #p00 .cv__grid{display:block}
+  #p00 .cv__photo{height:50vh}
+  #p00 .cv__photo img{width:100%;height:100%;object-fit:cover}
+  #p00 .cv__main{padding:32px 24px 40px}
+  #p00 .cv__eyebrow{font-size:12px;letter-spacing:4px}
+  #p00 .cv__title{font-size:28px;line-height:1.3;margin-top:16px;
+    letter-spacing:0.5px;word-spacing:2px;white-space:nowrap}
+  #p00 .cv__rule{width:120px;height:2px;margin-top:20px}
+  #p00 .cv__for{font-size:17px;margin-top:16px;letter-spacing:1px}
+  #p00 .cv__lead{font-size:13px;margin-top:12px;line-height:1.7}
+  #p00 .cv__model{font-size:12px;margin-top:24px;line-height:1.6}
+
+  #p00 .toc{grid-template-columns:1fr;column-gap:0;
+    margin-top:32px;padding:24px 20px;border-top-width:2px}
+  #p00 .toc__col + .toc__col{margin-top:24px}
+  #p00 .toc__ch + .toc__ch{margin-top:16px}
+  #p00 .toc__h{column-gap:6px}
+  #p00 .toc__n{width:24px;font-size:15px;letter-spacing:0}
+  #p00 .toc__t{font-size:15px}
+  #p00 .toc__subs{margin-top:6px;padding-left:26px}
+  #p00 .toc__subs a{font-size:13px;padding-left:20px;text-indent:-20px}
+}

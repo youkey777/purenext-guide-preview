@@ -94,11 +94,24 @@
 /* 03 は見出しを列いっぱいに出し、本文の右にグラスを置く（見出しが折り返さないように） */
 .mt__row{display:flex;align-items:flex-start;column-gap:calc(var(--sp-in-lg)*var(--u))}
 .mt__row>.p{flex:1 1 auto;min-width:0}
-.mt__glass{flex:none;width:calc(72*var(--u));height:auto;
-  mix-blend-mode:darken}  /* 切り出しの地色が地より明るく四角く見えるのを消す */
+/* 01 硬貨（inline SVG）／02 グラス2つ／03 グラス。切り出しの地色が四角く見えないよう darken */
+.mt__glass{flex:none;width:calc(72*var(--u));height:auto;mix-blend-mode:darken}
+.mt__glasses{flex:none;width:calc(120*var(--u));height:auto;mix-blend-mode:darken;
+  align-self:flex-end}
+.mt__coin{flex:none;width:calc(80*var(--u));height:auto}
+.mt__coin-ln{fill:none;stroke:var(--charcoal);stroke-width:1.5;
+  stroke-linecap:round;stroke-linejoin:round}
+.mt__coin-fill{fill:var(--mist);opacity:0.18}
 
 /* ---------- 中(d) 「他にも」の面 ---------- */
 .nc__more>*+*{margin-top:calc(var(--sp-in-lg)*var(--u))}
 .nc__list{display:grid;grid-auto-flow:column;
   grid-template-rows:repeat(2,auto);grid-template-columns:1fr 1fr;
   column-gap:calc(var(--gut2)*var(--u));row-gap:calc(var(--sp-in-lg)*var(--u))}
+
+/* ===== スマホ（〜900px） ===== */
+@media (max-width:900px){
+  /* 「他にも」の4項目は1列に（2列のままだと1項目が3行に折れて窮屈） */
+  .nc__list{grid-auto-flow:row;grid-template-columns:1fr;grid-template-rows:none;
+    column-gap:0;row-gap:12px}
+}

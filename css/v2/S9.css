@@ -13,9 +13,25 @@
 }
 .ap__item>.h3+*{margin-top:calc(var(--sp-h3)*var(--u))}
 
-/* ---------- 右：アプリ画面2枚 ---------- */
+/* ---------- 列比（左 40% / 右 60%）。アプリ画面を PC で大きく見せる ---------- */
+.ap__g{grid-template-columns:2fr 3fr}
+
+/* ---------- 右：アプリ画面2枚（右列いっぱい・各 約380） ---------- */
 .ap__right{align-self:center}
-.ap__phones{display:flex;justify-content:center;align-items:flex-end;
-  column-gap:calc(var(--sp-in-lg)*var(--u))}
-.ap__ph{height:calc(576*var(--u));width:auto}
+.ap__phones{display:flex;align-items:flex-end;
+  column-gap:calc(var(--sp-in)*var(--u))}
+.ap__ph{flex:1 1 0;min-width:0;width:100%;height:auto}
 .ap__cap{margin-top:calc(var(--sp-in-lg)*var(--u));text-align:center}
+
+/* ===== スマホ（〜900px）: 1列。アプリ画面2枚は横並びのまま幅いっぱい ===== */
+@media (max-width:900px){
+  .ap__g{grid-template-columns:1fr}
+  /* 罫は calc(1*var(--u))=0.66px だと項目ごとに出たり消えたりするので実寸1pxに */
+  .ap__item+.ap__item{margin-top:32px;padding-top:32px;border-top-width:1px}
+  .ap__item>.h3+*{margin-top:12px}
+  /* 1536用の <br> は実寸だと二重に折り返すので自然に流す */
+  #app .ap__item .p br{display:none}
+  .ap__phones{column-gap:12px}
+  .ap__ph{flex:1 1 0;min-width:0;width:100%}
+  .ap__cap{margin-top:16px}
+}

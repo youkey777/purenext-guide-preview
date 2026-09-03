@@ -26,3 +26,21 @@
 .ys__ctx{flex:1 1 auto;min-width:0;display:block}
 .ys__t{display:block}
 .ys__d{display:block;margin-top:calc(var(--sp-h3)*var(--u))}
+
+/* ===== スマホ（〜900px）: 写真を上・本文と3分類を下 ===== */
+@media (max-width:900px){
+  /* .g2 は base で1列になる。DOM 順（写真 → 右カラム）がそのまま縦並びになる */
+  .ys__photo{width:100%;height:auto}
+  .ys__right>*+*{margin-top:16px}
+  .ys__right>.ys__cats{margin-top:32px}
+  /* 1536用に入れた <br> は実寸だと途中で二重に折り返すので、自然に流す */
+  #yasune .lead--h1 br,#yasune .ys__right br{display:none}
+  /* base の flex-wrap:wrap で行が崩れるので、ここだけ横並びを固定する */
+  /* 罫は calc(1*var(--u))=0.66px だと行ごとに出たり消えたりするので実寸1pxに */
+  .ys__cat{flex-wrap:nowrap;align-items:flex-start;column-gap:16px;padding-top:20px;
+    border-top-width:1px}
+  .ys__cat+.ys__cat{margin-top:20px}
+  .ys__icwrap{width:56px}
+  .ys__ic{height:40px}
+  .ys__d{margin-top:8px}
+}

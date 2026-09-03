@@ -1,31 +1,19 @@
 @charset "utf-8";
 /* ===== S6 ご利用いただく上での注意ポイント =====
-   5つのセル（上3・下2は中央寄せ）。カードの面は作らず、各セルの上に細い罫線だけ。
+   4項目を 2×2。カードの面は作らず、各セルの上に細い罫線だけ。
    文字サイズは型7段（.h3 / .p / .note）、余白は --sp-* トークンだけ。 */
 
 .nt__cell{border-top:calc(3*var(--u)) solid var(--rule);
   padding-top:calc(var(--sp-in-lg)*var(--u))}
 .nt__cell>*+*{margin-top:calc(var(--sp-in)*var(--u))}
 .nt__cell>.h3+*{margin-top:calc(var(--sp-h3)*var(--u))}
-.nt__cell>.nt__bar,
-.nt__cell>.nt__legend{margin-top:calc(var(--sp-in-lg)*var(--u))}
 
-/* 下段2セル（上段3列と同じ列幅のまま中央寄せ） */
-.nt__row2{display:flex;justify-content:center;
-  column-gap:calc(var(--gut3)*var(--u))}
-.nt__row2>.nt__cell{width:calc((100% - var(--gut3)*2*var(--u)) / 3)}
+/* 4項目を 2×2（列幅 648）。行の間は要素群の間隔と同じ */
+.nt__grid{row-gap:calc(var(--sp-el)*var(--u))}
 
-/* --- 積み上げバー（仕上がり100ml ＝ 温水50 : 冷水35 : 粉末15） --- */
-.nt__bar{display:flex;width:100%;height:calc(28*var(--u))}
-.nt__seg--hot{width:50%;background:var(--bronze)}
-.nt__seg--cold{width:35%;background:var(--mist)}
-.nt__seg--powder{width:15%;background:var(--rule)}
-
-.nt__legend{list-style:none;padding:0}
-.nt__legend>li{display:flex;align-items:flex-start;
-  column-gap:calc(var(--sp-in)*var(--u))}
-.nt__legend>li+li{margin-top:calc(var(--sp-in)*var(--u))}
-.nt__sw{flex:none;width:calc(28*var(--u));height:calc(28*var(--u))}
-.nt__sw--hot{background:var(--bronze)}
-.nt__sw--cold{background:var(--mist)}
-.nt__sw--powder{background:var(--rule)}
+/* ===== スマホ・タブレット ===== */
+@media (max-width:900px){
+  .nt__cell{border-top-width:2px;padding-top:20px}
+  .nt__cell>*+*{margin-top:12px}
+  .nt__grid{row-gap:40px}
+}
