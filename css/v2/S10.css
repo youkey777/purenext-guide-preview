@@ -1,0 +1,19 @@
+@charset "utf-8";
+/* ===== S10 PureNextの強みまとめ =====
+   専用アプリ（S9）の「番号つき小見出し＋本文・区切りは --rule-soft の罫線」と同じ型を2列で並べる。
+   文字サイズは型7段だけ、余白は --sp-* トークンだけ。新しい色・罫線・囲みは作らない。 */
+/* スマホで「まと／め」と割れないよう語を守る */
+.sm__nb{white-space:nowrap}
+.sm__list{list-style:none;padding:0;
+  display:grid;grid-template-columns:1fr 1fr;
+  column-gap:calc(var(--gut2)*var(--u));row-gap:0}
+.sm__item{border-top:calc(1*var(--u)) solid var(--rule-soft);
+  padding:calc(var(--sp-in-lg)*var(--u)) 0 calc(var(--sp-el)*var(--u))}
+.sm__item>.h3+*{margin-top:calc(var(--sp-h3)*var(--u))}
+
+/* ===== スマホ・タブレット（〜900px）: 1列 ===== */
+@media (max-width:900px){
+  .sm__list{grid-template-columns:1fr}
+  .sm__item{padding:24px 0 32px;border-top-width:1px}
+  .sm__item>.h3+*{margin-top:12px}
+}
