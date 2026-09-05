@@ -59,7 +59,7 @@
   .cr__card{display:block}
   /* v2.4: 01・02 の絵は 390×1209 の高解像度になったので、base の img{height:auto} だと幅いっぱいに広がる。
      3枚とも旧画像の実寸（高さ403px）にそろえる */
-  .cr__tray{height:403px;width:auto;max-width:none}
+  .page img.cr__tray{height:403px;width:auto;max-width:none} /* base の .page img（0,1,1）より強い指定が要る */
   .cr__card>*+*{margin-top:12px}
   /* 温度対比の図は縦積みにして、矢印を下向きに回す */
   .cr__temp{flex-direction:column;align-items:stretch;padding:16px;row-gap:12px;border-width:1px}
