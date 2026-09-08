@@ -2,7 +2,7 @@
 
 /* S10案B: この章だけに適用する製品まとめ */
 #summary .sec__body{max-width:none}
-#summary .product-map{display:grid;grid-template-columns:minmax(0,1fr) 180px minmax(0,1fr);gap:28px;background:var(--ground);padding:28px;align-items:center}
+#summary .product-map{display:grid;grid-template-columns:minmax(0,1fr) 180px minmax(0,1fr);gap:28px;background:transparent;padding:28px;align-items:center}
 #summary .map-product{margin:0;text-align:center;align-self:center}
 #summary .sec__body .map-product img{display:block;width:auto;height:410px;max-width:100%;margin:0 auto;object-fit:contain;mix-blend-mode:multiply}
 #summary .map-product figcaption{color:var(--bronze);font-size:16px;margin-top:12px}
@@ -58,3 +58,5 @@
   #summary .service-band{grid-template-columns:1fr}
 }
 #summary .nowrap{white-space:nowrap}
+
+.page>#summary.sec{--chap-bg:var(--ground)}

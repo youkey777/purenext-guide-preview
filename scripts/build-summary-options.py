@@ -31,7 +31,7 @@ for k,n,u in [('water','10','ml'),('temp','5','モード'),('uv','99.9','%')]:
 A=f'<div class="major-grid">{major}</div><div class="support-grid">'+''.join(card(k) for k in ['memory','care','color','price','mall','repair','app'])+'</div>'
 left=''.join(card(k,'map-point') for k in ['water','temp','memory'])
 right=''.join(card(k,'map-point') for k in ['uv','care','color'])
-B=f'<section class="product-map"><div class="map-side map-left">{left}</div><figure class="map-product">'+pic('W04_strengths/body_slim_dry_20260908.png','受け皿が乾いた状態の細身のPureNextホワイト本体')+f'<figcaption>PureNext</figcaption></figure><div class="map-side map-right">{right}</div></section><div class="service-band">'+''.join(card(k) for k in ['price','mall','repair','app'])+'</div>'
+B=f'<section class="product-map"><div class="map-side map-left">{left}</div><figure class="map-product">'+pic('W04_strengths/body_balanced_dry_20260908.png','受け皿が乾いた状態の細身のPureNextホワイト本体')+f'<figcaption>PureNext</figcaption></figure><div class="map-side map-right">{right}</div></section><div class="service-band">'+''.join(card(k) for k in ['price','mall','repair','app'])+'</div>'
 def step(v,l):return f'<div class="step">{v}<span>{l}</span></div>'
 flow1=step('<b>250<small>ml</small></b>','量を決める')+'<span class="arrow">→</span>'+step(pic('W06_scenes/icon3.png','水筒'),'自動で出水')+'<span class="arrow">→</span>'+step(icon('memory'),'量を記憶')
 flow2=step('<span class="germs">· ·<br> · ·</span>','浮遊・付着')+'<span class="arrow">→</span>'+step('<b>UV</b>','形成前に<br>殺菌')+'<span class="arrow">→</span>'+step(pic('W08_temps/glasses.png','水の入ったグラス'),'出水直前も<br>清潔')
