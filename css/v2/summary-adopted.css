@@ -1,0 +1,60 @@
+@charset "utf-8";
+
+/* S10案B: この章だけに適用する製品まとめ */
+#summary .sec__body{max-width:none}
+#summary .product-map{display:grid;grid-template-columns:minmax(0,1fr) 180px minmax(0,1fr);gap:28px;background:var(--ground);padding:28px;align-items:center}
+#summary .map-product{margin:0;text-align:center;align-self:center}
+#summary .sec__body .map-product img{display:block;width:auto;height:410px;max-width:100%;margin:0 auto;object-fit:contain;mix-blend-mode:multiply}
+#summary .map-product figcaption{color:var(--bronze);font-size:16px;margin-top:12px}
+#summary .map-side .feature{display:grid;grid-template-columns:44px minmax(0,1fr);gap:12px;padding:20px 0;position:relative;min-width:0;border-top:1px solid var(--rule-soft)}
+#summary .map-side .feature:first-child{border-top:0}
+#summary .map-side .feature h3{font-size:19px;font-weight:500;line-height:1.5;margin:0 0 8px}
+#summary .map-side .feature p{font-size:15px;line-height:1.8;color:var(--gray);margin:0}
+#summary .map-side .feature-visual{height:56px;display:flex;align-items:center;justify-content:center;max-width:44px}
+#summary .map-side .feature-visual img{display:block;width:auto;height:auto;max-width:44px;max-height:56px;object-fit:contain;mix-blend-mode:multiply}
+#summary .line-icon{width:40px;height:40px;color:var(--bronze);fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
+#summary .map-point:after{content:"";position:absolute;top:42px;width:22px;border-top:1px solid var(--bronze)}
+#summary .map-left .map-point:after{right:-27px}
+#summary .map-right .map-point:after{left:-27px}
+#summary .swatches{display:flex;gap:7px}
+#summary .swatches i{display:block;width:25px;height:38px;background:#faf8f5;border:1px solid var(--rule-strong);border-radius:3px}
+#summary .swatches i:last-child{background:#393938}
+#summary .service-band{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 36px;margin-top:36px}
+#summary .service-band .feature{display:grid;grid-template-columns:64px minmax(0,1fr);gap:16px;align-items:start;min-width:0;padding:24px 0;border-top:1px solid var(--rule-soft)}
+#summary .service-band .feature-visual{height:72px;display:flex;align-items:center;justify-content:center}
+#summary .service-band .feature-visual img{display:block;width:auto;height:auto;max-width:64px;max-height:72px;object-fit:contain;mix-blend-mode:multiply}
+#summary .service-band .feature h3{font-size:20px;font-weight:500;line-height:1.5;margin:0 0 8px}
+#summary .service-band .feature p{font-size:16px;line-height:1.8;color:var(--gray);margin:0}
+#summary .notes{margin-top:36px;padding-top:20px;border-top:1px solid var(--rule-soft);font-size:14px;line-height:1.8;color:var(--gray)}
+#summary .notes p{margin:0 0 8px}
+#summary .notes a{text-decoration:underline;text-underline-offset:5px}
+
+@media (min-width:901px) and (max-width:1100px){
+  #summary .product-map{grid-template-columns:minmax(0,1fr) 124px minmax(0,1fr);gap:20px;padding:20px}
+  #summary .sec__body .map-product img{height:350px}
+  #summary .map-side .feature{grid-template-columns:1fr}
+  #summary .map-side .feature-visual{display:none}
+  #summary .map-point:after{width:15px}
+  #summary .map-left .map-point:after{right:-19px}
+  #summary .map-right .map-point:after{left:-19px}
+}
+@media (max-width:900px){
+  #summary .service-band{gap:0 26px;margin-top:28px}
+  #summary .product-map{grid-template-columns:1fr 1fr;gap:24px;padding:24px}
+  #summary .map-product{grid-column:1/-1;grid-row:1}
+  #summary .sec__body .map-product img{height:250px}
+  #summary .map-point:after{display:none}
+  #summary .map-side .feature{grid-template-columns:1fr}
+  #summary .map-side .feature-visual{display:none}
+}
+@media (max-width:520px){
+  #summary .product-map{grid-template-columns:1fr;padding:22px}
+  #summary .map-product{grid-column:1}
+  #summary .sec__body .map-product img{height:280px}
+  #summary .map-side .feature{grid-template-columns:42px minmax(0,1fr)}
+  #summary .map-side .feature-visual{display:flex;max-width:42px}
+  #summary .map-side .feature p{font-size:16px}
+  #summary .map-right .feature:first-child{border-top:1px solid var(--rule-soft)}
+  #summary .service-band{grid-template-columns:1fr}
+}
+#summary .nowrap{white-space:nowrap}
